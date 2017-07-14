@@ -13,40 +13,43 @@ public class _1_8Asignaciones_liosas {
 
     public static void main(String[] args) {
 
-        int M = ((int) (Math.random() * (1 + 100) + 1));
-        int N = ((int) (Math.random() * (1 + 100) + 1));
-        int P = ((int) (Math.random() * (1 + 100) + 1));
-        int Q = ((int) (Math.random() * (1 + 100) + 1));
+        System.out.println("Ejercicio A ");
+        int a, b, c;
+        a = 3;
+        b = 4;
+        c = a + 2 * b;
+        c = c + b;
+        b = c - a;
+        a = b * c;
+        System.out.println(a + b + c);
 
-        double x = ((int) (Math.random() * (1 + 100) + 1));
-        double y = ((int) (Math.random() * (1 + 100) + 1));
-        double m = ((int) (Math.random() * (1 + 100) + 1));
-        double n = ((int) (Math.random() * (1 + 100) + 1));
-        double p = ((int) (Math.random() * (1 + 100) + 1));
-        double q = ((int) (Math.random() * (1 + 100) + 1));
-        double r = ((int) (Math.random() * (1 + 100) + 1));
-        double s = ((int) (Math.random() * (1 + 100) + 1));
+        System.out.println("Ejercicio B ");
+        double x;
+        x = 2.0;
+        x = Math.pow((x + x), 2);
+        x = Math.sqrt(x + Math.sqrt(x) + 5);
+        System.out.println(x);
 
-        double a = (M / N) + P;
-        System.out.println("Valor : " + a);
+        System.out.println("Ejercicio C ");
 
-        double b = M + (N / P - Q) + P;
-        System.out.println("Valor : " + b);
+        int xx, yy;
+        boolean zz;
+        xx = 5;
+        yy = xx - 2;
+        xx = yy * yy + 1;
+        zz = (xx > (yy + 5));
+        System.out.println("x Vale " + xx + ", y vale " + yy + " y z vale " + zz);
 
-        double c = (x + y) / (a - b);
-        System.out.println("Valor : " + c);
+        System.out.println("Ejercicio D ");
 
-        double d = 2 * (Math.sin(1) + Math.cos(2)) / Math.tan(3);
-        System.out.println("Valor : " + d);
+        int aaa, bbb;
+        aaa = 10;
+        bbb = 5;
+        aaa = bbb;
+        bbb = aaa;
 
-        d = 2 * (Math.sin(1) + Math.cos(2)) / Math.tan(3);
-        System.out.println("Valor : " + d);
-
-        double e = (m + n / p) / (q - r / s);
-        System.out.println(e);
-
-        double f = (-b + Math.sqrt(b * b - 4 * a * c)) / (2 * a);
-        System.out.println(f);
+        
+        System.out.println("Vale a " + aaa + " - Vale b " + bbb);
 
     }
 }
