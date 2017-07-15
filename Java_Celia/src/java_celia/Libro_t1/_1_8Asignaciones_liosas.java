@@ -48,7 +48,6 @@ public class _1_8Asignaciones_liosas {
         aaa = bbb;
         bbb = aaa;
 
-        
         System.out.println("Vale a " + aaa + " - Vale b " + bbb);
 
     }
