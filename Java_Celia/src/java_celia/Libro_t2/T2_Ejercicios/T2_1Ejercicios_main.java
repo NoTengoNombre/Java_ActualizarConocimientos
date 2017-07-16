@@ -11,7 +11,7 @@ import static java_celia.Libro_t2.T2_Ejercicios.T2_1Ejercicios_Celsius_Farenheit
 import static java_celia.Libro_t2.T2_Ejercicios.T2_1Ejercicios_Celsius_Farenheit_object.farenheit_to_celsius_object;
 import static java_celia.Libro_t2.T2_Ejercicios.T2_1Ejercicios_Celsius_Farenheit_object.get_temperature;
 
-public class T2_Ejercicios_main {
+public class T2_1Ejercicios_main {
 
     public static void main(String[] args) {
 
