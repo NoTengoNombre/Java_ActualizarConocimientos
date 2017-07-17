@@ -9,9 +9,6 @@ package java_celia.Libro_t2.T2_Ejercicios;
 
 public class T2_2Peso_condicional {
 
-    private double libras;
-    private double onzas;
-    private double kg;
     private double gramos;
 
     public T2_2Peso_condicional(double cantidad, String unidad) {
@@ -49,4 +46,5 @@ public class T2_2Peso_condicional {
     public double getGramos() {
         return gramos;
     }
+
 }
