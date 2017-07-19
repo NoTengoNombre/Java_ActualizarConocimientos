@@ -7,7 +7,7 @@
  */
 package java_ejemplos.Operaciones_basicas;
 
-public class Java_Operadores {
+public class Java_incremento_dentro_print {
 
     public static void main(String[] args) {
 

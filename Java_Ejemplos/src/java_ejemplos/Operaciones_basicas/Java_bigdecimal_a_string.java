@@ -9,7 +9,7 @@ package java_ejemplos.Operaciones_basicas;
 
 import java.math.BigDecimal;
 
-public class Java_Operadores3 {
+public class Java_bigdecimal_a_string {
 
     public static void main(String[] args) {
 

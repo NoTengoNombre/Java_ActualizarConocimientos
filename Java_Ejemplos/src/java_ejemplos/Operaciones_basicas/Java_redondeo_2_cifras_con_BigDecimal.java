@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 
-public class Java_Operadores2 {
+public class Java_redondeo_2_cifras_con_BigDecimal {
 
     public static void main(String[] args) {
 
