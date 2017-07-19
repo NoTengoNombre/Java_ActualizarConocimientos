@@ -10,12 +10,20 @@ package java_num_aleatorios;
 public class java_num_aleatorios {
 
     public static void main(String[] args) {
-        for (int i = 0; i < 1001; i++) {
+//        for (int i = 0; i < 1001; i++) {
 
-            double valor = (double) (Math.random() * (0 + 10) + 1);
-            System.out.println(valor);
-            System.out.println("------------");
-        }
+        System.out.println("------------");
+        double valor_0_10 = (double) (Math.random() * (0 + 10) + 1);
+        System.out.println(valor_0_10);
 
+        System.out.println("------------");
+        int valor_1_10 = (int) (Math.random() * (1 + 9) + 1);
+        System.out.println(valor_1_10);
+
+        System.out.println("------------");
+        int x = (int) (Math.random() * (0 + 3) + 1);
+        System.out.println(x);
+
+//        }
     }
 }
