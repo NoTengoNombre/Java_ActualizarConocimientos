@@ -16,8 +16,15 @@ public class Java_division {
 
         double enteros = 100 / 5;
         System.out.println("division enteros : " + enteros);
-        
-        
+
+        double decimal1 = 1 / 100000;
+        System.out.println("division decimal : " + decimal1);
+
+        double decimal2 = 10 / 10000;
+        System.out.println("division decimal : " + decimal2);
+
+        double decimal3 = 100 / 10000;
+        System.out.println("division decimal : " + decimal3);
 
     }
 }
