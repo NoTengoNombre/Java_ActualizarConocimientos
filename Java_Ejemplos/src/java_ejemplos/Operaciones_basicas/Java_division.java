@@ -26,5 +26,8 @@ public class Java_division {
         double decimal3 = 100 / 10000;
         System.out.println("division decimal : " + decimal3);
 
+        double basica = 4 / 1;
+        System.out.println("Mayor izq , menor derecha : " + basica);
+
     }
 }
