@@ -8,7 +8,6 @@
 package java_celia.Libro_t3bucles.ejercicios;
 
 import java.util.Scanner;
-import javax.swing.JOptionPane;
 
 /**
  *
