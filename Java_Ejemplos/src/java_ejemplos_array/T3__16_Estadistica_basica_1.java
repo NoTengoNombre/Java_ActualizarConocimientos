@@ -7,8 +7,6 @@
  */
 package java_ejemplos_array;
 
-import java.util.Scanner;
-
 /**
  *
  */
