@@ -91,7 +91,7 @@ public class Asteriscos {
         numEspacios--;
 
         // Dibuja el resto del triángulo (menos la punta)
-        for (int i = 0; i < altura; i++) {
+        for (int i = 2; i < altura; i++) {
             // Dibuja los espacios a la izquierda
             escribeCaracteres(' ', numEspacios);
             // Escribe el asterisco izquierdo
@@ -104,6 +104,10 @@ public class Asteriscos {
             numEspacios--;
             numEspaciosInternos = numEspaciosInternos + 2;
         }
+        // Dibuja los espacios a la izquierda
+        escribeCaracteres(' ', numEspacios);
+        escribeCaracteres('*', numEspaciosInternos+2);
+        System.out.println();
     }
 
     /**
@@ -188,6 +192,17 @@ public class Asteriscos {
         
         System.out.println("Un triangulo : ");
         a.dibujaTriangulo(2, 5);
+        System.out.println("Un triangulo invertido: ");
+        a.dibujaTrianguloInvertido(2, 5);
+        System.out.println("Un triangulo hueco: ");
+        a.dibujaTrianguloHueco(2, 5);
+        System.out.println("Un triangulo hueco invertido: ");
+        a.dibujaTrianguloHuecoInvertido(2, 5);
+        System.out.println("Un rombo : ");
+        a.dibujaRombo(2, 5);
+        System.out.println("Un rombo hueco: ");
+        a.dibujaRomboHueco(2, 5);
+        
         
     }
 }
