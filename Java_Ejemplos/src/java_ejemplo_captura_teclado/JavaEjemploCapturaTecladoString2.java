@@ -8,12 +8,11 @@
 package java_ejemplo_captura_teclado;
 
 import java.io.BufferedReader;
-import java.io.Console;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
-public class java_ejemplo_captura_teclado_String2 {
+public class JavaEjemploCapturaTecladoString2 {
 
     static BufferedReader In = new BufferedReader(new InputStreamReader(System.in));
 

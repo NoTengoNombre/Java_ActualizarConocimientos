@@ -1,5 +1,8 @@
-//package java_ejemplo_captura_teclado;
+package java_ejemplo_medidas_basicas;
 
+import java_ejemplo_captura_teclado.*;
+
+//package java_ejemplo_captura_teclado;
 /**
  * @created on : 16-jul-2017, 15:51:25
  * @see
@@ -11,10 +14,10 @@
 public class T2_2Peso_condicional_captura_teclado {
 
     public static void main(String[] args) {
-        T2_2Peso_condicional p1 = new T2_2Peso_condicional(10, "oz");    // Instancia objeto peso con valor 10 onzas
-        T2_2Peso_condicional p2 = new T2_2Peso_condicional(10, "lb");    // Instancia objeto peso con valor 10 libras
-        T2_2Peso_condicional p3 = new T2_2Peso_condicional(10, "kg");    // Instancia objeto peso con valor 10 kilogramos
-        T2_2Peso_condicional p4 = new T2_2Peso_condicional(10, "gr");    // Instancia objeto peso con valor 10 gramos
+        T2_MedidasDePesoBasicas p1 = new T2_MedidasDePesoBasicas(10, "oz");    // Instancia objeto peso con valor 10 onzas
+        T2_MedidasDePesoBasicas p2 = new T2_MedidasDePesoBasicas(10, "lb");    // Instancia objeto peso con valor 10 libras
+        T2_MedidasDePesoBasicas p3 = new T2_MedidasDePesoBasicas(10, "kg");    // Instancia objeto peso con valor 10 kilogramos
+        T2_MedidasDePesoBasicas p4 = new T2_MedidasDePesoBasicas(10, "gr");    // Instancia objeto peso con valor 10 gramos
 
         System.out.println("PROBANDO EL METODO getPeso():");
         System.out.println("Diez onzas son " + p1.getPeso() + " kg");

@@ -5,7 +5,7 @@
  * @version
  * @author Raul Vela Salas
  */
-package java_ejemplos.Operaciones_basicas;
+package java_ejemplo_gui;
 
 import javax.swing.JOptionPane;
 

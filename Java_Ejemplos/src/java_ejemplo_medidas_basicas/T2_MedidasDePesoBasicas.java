@@ -1,3 +1,5 @@
+package java_ejemplo_medidas_basicas;
+
 /**
  * @created on : 16-jul-2017, 15:51:25
  * @see
@@ -6,12 +8,11 @@
  * @author Raul Vela Salas
  */
 //package java_ejemplo_captura_teclado;
-
-public class T2_2Peso_condicional {
+public class T2_MedidasDePesoBasicas {
 
     private double gramos;
 
-    public T2_2Peso_condicional(double cantidad, String unidad) {
+    public T2_MedidasDePesoBasicas(double cantidad, String unidad) {
         if (unidad == "gr") {
             gramos = cantidad;
         }
