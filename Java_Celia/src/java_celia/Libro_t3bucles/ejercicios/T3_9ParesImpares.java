@@ -7,17 +7,17 @@
  */
 package java_celia.Libro_t3bucles.ejercicios;
 
-public class T3_9pares_impares {
+public class T3_9ParesImpares {
 
     private int a = 0;
     private int b = 0;
 
-    public T3_9pares_impares() {
+    public T3_9ParesImpares() {
         a = 0;
         b = 0;
     }
 
-    public T3_9pares_impares(int aa, int bb) {
+    public T3_9ParesImpares(int aa, int bb) {
         a = aa;
         b = bb;
     }
@@ -40,7 +40,7 @@ public class T3_9pares_impares {
 
     public static void main(String[] args) {
 
-        T3_9pares_impares t = new T3_9pares_impares(10, 100);
+        T3_9ParesImpares t = new T3_9ParesImpares(10, 100);
         t.getPares();
 
     }

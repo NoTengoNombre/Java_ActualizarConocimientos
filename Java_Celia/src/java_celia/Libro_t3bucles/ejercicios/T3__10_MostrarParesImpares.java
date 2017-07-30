@@ -13,13 +13,13 @@ import java.io.InputStreamReader;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class T3__10_mostrar_pares_impares {
+public class T3__10_MostrarParesImpares {
 
     private int a = 0;
     private int b = 0;
     private static int ab = 1;
 
-    public T3__10_mostrar_pares_impares(int aa, int bb) {
+    public T3__10_MostrarParesImpares(int aa, int bb) {
         a = aa;
         b = bb;
     }
@@ -66,7 +66,7 @@ public class T3__10_mostrar_pares_impares {
         try {
             teclado = Integer.parseInt(br.readLine());
         } catch (IOException ex) {
-            Logger.getLogger(T3__10_mostrar_pares_impares.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(T3__10_MostrarParesImpares.class.getName()).log(Level.SEVERE, null, ex);
         }
         return teclado;
     }
@@ -80,7 +80,7 @@ public class T3__10_mostrar_pares_impares {
         try {
             teclado = br.readLine();
         } catch (IOException ex) {
-            Logger.getLogger(T3__10_mostrar_pares_impares.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(T3__10_MostrarParesImpares.class.getName()).log(Level.SEVERE, null, ex);
         }
         return teclado;
     }
@@ -121,7 +121,7 @@ public class T3__10_mostrar_pares_impares {
     }
 
     public static void main(String[] args) {
-        T3__10_mostrar_pares_impares t = new T3__10_mostrar_pares_impares(getNumero(), getNumero());
+        T3__10_MostrarParesImpares t = new T3__10_MostrarParesImpares(getNumero(), getNumero());
         t.menu(Integer.parseInt(getTeclado()));
 
     }

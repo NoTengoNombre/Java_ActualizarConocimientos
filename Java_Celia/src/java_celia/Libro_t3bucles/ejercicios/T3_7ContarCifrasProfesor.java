@@ -7,7 +7,7 @@
  */
 package java_celia.Libro_t3bucles.ejercicios;
 
-public class T3_7contar_cifras_profesor {
+public class T3_7ContarCifrasProfesor {
 
     /**
      *
@@ -77,7 +77,7 @@ public class T3_7contar_cifras_profesor {
 
     public static void main(String[] args) {
 
-        T3_7contar_cifras_profesor t3 = new T3_7contar_cifras_profesor();
+        T3_7ContarCifrasProfesor t3 = new T3_7ContarCifrasProfesor();
         int calculaNumCifras = t3.calculaNumDiviendoRangos(-100);
         System.out.println("longitud del numero : " + calculaNumCifras);
 

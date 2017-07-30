@@ -7,17 +7,17 @@
  */
 package java_celia.Libro_t3bucles.ejercicios;
 
-public class T3_8mayormenormediano_profesor {
+public class T3_8MayorMenorMedianoProfesor {
 
     public int x, y, z;
 
-    public T3_8mayormenormediano_profesor() {
+    public T3_8MayorMenorMedianoProfesor() {
         x = 0;
         y = 0;
         z = 0;
     }
 
-    public T3_8mayormenormediano_profesor(int a, int b, int c) {
+    public T3_8MayorMenorMedianoProfesor(int a, int b, int c) {
         x = a;
         y = b;
         z = c;
@@ -71,8 +71,8 @@ public class T3_8mayormenormediano_profesor {
     }
 
     public static void main(String[] args) {
-        T3_8mayormenormediano_profesor t
-                = new T3_8mayormenormediano_profesor(10, 15, 1);
+        T3_8MayorMenorMedianoProfesor t
+                = new T3_8MayorMenorMedianoProfesor(10, 15, 1);
 
         int menor = t.getMenor();
         System.out.println("menor " + menor);

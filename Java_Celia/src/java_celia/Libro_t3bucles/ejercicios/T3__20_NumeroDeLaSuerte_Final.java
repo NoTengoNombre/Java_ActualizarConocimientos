@@ -148,30 +148,41 @@ public class T3__20_NumeroDeLaSuerte_Final {
     /**
      * Version arreglada - llega hasta resto 0
      *
-     * @param valor
+     * @param anio
      * @return
      */
-    public static int dividir2CifrasAnio(int valor) {
+    public static int dividir2CifrasAnio(int anio) {
         System.out.println("----------- ANIO ---------------");
-        System.out.println("Anio a dividir :  " + valor);
-        int c1 = valor / 1000;
-        int r1 = valor % 1000;
+        System.out.println("Anio a dividir :  " + anio);
+    
+        int c1 = anio / 1000;
+        int r1 = anio % 1000;
+        
         int c2 = r1 / 100;
         int r2 = r1 % 100;
+        
         int c3 = r2 / 10;
         int r3 = r2 % 10;
+        
         int c4 = r3 / 1;
         int r4 = r3 % 1;
+        
         total = c1 + c2 + c3 + c4;
+        
         int valor2 = total;
         int c5 = valor2 / 10;
         int r5 = valor2 % 10;
+        
         int c6 = r5 / 1;
         int r6 = r5 % 1;
+        
         int total2 = c5 + c6;
+        
         int c7 = total2 / 10;
         int r7 = total2 % 10;
+        
         int valor4 = c7 + r7;
+        
         System.out.println("Valor final : " + valor4);
         return valor4;
     }
@@ -236,5 +247,6 @@ public class T3__20_NumeroDeLaSuerte_Final {
         int sumarTodasFechas = sumarTodasFechas(dividir2cifrasDia, dividir2cifrasMes, dividirAnioGeneral);
         System.out.println("--------------------------------");
         System.out.println("Tu numero de la suerte es el: " + sumarTodasFechas);
+        
     }
 }

@@ -7,7 +7,7 @@
  */
 package java_celia.Libro_t3bucles.ejercicios;
 
-public class T3__12_Dibujando_Asteriscos {
+public class T3__12_DibujandoAsteriscos {
 
     public static void main(String[] args) {
 

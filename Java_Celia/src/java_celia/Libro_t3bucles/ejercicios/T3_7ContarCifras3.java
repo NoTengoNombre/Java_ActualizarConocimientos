@@ -7,7 +7,7 @@
  */
 package java_celia.Libro_t3bucles.ejercicios;
 
-public class T3_7contar_cifras3 {
+public class T3_7ContarCifras3 {
 
     public static int c;
 

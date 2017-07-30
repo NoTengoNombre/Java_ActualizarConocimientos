@@ -13,7 +13,7 @@ package java_celia.Libro_t3bucles.ejercicios;
  * (comenzamos con los comentarios en formato javadoc)
  *
  */
-public class T3__12_Dibujando_rectangulo {
+public class T3__12_DibujandoRectangulo {
 
     public static void rectangulo(int espacio_izq_der, int num_col, int cantidad_puntos) {
         System.out.println("---------");

@@ -13,7 +13,7 @@ package java_celia.Libro_t3bucles.ejercicios;
  * (comenzamos con los comentarios en formato javadoc)
  *
  */
-public class T3__12_Dibujando_rombo_profesor {
+public class T3__12_DibujandoRomboProfesor {
 
     /**
      * Dibuja con asteriscos un patrón con forma de triángulo
@@ -172,7 +172,7 @@ public class T3__12_Dibujando_rombo_profesor {
 
     public static void main(String[] args) {
 
-        T3__12_Dibujando_rombo_profesor a = new T3__12_Dibujando_rombo_profesor();
+        T3__12_DibujandoRomboProfesor a = new T3__12_DibujandoRomboProfesor();
 
         // Este trozo de código dibuja los patrones
         // pedidos en el ejercicio

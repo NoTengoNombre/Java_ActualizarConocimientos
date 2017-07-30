@@ -8,12 +8,12 @@
 package java_celia.Libro_t3bucles.ejercicios;
 
 import java.text.DecimalFormat;
-import static java_celia.Libro_t3bucles.ejercicios.T3__16_Estadistica_basica_fucional.media;
+import static java_celia.Libro_t3bucles.ejercicios.T3__16_EstadisticoBasicaFuncional.media;
 
 /**
  *
  */
-public class T3__16_Estadistica_basica_fucional {
+public class T3__16_EstadisticoBasicaFuncional {
 
     private static double media;
     private static double total;

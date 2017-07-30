@@ -10,7 +10,7 @@ package java_celia.Libro_t3bucles.ejercicios;
 /**
  *
  */
-public class T3__13_tabla_multiplicar {
+public class T3__13_TablaMultiplicar {
 
     public static void multiplicar(int n) {
         for (int i = 0; i < 11; i++) {

@@ -6,7 +6,7 @@
  */
 package java_celia.Libro_t3bucles.ejercicios;
 
-public class T3_6numerosOrdenados_profesor {
+public class T3_6NumerosOrdenadosProfesor {
 
     /**
      * Cada vez que se instancia/ejemplariza un objeto
@@ -20,7 +20,7 @@ public class T3_6numerosOrdenados_profesor {
     /**
      * Constructor sin parámetros. Asigna valor 0 a x, y, z
      */
-    public T3_6numerosOrdenados_profesor() {
+    public T3_6NumerosOrdenadosProfesor() {
         x = 0;
         y = 0;
         z = 0;
@@ -33,7 +33,7 @@ public class T3_6numerosOrdenados_profesor {
      * @param b
      * @param c
      */
-    public T3_6numerosOrdenados_profesor(int a, int b, int c) {
+    public T3_6NumerosOrdenadosProfesor(int a, int b, int c) {
         x = a;
         y = b;
         z = c;
@@ -102,7 +102,7 @@ public class T3_6numerosOrdenados_profesor {
         System.out.print("  Tercer número: ");
         c = (int) (Math.random() * (1 + 10));
 
-        T3_6numerosOrdenados_profesor num = new T3_6numerosOrdenados_profesor(a, b, c);
+        T3_6NumerosOrdenadosProfesor num = new T3_6NumerosOrdenadosProfesor(a, b, c);
 
         if (num.estanOrdenados()) {
             System.out.println("\nLos números están ordenados");

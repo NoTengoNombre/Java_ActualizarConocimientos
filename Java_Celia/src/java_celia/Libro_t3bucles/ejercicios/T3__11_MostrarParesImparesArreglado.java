@@ -9,7 +9,7 @@ package java_celia.Libro_t3bucles.ejercicios;
 
 import java.util.Scanner;
 
-public class T3__11_mostrar_pares_impares_arreglado {
+public class T3__11_MostrarParesImparesArreglado {
 
     /**
      *
@@ -174,7 +174,7 @@ class MayorMenorMediano {
 
     public static void main(String[] args) {
 
-        T3__11_mostrar_pares_impares_arreglado t = new T3__11_mostrar_pares_impares_arreglado();
+        T3__11_MostrarParesImparesArreglado t = new T3__11_MostrarParesImparesArreglado();
 //        t.mostrar((int) ((Math.random() * (1 + 100) + 1)), (int) ((Math.random() * (1 + 100) + 1)), "pares");
         t.mostrar(100, 1, "pares");
 

@@ -12,7 +12,7 @@ import java.util.Scanner;
 /**
  *
  */
-public class T3__15_tabla_acumulador_interactivo {
+public class T3__15_TablaAcumuladorInteractivo {
 
     static int acumulador = 0;
     static int i = 0;

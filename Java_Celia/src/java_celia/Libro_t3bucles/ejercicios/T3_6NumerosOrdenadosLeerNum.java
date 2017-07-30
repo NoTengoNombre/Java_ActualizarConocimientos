@@ -9,7 +9,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class T3_6numerosOrdenados_leerNum {
+public class T3_6NumerosOrdenadosLeerNum {
 
     static int c = 1;
     static int menor = 0;

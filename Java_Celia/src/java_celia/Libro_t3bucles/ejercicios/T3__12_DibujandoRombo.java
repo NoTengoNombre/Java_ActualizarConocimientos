@@ -7,7 +7,7 @@
  */
 package java_celia.Libro_t3bucles.ejercicios;
 
-public class T3__12_Dibujando_rombo {
+public class T3__12_DibujandoRombo {
 
     public static void triangulo(int distancia) {
         System.out.println("La distancia minima para mostar un triangulo es de 3");

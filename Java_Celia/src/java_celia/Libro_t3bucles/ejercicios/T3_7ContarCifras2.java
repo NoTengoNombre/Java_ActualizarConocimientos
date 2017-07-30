@@ -6,7 +6,7 @@
  */
 package java_celia.Libro_t3bucles.ejercicios;
 
-public class T3_7contar_cifras2 {
+public class T3_7ContarCifras2 {
 
     private static int c = 0;
 
@@ -40,7 +40,7 @@ public class T3_7contar_cifras2 {
     }
 
     public static void main(String[] args) {
-        T3_7contar_cifras2 tc = new T3_7contar_cifras2();
+        T3_7ContarCifras2 tc = new T3_7ContarCifras2();
         tc.contarCifras(-1111);
     }
 

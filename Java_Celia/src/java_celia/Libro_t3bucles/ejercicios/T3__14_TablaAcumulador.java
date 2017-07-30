@@ -10,7 +10,7 @@ package java_celia.Libro_t3bucles.ejercicios;
 /**
  *
  */
-public class T3__14_tabla_acumulador {
+public class T3__14_TablaAcumulador {
 
     public static void acumuladorSimple(int n) {
         int total = 0;
