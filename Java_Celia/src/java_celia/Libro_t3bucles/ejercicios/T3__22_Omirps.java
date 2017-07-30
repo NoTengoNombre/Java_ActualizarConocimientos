@@ -7,6 +7,8 @@
  */
 package java_celia.Libro_t3bucles.ejercicios;
 
+import java.util.Scanner;
+
 public class T3__22_Omirps {
 
     private static int resto;
@@ -93,15 +95,43 @@ public class T3__22_Omirps {
     }
 
     public static void main(String[] args) {
-
         T3__22_Omirps t = new T3__22_Omirps();
-        int[] listaNumeros = t.listaNumeros(169);
-        int longitud = listaNumeros.length;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Introduce la longitud de la lista de numeros Primos entre 1 y 100");
+        System.out.println("Recuerda que el orden de los numeros Primos NO ES igual al de los Enteros");
+        int longLista = (int) (sc.nextInt() * 1.69);
+        int[] listaNumeros = t.listaNumeros(longLista);
+
+        System.out.println("Introduce un numero : ");
+        int numero = sc.nextInt();
+        boolean esPrimo = t.esPrimo(numero);
+
+        if (esPrimo == true) {
+            System.out.println("El numero " + numero + " ES primo");
+        } else {
+            System.out.println("El numero " + numero + " NO ES primo");
+        }
+
+        if (esPrimo == true) {
+            resto = numero;
+
+            int omirps = getNumeroInvertido();
+
+            for (int i = 0; i < listaNumeros.length; i++) {
+                int valoresPrimos = listaNumeros[i];
+                if (valoresPrimos == omirps) {
+                    System.out.println("El numero es omirps : " + numero + " = " + valoresPrimos);
+                }
+            }
+        } else {
+            System.out.println("El numero " + numero + " NO ES omirps");
+        }
 
         System.out.println(".......................");
 
         for (int i = 0; i < listaNumeros.length; i++) {
-            System.out.println("obtener : " + listaNumeros[i]);
+//            System.out.println("obtener : " + listaNumeros[i]);
         }
 
         System.out.println("------- Lista --------");
@@ -111,10 +141,9 @@ public class T3__22_Omirps {
         for (int i = 0; i < listaNumeros.length; i++) {
             resto = listaNumeros[i];
             listaNumeros2[i] = getNumeroInvertido();
-            System.out.println("obtener : " + listaNumeros2[i]);
         }
 
-        for (int i = 0; i < longitud; i++) {
+        for (int i = 0; i < listaNumeros2.length; i++) {
             System.out.println("Primos : " + listaNumeros[i] + " Omirps : " + listaNumeros2[i]);
         }
 
