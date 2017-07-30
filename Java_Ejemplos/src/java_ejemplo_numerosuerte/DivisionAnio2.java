@@ -5,7 +5,7 @@
  * @version
  * @author Raul Vela Salas
  */
-package java_ejemplo_Math;
+package java_ejemplo_numerosuerte;
 
 public class DivisionAnio2 {
 
@@ -57,6 +57,7 @@ public class DivisionAnio2 {
         System.out.println(" 7º resto : " + r7);
 
         int valor4 = c7 + r7;
+        System.out.println("Valor final : " + valor4);
 
         return valor4;
     }

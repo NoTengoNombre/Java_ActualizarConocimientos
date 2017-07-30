@@ -5,7 +5,7 @@
  * @version
  * @author Raul Vela Salas
  */
-package java_ejemplo_Math;
+package java_ejemplo_Operaciones;
 
 public class Fibonnaci {
 

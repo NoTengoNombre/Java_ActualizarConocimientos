@@ -5,11 +5,11 @@
  * @version
  * @author Raul Vela Salas
  */
-package java_ejemplo_Math;
+package java_ejemplo_Operaciones;
 
 import java.util.Scanner;
 
-public class java_ejemplo_Math_desviacion_tipica {
+public class JavaEjemploMathDesviacionTipica {
 
     public static void main(String[] args) {
         //definición  de variables 

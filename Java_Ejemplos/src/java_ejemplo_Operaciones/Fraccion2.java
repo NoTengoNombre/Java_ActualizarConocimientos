@@ -1,4 +1,4 @@
-package java_ejemplo_Math;
+package java_ejemplo_Operaciones;
 
 public class Fraccion2 {
 

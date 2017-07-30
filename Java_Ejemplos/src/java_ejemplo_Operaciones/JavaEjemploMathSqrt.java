@@ -5,9 +5,9 @@
  * @version
  * @author Raul Vela Salas
  */
-package java_ejemplo_Math;
+package java_ejemplo_Operaciones;
 
-public class java_ejemplo_Math_sqrt {
+public class JavaEjemploMathSqrt {
 
     public static void main(String[] args) {
 

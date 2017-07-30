@@ -5,7 +5,7 @@
  * @version
  * @author Raul Vela Salas
  */
-package java_ejemplo_Math;
+package java_ejemplo_numerosuerte;
 
 public class DivisionAnio {
 
@@ -37,6 +37,7 @@ public class DivisionAnio {
         System.out.println(" 4 divison : " + d4);
         int r4 = valor % 1;
         System.out.println(" 4 resto : " + r4);
+        System.out.println("-----------------");
         System.out.println("r4 " + r4);
         total = d1 + d2 + d3 + d4;
         System.out.println("VER TOTAL : " + total);

@@ -5,9 +5,9 @@
  * @version
  * @author Raul Vela Salas
  */
-package java_ejemplo_Math;
+package java_ejemplo_Operaciones;
 
-public class java_ejemplo_Math_media_formula {
+public class JavaEjemploMathMediaFormula {
 
     public static void main(String[] args) {
 //        int[] list = {1, -2, 4, -4, 9, -6, 16, -8, 25, -10};

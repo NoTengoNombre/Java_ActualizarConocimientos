@@ -5,9 +5,9 @@
  * @version
  * @author Raul Vela Salas
  */
-package java_ejemplo_Math;
+package java_ejemplo_Operaciones;
 
-public class java_ejemplo_division {
+public class JavaEjemploDivision {
 
     public static void main(String[] args) {
         Fraccion s1 = new Fraccion(66, 8);
@@ -15,35 +15,36 @@ public class java_ejemplo_division {
     }
 }
 
-class Fraccion {
+class Fraccion1 {
 
     double num;
     double den;
 
-    public Fraccion() {
+    public Fraccion1() {
         num = 0;
         den = 1;
     }
 
-    public Fraccion(double x, double y) {
+    public Fraccion1(double x, double y) {
         num = x;
         den = y;
     }
 
-    Fraccion sumar(Fraccion a, Fraccion b) {
-        Fraccion c = new Fraccion();
+    Fraccion1 sumar(Fraccion1 a, Fraccion1 b) {
+        Fraccion1 c = new Fraccion1();
         c.num = a.num * b.den + b.num * a.den;
         c.den = a.den * b.den;
         return c;
     }
 
-    Fraccion restar(Fraccion a, Fraccion b) {
-        Fraccion c = new Fraccion();
+    Fraccion1 restar(Fraccion1 a, Fraccion1 b) {
+        Fraccion1 c = new Fraccion1();
         c.num = a.num * b.den - b.num * a.den;
         c.den = a.den * b.den;
         return c;
     }
 
+    @Override
     public String toString() {
         String texto = num + " / " + den;
         return texto;
