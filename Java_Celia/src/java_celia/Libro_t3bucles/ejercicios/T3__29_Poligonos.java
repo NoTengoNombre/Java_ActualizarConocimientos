@@ -34,11 +34,20 @@ public class T3__29_Poligonos {
         System.out.println("Introduce el numero de lados : ");
         numLados = sc.nextInt();
 
+        do {
+            if (numLados <= 2) {
+                System.out.println("Has introducido " + numLados + " lados - tienen que ser mayor de '2'");
+                numLados = sc.nextInt();
+            }
+        } while (numLados <= 2);
+
         System.out.println("Introduce la longitud de los lados : ");
-        longitudLados = sc.nextDouble();
+        String longitudLado = sc.next();
+        longitudLados = Double.parseDouble(longitudLado);
 
         System.out.println("Introduce la apotema : ");
-        apotema = sc.nextDouble();
+        String apotemaCadena = sc.next();
+        apotema = Double.parseDouble(apotemaCadena);
 
         switch (numLados) {
             case 3:
