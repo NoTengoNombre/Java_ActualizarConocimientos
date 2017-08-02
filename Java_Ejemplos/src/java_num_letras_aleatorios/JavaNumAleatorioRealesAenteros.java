@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package java_num_aleatorios;
+package java_num_letras_aleatorios;
 
 /**
  *
  * @author Portatil_Bot
  */
-public class java_num_aleatorio_reales_a_enteros {
+public class JavaNumAleatorioRealesAenteros {
 
     public static void main(String[] args) {
 

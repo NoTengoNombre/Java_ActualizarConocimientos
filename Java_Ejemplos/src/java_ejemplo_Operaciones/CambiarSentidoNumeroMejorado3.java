@@ -18,7 +18,7 @@ public class CambiarSentidoNumeroMejorado3 {
         return cociente;
     }
 
-    public static int getNumeroInvertido() {
+    public static double getNumeroInvertido() {
         int temp;
         double totalTemp = 0;
         int restoComp = resto;
@@ -28,7 +28,12 @@ public class CambiarSentidoNumeroMejorado3 {
         }
         double numero = totalTemp * 10000;
 
-        if (restoComp >= 1 && restoComp <= 99) {
+        if (restoComp >= 0 && restoComp <= 9) {
+            numero = Math.round(numero);
+            numero /= 1000;
+        }
+
+        if (restoComp >= 10 && restoComp <= 99) {
             numero = Math.round(numero);
             numero /= 100;
         }
@@ -45,6 +50,11 @@ public class CambiarSentidoNumeroMejorado3 {
     }
 
     public static void main(String[] args) {
+        resto = 5;
+        System.out.println("Numero : " + resto);
+        double resto0 = getNumeroInvertido();
+        System.out.println("Valor : " + resto0);
+        System.out.println("-----------------------");
         resto = 25;
         System.out.println("Numero : " + resto);
         double resto1 = getNumeroInvertido();

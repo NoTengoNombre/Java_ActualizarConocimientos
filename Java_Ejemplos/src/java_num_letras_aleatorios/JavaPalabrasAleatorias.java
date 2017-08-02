@@ -1,10 +1,10 @@
-package java_ejemplos;
+package java_num_letras_aleatorios;
 
 /**
  *
  * @author Portatil_Bot
  */
-public class Java_Palabras_Aleatorias {
+public class JavaPalabrasAleatorias {
 
     /**
      * @param args the command line arguments
