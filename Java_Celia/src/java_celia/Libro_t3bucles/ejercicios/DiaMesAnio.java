@@ -9,6 +9,7 @@ package java_celia.Libro_t3bucles.ejercicios;
 
 import java.util.Calendar;
 import java.util.Scanner;
+import static java_celia.Libro_t3bucles.ejercicios.T3__33ContarDias.getBisiesto;
 
 public class DiaMesAnio {
 
@@ -63,6 +64,30 @@ public class DiaMesAnio {
             anio = sc.nextInt();
         } while (anio <= 1900 || anio > anioActual());
         return anio;
+    }
+
+    public static int mes(int mes, int anio) {
+        int total = 0;
+        if (mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12) {
+//x 31
+        }
+        if (mes == 4 || mes == 6 || mes == 9 || mes == 11) {
+//x 30
+        }
+        if (mes == 2 && getBisiesto(anio)) {
+// x 28
+        }
+        return mes;
+    }
+
+    public static boolean getBisiesto(int anio) {
+        boolean booleano;
+        if ((anio % 4 == 0) && ((anio % 4 == 0) || (anio % 100 != 0))) {
+            System.out.println("Bisiesto");
+            return booleano = true;
+        } else {
+            return booleano = false;
+        }
     }
 
     public static int anioActual() {

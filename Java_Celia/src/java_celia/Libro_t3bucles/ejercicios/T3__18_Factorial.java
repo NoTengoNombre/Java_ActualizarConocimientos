@@ -18,6 +18,7 @@ public class T3__18_Factorial {
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
         System.out.println("¿ Intro un numero para factorizar ? ");
         int x = Integer.parseInt(br.readLine());
 
@@ -25,7 +26,9 @@ public class T3__18_Factorial {
         int variable_controladora = x;
 
         do {
+            System.out.println("♦ Soy el valor :  " + valor_incremental);
             x = x * (valor_incremental++);
+            System.out.println("• Soy x " + x);
         } while (valor_incremental < x && valor_incremental < variable_controladora);
 
         System.out.println("---------------");

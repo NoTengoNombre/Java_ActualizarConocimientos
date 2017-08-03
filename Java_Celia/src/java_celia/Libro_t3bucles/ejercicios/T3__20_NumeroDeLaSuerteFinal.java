@@ -10,7 +10,7 @@ package java_celia.Libro_t3bucles.ejercicios;
 import java.util.Calendar;
 import java.util.Scanner;
 
-public class T3__20_NumeroDeLaSuerte_Final {
+public class T3__20_NumeroDeLaSuerteFinal {
 
     private static int dia;
     private static int mes;

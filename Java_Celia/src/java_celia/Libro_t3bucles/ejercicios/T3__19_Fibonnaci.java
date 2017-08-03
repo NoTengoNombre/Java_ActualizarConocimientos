@@ -13,11 +13,11 @@ public class T3__19_Fibonnaci {
 
     public static int fibonacci_iterativo(int n) {
         int actual = 0, anterior1, anterior2;
-
-        anterior1 = anterior2 = 1;
+        anterior2 = 0;
+        anterior1 = 1;
 
         if ((n == 0) || (n == 1)) {
-            actual = 1;
+            actual = n;
         } else {
             for (int i = 2; i <= n; i++) {
                 actual = anterior1 + anterior2;
@@ -30,7 +30,7 @@ public class T3__19_Fibonnaci {
 
     public static int fibonacci_recursivo(int n) {
         if ((n == 0 || n == 1)) {
-            return 1;
+            return n;
         } else {
             return fibonacci_recursivo(n - 1) + fibonacci_recursivo(n - 2);
         }
@@ -57,12 +57,12 @@ public class T3__19_Fibonnaci {
             System.out.println("" + n2);
         }
 
-        int fibonacci_recursivo = fibonacci_recursivo(10);
+        int fibonacci_recursivo = fibonacci_recursivo(0);
         System.out.println("Ejecuta fibonacci recursivo : " + fibonacci_recursivo);
 
         System.out.println("----------------");
 
-        int fibonacci_iterativo = fibonacci_iterativo(5);
+        int fibonacci_iterativo = fibonacci_iterativo(0);
         System.out.println("Ejecuta fibonacci iterativo : " + fibonacci_iterativo);
 
     }
