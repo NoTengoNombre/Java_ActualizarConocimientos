@@ -9,7 +9,6 @@ package java_celia.Libro_t3bucles.ejercicios;
 
 import java.util.Calendar;
 import java.util.Scanner;
-import static java_celia.Libro_t3bucles.ejercicios.T3__33ContarDias.getBisiesto;
 
 public class DiaMesAnio {
 
@@ -90,6 +89,17 @@ public class DiaMesAnio {
         }
     }
 
+    public static boolean getNoBisiesto(int anio) {
+        boolean booleano;
+        if (!(anio % 4 == 0) && ((anio % 4 == 0) || (anio % 100 != 0))) {
+            System.out.println("Bisiesto");
+            return booleano = true;
+        } else {
+            System.out.println("No Bisiesto");
+            return booleano = false;
+        }
+    }
+
     public static int anioActual() {
         Calendar cal = Calendar.getInstance();
         int year = cal.get(Calendar.YEAR);
@@ -99,5 +109,9 @@ public class DiaMesAnio {
     public static int totalFecha() {
         totalFecha = dia + mes + anio;
         return totalFecha;
+    }
+
+    public static void main(String[] args) {
+        getNoBisiesto(2000);
     }
 }
