@@ -12,180 +12,139 @@ import java.util.Scanner;
 public class T3__35NumeroLetra {
 
     private final static Scanner SCANNER = new Scanner(System.in);
-    private static int cDMs1;
-    private static int cMs;
-    private static int cCs;
-    private static int cDs;
-    private static int cUs;
+    private static int dMs;
+    private static int ms; // entre de 10.000 y 19.000
+    private static int ms2; // mayor de 20.000
+    private static int cs;
+    private static int ds;
+    private static int us;
     
-    public static void setDms1() {
+    public static void setDms() {
     System.out.println("Introduce decenas de millares");
-    cDMs1 = SCANNER.nextInt();
-    if(cDMs1 < 0 || cDMs1 > 9){
-        while(cDMs1 < 0 || cDMs1 > 9){
+    dMs = SCANNER.nextInt();
+    if(dMs < 0 || dMs > 9){
+        while(dMs < 0 || dMs > 9){
            System.out.println("Introduce decenas de millares entre 0 y 9 ");
-           cDMs1 = SCANNER.nextInt();
-    }
-        if (cDMs1 == 1) {
-            setMs();
+           dMs = SCANNER.nextInt();
+            }
+        if (dMs == 1 && ms >= 0) {
+            setMs();  // entre de 10.000 y 19.000
         }
       }
     }
     
-    public static void setMs() {
-    System.out.println("♦ Introduce millares : ");
-        cMs = SCANNER.nextInt();
-        if (cMs < 0 || cMs > 9) {
-            while(cMs < 0 || cMs > 9){
-              System.out.println("Introduce millares entre 0 y 9 ");
-              cMs = SCANNER.nextInt();
-            }
-        }
-    System.out.println("♦ millares : " + cMs );
-    }
-    
-    public static void setCs() {
-    System.out.println("☻ Introduce centenas");
-        cCs = SCANNER.nextInt();
-        if (cCs < 0 || cCs > 9) {
-            while(cCs < 0 || cCs > 9){
-              System.out.println("☻ Introduce centenas entre 0 y 9 ");
-              cCs = SCANNER.nextInt();
-            }
-        }
-    System.out.println("☻ centenas : "+ cCs);
-    }
-    
-    public static void setDs() {
-    System.out.println("☺ Introduce decenas");
-        cDs = SCANNER.nextInt();
-        if (cDs < 0 || cDs > 9) {
-            while(cDs < 0 || cDs > 9){
-              System.out.println("☻ Introduce decenas entre 0 y 9 ");
-              cDs = SCANNER.nextInt();
-            }
-        }
-    System.out.println("☺ decenas : " + cDs);
-    }
-    
-    public static void setUs() {
-    System.out.println("♥ Introduce unidades");
-        cUs = SCANNER.nextInt();
-        if (cUs < 0 || cUs > 9) {
-            while(cUs < 0 || cUs > 9){
-            System.out.println("☻ Introduce unidades entre 0 y 9 ");
-            cUs = SCANNER.nextInt();
-            }
-        }
-    System.out.println("♥ unidades : " + cUs);
-    }
-
     public static int getDms() {
-        if (cDMs1 == 1) {
-            if (cMs == 0) {
-                System.out.println("• Diez ");                
-            }else{
-             switch(cMs){
-            case 1 : System.out.println("• Once ");break;
-            case 2 : System.out.println("• Doce ");break;
-            case 3 : System.out.println("• Trece ");break;
-            case 4 : System.out.println("• Catorce ");break;
-            case 5 : System.out.println("• Quince ");break;
-            case 6 : System.out.println("• Dieciseis ");break;
-            case 7 : System.out.println("• Diecisiete ");break;
-            case 8 : System.out.println("• Dieciocho ");break;
-            case 9 : System.out.println("• Diecinueve ");break;
+        if (dMs == 0) {
+           getMs1();
+        }
+        if (dMs == 1) {
+            if (ms == 0) {
+                System.out.println("• Diez ");   
+                getMs1();
                 }
             }
-        }
-        if (cDMs1 == 0) {
-           getMs2();
-        }else{
-        if (cDMs1 == 2) {System.out.println("• Veinti");}
-        if (cDMs1 == 3) {System.out.println("• Treinta");}
-        if (cDMs1 == 4) {System.out.println("• Cuarenta");}
-        if (cDMs1 == 5) {System.out.println("• Cincuenta");}
-        if (cDMs1 == 6) {System.out.println("• Sesenta");}
-        if (cDMs1 == 7) {System.out.println("• Setenta");}
-        if (cDMs1 == 8) {System.out.println("• Ochenta");}
-        if (cDMs1 == 9) {System.out.println("• Noventa");}
-        }
-        return cDMs1;
+        if (dMs == 1) {
+                if (ms > 0) {
+            switch(ms){
+                case 1 : System.out.println("• Once ");break;
+                case 2 : System.out.println("• Doce ");break;
+                case 3 : System.out.println("• Trece ");break;
+                case 4 : System.out.println("• Catorce ");break;
+                case 5 : System.out.println("• Quince ");break;
+                case 6 : System.out.println("• Dieciseis ");break;
+                case 7 : System.out.println("• Diecisiete ");break;
+                case 8 : System.out.println("• Dieciocho ");break;
+                case 9 : System.out.println("• Diecinueve ");break;
+                    }
+                }
+            }
+            if (dMs == 2) {System.out.println("• Veinti");}
+            if (dMs == 3) {System.out.println("• Treinta");}
+            if (dMs == 4) {System.out.println("• Cuarenta");}
+            if (dMs == 5) {System.out.println("• Cincuenta");}
+            if (dMs == 6) {System.out.println("• Sesenta");}
+            if (dMs == 7) {System.out.println("• Setenta");}
+            if (dMs == 8) {System.out.println("• Ochenta");}
+            if (dMs == 9) {System.out.println("• Noventa");}
+        return dMs;
     }
     
-       public static int getMs() {
-           if (cDMs1 > 1) {
-        if (cMs == 0) {System.out.println("♦ mil");}
-        if (cMs == 1) {System.out.println("♦ y un mil");}
-        if (cMs == 2) {System.out.println("♦ y dos mil");}
-        if (cMs == 3) {System.out.println("♦ y tres mil");}
-        if (cMs == 4) {System.out.println("♦ y cuatro mil");}
-        if (cMs == 5) {System.out.println("♦ y cinco mil");}
-        if (cMs == 6) {System.out.println("♦ y seis mil");}
-        if (cMs == 7) {System.out.println("♦ y siete mil");}
-        if (cMs == 8) {System.out.println("♦ y ocho mil");}
-        if (cMs == 9) {System.out.println("♦ y nueve mil");}   
+     public static int getMs1() {
+           if (dMs == 0) {
+        if (ms == 1) {System.out.println("♦♦ mil");}
+        if (ms == 2) {System.out.println("♦♦ dos mil");}
+        if (ms == 3) {System.out.println("♦♦ tres mil");}
+        if (ms == 4) {System.out.println("♦♦ cuatro mil");}
+        if (ms == 5) {System.out.println("♦♦ cinco mil");}
+        if (ms == 6) {System.out.println("♦♦ seis mil");}
+        if (ms == 7) {System.out.println("♦♦ siete mil");}
+        if (ms == 8) {System.out.println("♦♦ ocho mil");}
+        if (ms == 9) {System.out.println("♦♦ nueve mil");}   
            }
-       return cMs;
+       return ms;
        }
-       
+    
        public static int getMs2() {
-           if (cDMs1 > 1) {
-        if (cMs == 1) {System.out.println("♦♦ mil");}
-        if (cMs == 2) {System.out.println("♦♦ dos mil");}
-        if (cMs == 3) {System.out.println("♦♦ tres mil");}
-        if (cMs == 4) {System.out.println("♦♦ cuatro mil");}
-        if (cMs == 5) {System.out.println("♦♦ cinco mil");}
-        if (cMs == 6) {System.out.println("♦♦ seis mil");}
-        if (cMs == 7) {System.out.println("♦♦ siete mil");}
-        if (cMs == 8) {System.out.println("♦♦ ocho mil");}
-        if (cMs == 9) {System.out.println("♦♦ nueve mil");}   
+           if (dMs == 1 ) {
+        if (ms >= 0) {System.out.println("♦ mil");}
            }
-       return cMs;
+           if (dMs > 1 ) {
+        if (ms == 0) {System.out.println("♦ mil");}
+        if (ms == 1) {System.out.println("♦ y un mil");}
+        if (ms == 2) {System.out.println("♦ y dos mil");}
+        if (ms == 3) {System.out.println("♦ y tres mil");}
+        if (ms == 4) {System.out.println("♦ y cuatro mil");}
+        if (ms == 5) {System.out.println("♦ y cinco mil");}
+        if (ms == 6) {System.out.println("♦ y seis mil");}
+        if (ms == 7) {System.out.println("♦ y siete mil");}
+        if (ms == 8) {System.out.println("♦ y ocho mil");}
+        if (ms == 9) {System.out.println("♦ y nueve mil");}   
+           }
+       return ms;
        }
      
     public static int getCs() {
-        if (cCs == 1) {System.out.println("☻ cien");}
-        if (cCs == 2) {System.out.println("☻ doscientos");}
-        if (cCs == 3) {System.out.println("☻ trescientos");}
-        if (cCs == 4) {System.out.println("☻ cuatrocientos");}
-        if (cCs == 5) {System.out.println("☻ quinientos");}
-        if (cCs == 6) {System.out.println("☻ seiscientos");}
-        if (cCs == 7) {System.out.println("☻ setecientos");}
-        if (cCs == 8) {System.out.println("☻ ochocientos");}
-        if (cCs == 9) {System.out.println("☻ novencientos");}
-        return cCs;
+        if (cs == 1) {System.out.println("☻ cien");}
+        if (cs == 2) {System.out.println("☻ doscientos");}
+        if (cs == 3) {System.out.println("☻ trescientos");}
+        if (cs == 4) {System.out.println("☻ cuatrocientos");}
+        if (cs == 5) {System.out.println("☻ quinientos");}
+        if (cs == 6) {System.out.println("☻ seiscientos");}
+        if (cs == 7) {System.out.println("☻ setecientos");}
+        if (cs == 8) {System.out.println("☻ ochocientos");}
+        if (cs == 9) {System.out.println("☻ novencientos");}
+        return cs;
     }
     
     public static int getDs() {
-        if (cDs == 1) {System.out.println("☺ diez y");}
-        if (cDs == 2) {System.out.println("☺ veinte y");}
-        if (cDs == 3) {System.out.println("☺ treinta y");}
-        if (cDs == 4) {System.out.println("☺ cuarenta y");}
-        if (cDs == 5) {System.out.println("☺ cincuenta y");}
-        if (cDs == 6) {System.out.println("☺ sesenta y");}
-        if (cDs == 7) {System.out.println("☺ setenta y");}
-        if (cDs == 8) {System.out.println("☺ ochenta y");}
-        if (cDs == 9) {System.out.println("☺ noventa y");}
-        return cDs;
+        if (ds == 1) {System.out.println("☺ diez y");}
+        if (ds == 2) {System.out.println("☺ veinte y");}
+        if (ds == 3) {System.out.println("☺ treinta y");}
+        if (ds == 4) {System.out.println("☺ cuarenta y");}
+        if (ds == 5) {System.out.println("☺ cincuenta y");}
+        if (ds == 6) {System.out.println("☺ sesenta y");}
+        if (ds == 7) {System.out.println("☺ setenta y");}
+        if (ds == 8) {System.out.println("☺ ochenta y");}
+        if (ds == 9) {System.out.println("☺ noventa y");}
+        return ds;
     }
 
     public static int getUs() {
-        if (cUs == 1) {System.out.println("♥ uno");}
-        if (cUs == 2) {System.out.println("♥ dos");}
-        if (cUs == 3) {System.out.println("♥ tres");}
-        if (cUs == 4) {System.out.println("♥ cuatro");}
-        if (cUs == 5) {System.out.println("♥ cinco");}
-        if (cUs == 6) {System.out.println("♥ seis");}
-        if (cUs == 7) {System.out.println("♥ siete");}
-        if (cUs == 8) {System.out.println("♥ ocho");}
-        if (cUs == 9) {System.out.println("♥ nueve");}
-        return cUs;
+        if (us == 1) {System.out.println("♥ uno");}
+        if (us == 2) {System.out.println("♥ dos");}
+        if (us == 3) {System.out.println("♥ tres");}
+        if (us == 4) {System.out.println("♥ cuatro");}
+        if (us == 5) {System.out.println("♥ cinco");}
+        if (us == 6) {System.out.println("♥ seis");}
+        if (us == 7) {System.out.println("♥ siete");}
+        if (us == 8) {System.out.println("♥ ocho");}
+        if (us == 9) {System.out.println("♥ nueve");}
+        return us;
     }
     
     public static void setNumero() {
-        setDms1();
-        if (cDMs1 == 1 && (cMs > 0 || cMs >= 9)) {
+        setDms();
+        if (dMs == 1 && (ms > 0 || ms >= 9)) {
         setCs();
         setDs();
         setUs();
@@ -198,17 +157,80 @@ public class T3__35NumeroLetra {
     }
     
     public static void getNumero() {
+        System.out.println("----------");
         getDms();
-        getMs();
+        getMs2();
         getCs();
         getDs();
         getUs();
-        System.out.println("-------- \n Numero original : "+cDMs1 + cMs + cCs + cDs + cUs);
+        System.out.println("-------- \n Numero original : "+dMs + ms + cs + ds + us);
     }
-
+    
     public static void main(String[] args) {
         setNumero();
         getNumero();
-
     }
+    
+    public static void setCs() {
+    System.out.println("☻ Introduce centenas");
+        cs = SCANNER.nextInt();
+        if (cs < 0 || cs > 9) {
+            while(cs < 0 || cs > 9){
+              System.out.println("☻ Introduce centenas entre 0 y 9 ");
+              cs = SCANNER.nextInt();
+            }
+        }
+    System.out.println("☻ centenas : "+ cs);
+    }
+    
+    public static void setDs() {
+    System.out.println("☺ Introduce decenas");
+        ds = SCANNER.nextInt();
+        if (ds < 0 || ds > 9) {
+            while(ds < 0 || ds > 9){
+              System.out.println("☻ Introduce decenas entre 0 y 9 ");
+              ds = SCANNER.nextInt();
+            }
+        }
+    System.out.println("☺ decenas : " + ds);
+    }
+    
+    public static void setUs() {
+    System.out.println("♥ Introduce unidades");
+        us = SCANNER.nextInt();
+        if (us < 0 || us > 9) {
+            while(us < 0 || us > 9){
+            System.out.println("☻ Introduce unidades entre 0 y 9 ");
+            us = SCANNER.nextInt();
+            }
+        }
+    System.out.println("♥ unidades : " + us);
+    }
+
+    //    entre de 10.000 y 19.000
+    public static void setMs() {
+    System.out.println("♦ Introduce millares : ");
+        ms = SCANNER.nextInt();
+        if (ms < 0 || ms > 9) {
+            while(ms < 0 || ms > 9){
+              System.out.println("Introduce millares entre 0 y 9 ");
+              ms = SCANNER.nextInt();
+            }
+        }
+    System.out.println("♦ millares : " + ms );
+    }
+    
+//    mayor de 20.000
+    public static void setMs2() {
+    System.out.println("♦ Introduce millares : ");
+        ms2 = SCANNER.nextInt();
+        if (ms2 < 0 || ms2 > 9) {
+            while(ms2 < 0 || ms2 > 9){
+              System.out.println("Introduce millares entre 0 y 9 ");
+              ms2 = SCANNER.nextInt();
+            }
+        }
+    System.out.println("♦ millares : " + ms2 );
+    }
+    
 }
