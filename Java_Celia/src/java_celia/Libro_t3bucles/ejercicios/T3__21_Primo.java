@@ -51,7 +51,13 @@ public class T3__21_Primo {
 //        }
 //        return n;
 //    }
-//                                    6
+    
+    /**
+     * Solo comprueba si el numero es primo o no
+     *
+     * @param n
+     * @return true o false
+     */
     public static boolean esPrimo(int n) {
 //          6
         if (n < 2) {
