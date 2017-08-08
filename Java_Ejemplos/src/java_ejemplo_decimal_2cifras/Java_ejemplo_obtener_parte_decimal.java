@@ -36,14 +36,14 @@ public class Java_ejemplo_obtener_parte_decimal {
         double numero = 7.936427373645;
 
         Float numObject = new Float(numero);
-        byte byteValue = numObject.byteValue();
+        byte valorByte = numObject.byteValue();
 
-        System.out.println("aqui :" + byteValue);
+        System.out.println("Aqui esta el valor con 2 decimales :" + valorByte);
 
         String dosdecimales = decimales.format(numero);
 
 //        System.out.println(dd);
-        System.out.println(dosdecimales);
+        System.out.println("2 decimales : "+dosdecimales);
 
     }
 }

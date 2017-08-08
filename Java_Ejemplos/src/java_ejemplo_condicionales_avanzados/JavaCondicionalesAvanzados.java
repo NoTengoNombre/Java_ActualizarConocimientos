@@ -29,7 +29,7 @@ public class JavaCondicionalesAvanzados {
         if (presion == null ? humedad == null : presion.equals(humedad)) {
             System.out.println("P2: baja - H: baja : " + presion);
         }
-        
+
         System.out.println("Presion : " + presion);
         presion = "alta";
         System.out.println("Humedad :" + humedad);
