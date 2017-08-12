@@ -15,5 +15,7 @@ public class JavaASCII {
             System.out.println("El codigo ASCII de la letra "
                     + letra++ + " es " + i);
         }
+        char v = (char) 0x1F431;
+        System.out.println(v);
     }
 }
