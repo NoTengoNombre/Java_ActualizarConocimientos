@@ -19,7 +19,7 @@ public class T3__43_TragaPerras5ArreglarRepeticionJuego1 {
     private static int num1;// numeros para las combinaciones
     private static int num2;// numeros para las combinaciones
     private static int num3;// numeros para las combinaciones
-    private static double dineroTotal = 10; // dinero total para apostar
+    private static double dineroTotal; // dinero total para apostar
     private static String frutaString; // Muestra el nombre de la fruta
     private static int premio;// premio recibido
     private static int con;// premio recibido
@@ -233,8 +233,8 @@ public class T3__43_TragaPerras5ArreglarRepeticionJuego1 {
 
     public static void setIniciarJuego() {
 
-//        do {
         String respuesta;
+        setDineroInicial();
         do {
             setIniciarPartida();
             setNumeroAleatorios();
@@ -265,14 +265,16 @@ public class T3__43_TragaPerras5ArreglarRepeticionJuego1 {
             System.out.println("\t$ Dinero Disponible : " + dineroTotal);
             System.out.println("---------------------------------------------\n");
 
-            System.out.println("Escriba 'si' o 'no' para continuar el juego ");
+            System.out.print("¿ • Desea jugar otra vez (s/n) ? ");
             respuesta = SC.next();
 
-        } while ((dineroTotal > 0) && (!(respuesta.equals("no"))));
+        } while ((dineroTotal > 0) && (!(respuesta.equals("n"))));
         if (dineroTotal <= 0) {
-            System.out.println(" ☢  ☢ Has perdido todo el dinero  ☢  ☢ ");
+            System.out.println(" ☢  ☢ Lo siento : Has perdido todo el dinero  ☢  ☢ ");
         } else {
-            System.out.println("$$$ Dinero Ganado " + dineroTotal + " $$$ ");
+            System.out.println("▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁");
+            System.out.println("\t  $$$ Dinero Conseguido " + dineroTotal + " $$$ ");
+            System.out.println("▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁");
         }
     }
 
