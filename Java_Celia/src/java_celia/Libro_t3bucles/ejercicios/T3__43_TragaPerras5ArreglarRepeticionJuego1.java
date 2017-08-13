@@ -25,9 +25,9 @@ public class T3__43_TragaPerras5ArreglarRepeticionJuego1 {
     private static int con;// premio recibido
 
 // Muestra el nombre de la fruta
-    private static final String MANZANAS = "MANZANA";
-    private static final String NARANJAS = "NARANJA";
-    private static final String LIMONES = "LIMON";
+    private static final String MANZANAS = "MANZANAS";
+    private static final String NARANJAS = "NARANJAS";
+    private static final String LIMONES = "LIMONES";
     private static final String FRESAS = "FRESAS";
     private static final String SANDIAS = "SANDIAS";
     private static final String CEREZAS = "CEREZAS";
@@ -64,11 +64,11 @@ public class T3__43_TragaPerras5ArreglarRepeticionJuego1 {
      */
     public static void setIniciarPartida() {
         if (con == 0) {
-            dineroTotal -= 1.00;
+            dineroTotal -= 0.5;
             System.out.println("@ Introduce 1 moneda : " + dineroTotal + "\n");
             con++;
         } else {
-            dineroTotal -= 1.00;
+            dineroTotal -= 0.5;
             System.out.println("@ Introduce otra moneda : " + dineroTotal + "\n");
         }
     }
@@ -120,7 +120,7 @@ public class T3__43_TragaPerras5ArreglarRepeticionJuego1 {
                 imgFruta = "❍ SANDIAS ❍ ";
                 break;
             case 6:
-                imgFruta = " ◍◍◍⋯ CEREZAS ⋯◍◍◍ ";
+                imgFruta = "◍◍◍ CEREZAS ◍◍◍";
                 break;
             default:
                 break;
@@ -138,46 +138,47 @@ public class T3__43_TragaPerras5ArreglarRepeticionJuego1 {
             if (in == indice && in == 1) {
                 frutaString = MANZANAS;
                 premio = 5;
-                System.out.println("☻ Triple Aciertos " + in + " - " + in + " - " + in + " : Trio de " + frutaString + " - Premio de " + premio + " € ");
+                System.out.printf("\t     ⋖ 6º Premio ⋗ \n");
+                System.out.println("☻ Trio de " + frutaString + " - Premio de " + premio + " € ");
                 setAnadirPremio(premio);
             }
             if (in == indice && in == 2) {
                 frutaString = NARANJAS;
                 premio = 5;
-                System.out.println("☻ Triple Aciertos " + in + " - " + in + " - " + in + " : Trio de " + frutaString + " - Premio de " + premio + " € ");
+                System.out.printf("\t     ⋖ 5º Premio ⋗ \n");
+                System.out.println("☻ Trio de " + frutaString + " - Premio de " + premio + " € ");
                 setAnadirPremio(premio);
             }
             if (in == indice && in == 3) {
                 frutaString = LIMONES;
                 premio = 5;
-                System.out.println("☻ Triple Aciertos " + in + " - " + in + " - " + in + " : Trio de " + frutaString + " - Premio de " + premio + " € ");
+                System.out.printf("\t     ⋖ 4º Premio ⋗ \n");
+                System.out.println("☻ Trio de " + frutaString + " - Premio de " + premio + " € ");
                 setAnadirPremio(premio);
             }
             if (in == indice && in == 4) {
                 frutaString = FRESAS;
                 premio = 10;
-                System.out.printf("\t\t   " + in + " - " + in + " - " + in + "\n");
-                System.out.printf("\t \t ⋖ 3º Premio ⋗ \n");
-                System.out.printf("\t       ✸ Triple " + frutaString + " ✸\n ");
-                System.out.printf("\t\t  Premio de " + premio + " € \n");
+                System.out.printf("\t     ⋖ 3º Premio ⋗ \n");
+                System.out.printf("\t      ✸ Triple " + frutaString + " ✸\n ");
+                System.out.printf("\t\tPremio de " + premio + " € \n");
                 setAnadirPremio(premio);
             }
             if (in == indice && in == 5) {
                 frutaString = SANDIAS;
                 premio = 20;
-                System.out.printf("\t\t     " + in + " - " + in + " - " + in + "\n");
-                System.out.printf("\t \t ⋖⋖ 2º Premio ⋗⋗ \n");
-                System.out.printf("\t       ✯✯ Triple " + frutaString + " ✯✯\n ");
-                System.out.printf("\t\t    Premio de " + premio + " € \n");
+                System.out.printf("\t      ⋖⋖ 2º Premio ⋗⋗ \n");
+                System.out.printf("\t    ✯✯ Triple " + frutaString + " ✯✯\n ");
+                System.out.printf("\t\tPremio de " + premio + " € \n");
                 setAnadirPremio(premio);
             }
             if (in == indice && in == 6) {
                 frutaString = CEREZAS;
                 premio = 30;
-                System.out.printf("\t\t     " + in + " - " + in + " - " + in + "\n");
-                System.out.printf("\t \t ⋖⋖⋖ 1º Premio ⋗⋗⋗  \n");
-                System.out.printf("\t       ✪✪✪ Triple " + frutaString + " ✪✪✪\n ");
-                System.out.printf("\t\t    Premio de " + premio + " € \n");
+                System.out.printf("\t  ⋖⋖⋖ 1º Premio ⋗⋗⋗  \n");
+                System.out.printf("\t   ✪✪✪ Triple " + frutaString + " ✪✪✪\n ");
+                System.out.printf("\t\tPremio de " + premio + " € \n");
+
                 setAnadirPremio(premio);
             }
         }
@@ -188,48 +189,58 @@ public class T3__43_TragaPerras5ArreglarRepeticionJuego1 {
             if (i == x && i == y && i == 1) {
                 frutaString = MANZANAS;
                 premio = 1;
-                System.out.println("★★ 2 Aciertos : Pareja de " + frutaString + " ⇒ Has ganado " + premio + " euros ★★");
+                System.out.println("★★ 2 Aciertos : Pareja de " + frutaString + " ★★");
+                System.out.println("      ★★ Has ganado " + premio + " euros ★★");
                 setAnadirPremio(premio);
             }
             if (i == x && i == y && i == 2) {
                 frutaString = NARANJAS;
                 premio = 1;
-                System.out.println("★★ 2 Aciertos : Pareja de " + frutaString + " ⇒ Has ganado " + premio + " euros ★★");
+                System.out.println("★★ 2 Aciertos : Pareja de " + frutaString + " ★★");
+                System.out.println("      ★★ Has ganado " + premio + " euros ★★");
                 setAnadirPremio(premio);
             }
             if (i == x && i == y && i == 3) {
                 frutaString = LIMONES;
                 premio = 1;
-                System.out.println("★★ 2 Aciertos : Pareja de " + frutaString + " ⇒ Has ganado " + premio + " euros ★★");
+                System.out.println("★★ 2 Aciertos : Pareja de " + frutaString + " ★★");
+                System.out.println("      ★★ Has ganado " + premio + " euros ★★");
                 setAnadirPremio(premio);
             }
             if (i == x && i == y && i == 4) {
                 frutaString = FRESAS;
                 premio = 1;
-                System.out.println("★★ 2 Aciertos : Pareja de " + frutaString + " ⇒ Has ganado " + premio + " euros ★★");
+                System.out.println("★★ 2 Aciertos : Pareja de " + frutaString + " ★★");
+                System.out.println("      ★★ Has ganado " + premio + " euros ★★");
                 setAnadirPremio(premio);
             }
             if (i == x && i == y && i == 5) {
                 frutaString = SANDIAS;
                 premio = 2;
-                System.out.println("★★ 2 Aciertos : Pareja de " + frutaString + " ⇒ Has ganado " + premio + " euros ★★");
+                System.out.println("★★ 2 Aciertos : Pareja de " + frutaString + " ★★");
+                System.out.println("      ★★ Has ganado " + premio + " euros ★★");
                 setAnadirPremio(premio);
             }
             if (i == x && i == y && i == 6) {
                 frutaString = CEREZAS;
                 premio = 3;
-                System.out.println("★★ 2 Aciertos : Pareja de " + frutaString + " ⇒ Has ganado " + premio + " euros ★★");
+                System.out.println("★★ 2 Aciertos : Pareja de " + frutaString + " ★★");
+                System.out.println("      ★★ Has ganado " + premio + " euros ★★");
                 setAnadirPremio(premio);
             }
         }
     }
 
     public static void setIniciarJuego() {
+
+//        do {
+        String respuesta;
         do {
             setIniciarPartida();
             setNumeroAleatorios();
 
-            System.out.println(frutaNumero1 + " - " + frutaNumero2 + " - " + frutaNumero3);
+            System.out.println("---------------------------------------------");
+            System.out.println(frutaNumero1 + "| " + frutaNumero2 + " | " + frutaNumero3);
 
             for (int i = 0; i < 7; i++) {
                 if (num1 == i && num2 == i && num3 == i) {
@@ -251,13 +262,17 @@ public class T3__43_TragaPerras5ArreglarRepeticionJuego1 {
                 }
             }
 
-            System.out.println("\t   $ Dinero Disponible : " + dineroTotal);
+            System.out.println("\t$ Dinero Disponible : " + dineroTotal);
             System.out.println("---------------------------------------------\n");
-        } while (dineroTotal > 0);
+
+            System.out.println("Escriba 'si' o 'no' para continuar el juego ");
+            respuesta = SC.next();
+
+        } while ((dineroTotal > 0) && (!(respuesta.equals("no"))));
         if (dineroTotal <= 0) {
             System.out.println(" ☢  ☢ Has perdido todo el dinero  ☢  ☢ ");
         } else {
-            System.out.println("$$$ Dinero Ganado : " + dineroTotal + " : $$$ ");
+            System.out.println("$$$ Dinero Ganado " + dineroTotal + " $$$ ");
         }
     }
 
