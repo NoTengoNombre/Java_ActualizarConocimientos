@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * @author Portatil_Bot
  */
-public class T3__43_TragaPerras5ArreglarRepeticionJuego1 {
+public class T3__43_TragaPerrasFinal {
 
     public static final Scanner SC = new Scanner(System.in);
 
