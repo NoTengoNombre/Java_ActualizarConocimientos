@@ -29,7 +29,7 @@ public class T3__39Ruleta {
             numElegido = sc.nextInt();
         }
         System.out.println("Ɵ El Usuario ha elegido el numero : " + numElegido);
-        return numElegido;
+        return numElegido; 
     }
 
 // ☻ Devuelve el color en forma de numero con el que voy a apostar

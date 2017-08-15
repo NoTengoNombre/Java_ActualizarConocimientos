@@ -9,7 +9,7 @@ package java_celia.Libro_t3bucles.ejercicios;
 
 import java.util.Scanner;
 
-public class T3__44_Juego_Nim7ArreglarComprobarMonton2 {
+public class T3__44_Juego_Nim8conSwitch {
 
     private static final Scanner SC = new Scanner(System.in);
     private static int numPalillos; // variable para elegir el monton 
@@ -19,9 +19,11 @@ public class T3__44_Juego_Nim7ArreglarComprobarMonton2 {
 
     private static int montonElegido;
 
-//    private static boolean comprobadorDeMonton1 = true;
-//    private static boolean comprobadorDeMonton2 = true;
-//    private static boolean comprobadorDeMonton3 = true;
+    private static boolean cierre1;
+    private static boolean cierre2;
+    private static boolean cierre3;
+
+    private static boolean parar;
     private static boolean tienePalillos;
 
     /**
@@ -30,7 +32,8 @@ public class T3__44_Juego_Nim7ArreglarComprobarMonton2 {
      * @return palillo
      */
     public static int getPalillos() {
-        System.out.println("• Coge palillos de entre 1 a 2 ");
+        System.out.println("• ¿ Cuantos palillos quieres retirar ? • ");
+        System.out.println("• Coge palillos entre 1 y 2 • ");
         int palillo = SC.nextInt();
         while (palillo <= 0 || palillo > 2) {
             System.out.println("• Por favor : Coge los palillos de entre 1 a 2 ");
@@ -75,21 +78,21 @@ public class T3__44_Juego_Nim7ArreglarComprobarMonton2 {
             montonElegido = SC.nextInt();
 
             while (montonElegido <= 0 || montonElegido > 3) {
-                System.out.println("◘ Error: Por favor - Elige entre el monton 1 , monton 2 , monton 3 ");
+                System.out.println("◘ Error: Por favor - Elige entre el monton 1 , monton 2 , monton 3 ◘ ");
                 montonElegido = SC.nextInt();
             }
 
             if (montonElegido == 1) {
                 numPalillos = monton1palillos;
-                System.out.println("◘ El 'Humano' eligio el monton " + montonElegido + " con " + numPalillos + " palillos ");
+                System.out.println("◘ El 'Jugador' eligio el monton " + montonElegido + " con " + numPalillos + " palillos ◘ ");
             }
             if (montonElegido == 2) {
                 numPalillos = monton2palillos;
-                System.out.println("◘ El 'Humano' eligio el monton " + montonElegido + " con " + numPalillos + " palillos ");
+                System.out.println("◘ El 'Jugador' eligio el monton " + montonElegido + " con " + numPalillos + " palillos ◘ ");
             }
             if (montonElegido == 3) {
                 numPalillos = monton3palillos;
-                System.out.println("◘ El 'Humano' eligio el monton " + montonElegido + " con " + numPalillos + " palillos ");
+                System.out.println("◘ El 'Jugador' eligio el monton " + montonElegido + " con " + numPalillos + " palillos ◘ ");
             }
         }
         if (turno == 2) {
@@ -114,77 +117,106 @@ public class T3__44_Juego_Nim7ArreglarComprobarMonton2 {
         return montonElegido; // devuelve monton 1 | monton 2 | monton 3 + palillos
     }
 
-    /**
-     *
-     * @param montElegido
-     * @return
-     */
-//                                                1
     public static boolean comprobarMonton(int montElegido) {
+        int contador = 0;
+        System.out.println("Numero del Monton elegido : " + montElegido);
 
-        int contador = 1; // cuenta hasta 3 para salir del while 
-        boolean salir = true; // para salir del bucle
+        while (contador < 3 && parar == false) {
 
-        System.out.println("NumPalillos : " + numPalillos);
-
-        montonElegido = montElegido;
-
-        while (contador <= 2 && tienePalillos != true) {
-
-            System.out.print("Contador : " + contador + " - Elige otro monton : ");
-//
-            if (montonElegido == 1 && salir != false) {
-                if (numPalillos >= 1) {
-                    System.out.println("♠ El monton " + montonElegido + " tiene " + numPalillos + " palillos ");
-                    tienePalillos = true;
-                } else {
-                    System.out.println("♠ Error: El monton " + montonElegido + " : Tiene " + numPalillos + " palillos ");
-                    tienePalillos = false;
-                    salir = false;
-                    contador++;
-                }
+            if (contador == 0 && montElegido == 1) {
+                cierre1 = false;
             }
-//
-            if (montonElegido == 2 && salir != false) {
-                if (numPalillos >= 1) {
-                    System.out.println("♠ El monton " + montonElegido + " tiene " + numPalillos + " palillos ");
-                    tienePalillos = true;
-                } else {
-                    System.out.println("♠ Error: El monton " + montonElegido + " : Tiene " + numPalillos + " palillos ");
-                    tienePalillos = false;
-                    salir = false;
-                    contador++;
-                }
+
+            if (contador == 0 && montElegido == 2) {
+                cierre2 = false;
             }
-//
-            if (montonElegido == 3 && salir != false) {
-                if (numPalillos >= 1) {
-                    System.out.println("♠ El monton " + montonElegido + " tiene " + numPalillos + " palillos ");
-                    tienePalillos = true;
-                } else {
-                    System.out.println("♠ Error: El monton " + montonElegido + " : Tiene " + numPalillos + " palillos ");
-                    tienePalillos = false;
-                    salir = false;
-                    contador++;
-                }
+
+            if (contador == 0 && montElegido == 3) {
+                cierre3 = false;
+            }
+
+            switch (montElegido) {
+                case 1:
+                    if (cierre1 == false) {
+                        if (monton1palillos > 1) {
+                            montonElegido = 1;
+                            numPalillos = monton1palillos;
+                            tienePalillos = true;
+                            parar = true;
+                        } else {
+                            System.out.println("Error : ese monton no tiene tantos palillos : " + monton1palillos + "");
+                            montonElegido = 1;
+                            numPalillos = 0;
+                            tienePalillos = false;
+                            cierre1 = true;
+                            contador++;
+                        }
+                    }
+                    break;
+                case 2:
+                    if (cierre2 == false) {
+                        if (monton2palillos > 1) {
+                            montonElegido = 2;
+                            numPalillos = monton2palillos;
+                            tienePalillos = true;
+                            parar = true; // para el while porque devuelve palillos
+                        } else {
+                            System.out.println("Error : ese monton no tiene tantos palillos : " + monton2palillos + "");
+                            montonElegido = 2;
+                            numPalillos = 0;
+                            tienePalillos = false;
+                            cierre2 = true;
+                            contador++;
+                        }
+                    }
+                    break;
+                case 3:
+                    if (cierre3 == false) {
+                        if (monton3palillos > 1) {
+                            montonElegido = 3;
+                            numPalillos = monton3palillos;
+                            tienePalillos = true;
+                            parar = true; // para el while porque devuelve palillos
+                        } else {
+                            System.out.println("Error : ese monton no tiene tantos palillos : " + monton3palillos + "");
+                            montonElegido = 3;
+                            numPalillos = 0;
+                            tienePalillos = false;
+                            cierre3 = true;
+                            contador++;
+                        }
+                    }
+                    break;
+                default:
+                    System.out.println("!! No existe ese monton de palillos !! ");
+                    break;
             }
 
             if (tienePalillos == false) {
-                System.out.println("Intro otro monton : ");
-                montonElegido = SC.nextInt();
-                System.out.println("Contador : " + contador);
+                System.out.println("♦ Elige otro monton ♦");
+                montElegido = SC.nextInt();
+                montonElegido = montElegido;
+                while (montElegido < 0 || montElegido > 3) {
+                    System.out.println("♦♦ Por favor : Elige un monton entre 1 , 2 , 3 : ♦♦");
+                    montElegido = SC.nextInt();
+                    montonElegido = montElegido;
+                }
             }
-            contador++;
         }
+
         return tienePalillos;
+    }
+
+    public static boolean elegirPalillos(int turno) {
+        getPalillos();
+        return false;
     }
 
     public static void main(String[] args) {
 //        getPalillos();
 //        crearMontones();
-//        boolean x = comprobarMonton(elegirMonton(1));
-        boolean x = comprobarMonton((1));
-        System.out.println("----------------------");
+        boolean x = comprobarMonton(elegirMonton(2));
+//        System.out.println("----------------------");
         System.out.println("Devuelve : " + x);
         System.out.println("montonElegido : " + montonElegido);
         System.out.println("numPalillos : " + numPalillos);
