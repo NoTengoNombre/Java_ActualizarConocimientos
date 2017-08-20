@@ -50,8 +50,8 @@ public class T3__44_Juego_Nim9xxArreglarFallos5PalillosEscogidos {
 //        palillos2 = (int) (Math.random() * (1 + 4) + 2);
 //        palillos3 = (int) (Math.random() * (1 + 4) + 2);
         palillosDelMonton1 = 2;
-        palillosDelMonton2 = 2;
-        palillosDelMonton3 = 2;
+        palillosDelMonton2 = 1;
+        palillosDelMonton3 = 5;
 
         System.out.println("▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁");
         System.out.println("♦ Bienvenido al Juego de Nim ♦ ");
@@ -370,7 +370,7 @@ public class T3__44_Juego_Nim9xxArreglarFallos5PalillosEscogidos {
             if (montonElegido == MONTON1) {
 //                          2                       2              2
                 if (palillosCogidos > 0 && (palillosCogidos <= palillosDelMonton1)) {
-                    if (palillosCogidos == 2 && palillosDelMonton1 == 2) {
+                    if ((palillosCogidos == 2 && palillosDelMonton1 == 2) && (palillosDelMonton2 + palillosDelMonton3 <= 0)) {
                         System.out.println("♦♦ No puedes restar " + palillosCogidos + " palillos al monton 1 ");
                         while (palillosCogidos >= 2 || palillosCogidos <= 0) {
                             System.out.println("♦♦ Elige el nunero 1 ");
@@ -400,7 +400,7 @@ public class T3__44_Juego_Nim9xxArreglarFallos5PalillosEscogidos {
             if (montonElegido == MONTON2) {
 
                 if (palillosCogidos > 0 && (palillosCogidos <= palillosDelMonton2)) {
-                    if (palillosCogidos == 2 && palillosDelMonton2 == 2) {
+                    if ((palillosCogidos == 2 && palillosDelMonton2 == 2) && (palillosDelMonton1 + palillosDelMonton3 <= 0)) {
                         System.out.println("♦♦ No puedes restar " + palillosCogidos + " palillos al monton 1 ");
                         while (palillosCogidos >= 2 || palillosCogidos <= 0) {
                             System.out.println("♦♦ Elige el nunero 1 ");
@@ -429,7 +429,8 @@ public class T3__44_Juego_Nim9xxArreglarFallos5PalillosEscogidos {
 
             if (montonElegido == MONTON3) {
                 if (palillosCogidos > 0 && (palillosCogidos <= palillosDelMonton3)) {
-                    if (palillosCogidos == 2 && palillosDelMonton3 == 2) {
+//                                2                    2                             0                    + 1
+                    if ((palillosCogidos == 2 && palillosDelMonton3 == 2) && (palillosDelMonton1 + palillosDelMonton2 <= 0)) {
                         System.out.println("♦♦ No puedes restar " + palillosCogidos + " palillos al monton 1 ");
                         while (palillosCogidos >= 2 || palillosCogidos <= 0) {
                             System.out.println("♦♦ Elige el nunero 1 ");
