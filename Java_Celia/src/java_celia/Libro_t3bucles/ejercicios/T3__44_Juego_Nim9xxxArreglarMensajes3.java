@@ -9,7 +9,7 @@ package java_celia.Libro_t3bucles.ejercicios;
 
 import java.util.Scanner;
 
-public class T3__44_Juego_Nim9xxxArreglarMensajes2 {
+public class T3__44_Juego_Nim9xxxArreglarMensajes3 {
 
     private static final Scanner SC = new Scanner(System.in);
 
