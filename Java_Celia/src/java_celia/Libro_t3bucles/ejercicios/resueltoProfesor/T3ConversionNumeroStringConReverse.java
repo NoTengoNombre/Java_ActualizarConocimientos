@@ -7,7 +7,7 @@
  */
 package java_celia.Libro_t3bucles.ejercicios.resueltoProfesor;
 
-public class ConversionNumeroStringConReverse {
+public class T3ConversionNumeroStringConReverse {
 
     public static int getRevertirString(StringBuilder sb) {
         StringBuilder str = new StringBuilder(sb);

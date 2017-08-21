@@ -7,7 +7,7 @@
  */
 package java_celia.Libro_t3bucles.ejercicios.resueltoProfesor;
 
-public class InvertirNumeros {
+public class T3InvertirNumeros {
 
 
     /**

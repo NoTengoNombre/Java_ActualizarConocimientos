@@ -7,11 +7,11 @@
  */
 package java_celia.Libro_t3bucles.ejercicios.resueltoProfesor;
 
-public class NumeroSuerte {
+public class T3NumeroSuerte2 {
 
     int suma;
 
-    public NumeroSuerte(int d, int m, int a) {
+    public T3NumeroSuerte2(int d, int m, int a) {
         suma = d + m + a;
     }
 
