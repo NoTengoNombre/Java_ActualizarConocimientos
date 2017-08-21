@@ -5,7 +5,7 @@
  * @version
  * @author Raul Vela Salas
  */
-package java_num_letras_aleatorios;
+package java_num_aleatorios;
 
 public class JavaNumAleatoriosNegativosHastaPositivos {
 

@@ -15,9 +15,6 @@ public class java_ejemplo_acumuladores {
 //                 2   1   1 
         a += a; // a = a + a
         System.out.println("Valores: " + a);
-        
-        
-        
 
         int acumuladores = 1;
         int acumuladores1 = 0;

@@ -17,9 +17,7 @@ public class T3__26_Calculadora {
     private static int con = 0;
     private static int num = 0;
 
-    private static int numeroA = 0;
     private static int numeroA2 = 0;
-    private static int numeroB = 0;
     private static int numeroB2 = 0;
 
     private static String cadena;

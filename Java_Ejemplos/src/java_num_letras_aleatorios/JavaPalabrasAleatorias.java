@@ -11,15 +11,16 @@ public class JavaPalabrasAleatorias {
      */
     public static void main(String[] args) {
         char a1 = (char) (Math.random() * (26) + 'a');
-        System.out.println(a1);
+        System.out.print(a1);
         char a2 = (char) (Math.random() * (26) + 'a');
-        System.out.println(a2);
+        System.out.print(a2);
         char a3 = (char) (Math.random() * (26) + 'a');
-        System.out.println(a3);
+        System.out.print(a3);
         char a4 = (char) (Math.random() * (26) + 'a');
-        System.out.println(a4);
+        System.out.print(a4);
         char a5 = (char) (Math.random() * (26) + 'a');
-        System.out.println(a5);
+        System.out.print(a5);
+        System.out.println();
     }
 
 }
