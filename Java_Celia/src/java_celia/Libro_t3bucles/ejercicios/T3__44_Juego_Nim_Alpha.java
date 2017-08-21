@@ -9,7 +9,7 @@ package java_celia.Libro_t3bucles.ejercicios;
 
 import java.util.Scanner;
 
-public class T3__44_Juego_Nim9xxxArreglarMensajes2 {
+public class T3__44_Juego_Nim_Alpha {
 
     private static final Scanner SC = new Scanner(System.in);
 
@@ -81,18 +81,18 @@ public class T3__44_Juego_Nim9xxxArreglarMensajes2 {
         int palillosRetirar = 0;
 
         if (turno == 1) { //Si el turno es 1 pide que cojas los palillos entre 1 y 2
-            System.out.println("• ¿ Cuantos palillos quieres coger ? : Tienen que ser entre 1 y 2 • ");
+            System.out.println("\t• ¿ Cuantos palillos quieres coger ? - Tienen que ser entre 1 y 2 • ");
             palillosRetirar = SC.nextInt();
             while (palillosRetirar <= 0 || palillosRetirar > 2) {
-                System.out.println("• Por favor : Coge palillos entre 1 a 2 ");
+                System.out.println("\t• Por favor : Coge palillos entre 1 a 2  • ");
                 palillosRetirar = SC.nextInt();
             }
-            System.out.println("• La cantidad de palillos cogidos son : " + palillosRetirar);
+            System.out.println("\t• La cantidad de palillos cogidos son : " + palillosRetirar + " • ");
         }
 //Si el turno es 2 el ordenador coge los palillos entre 1 y 2
         if (turno == 2) {
             palillosRetirar = (int) (Math.random() * (1 + 1) + 1);
-            System.out.println("• El 'ORDENADOR' eligio : " + palillosRetirar + " palillos");
+            System.out.println("\t• El 'ORDENADOR' eligio : " + palillosRetirar + " palillos • ");
         }
         return palillosRetirar;
     }
@@ -160,8 +160,8 @@ public class T3__44_Juego_Nim9xxxArreglarMensajes2 {
             do {
 
                 montonElegido = (int) (Math.random() * (1 + 2) + 1);
-                System.out.println("\t♨ El 'ORDENADOR' eligio el monton : " + montonElegido + " ♨ ");
-                System.out.println(" ---------------------------------------------- ");
+//                System.out.println("\t♨ El 'ORDENADOR' eligio el monton : " + montonElegido + " ♨ ");
+                System.out.println("\t ---------------------------------------------- ");
                 if (montonElegido == 1) { // si palillos es 0 : se descarta ese monton
                     if (comprobarMonton(montonElegido)) { // al ser true porque comprueba todas las condiciones 
                         montonElegido = monton;
@@ -366,21 +366,21 @@ public class T3__44_Juego_Nim9xxxArreglarMensajes2 {
                 if (montonElegido == MONTON1) {
                     if (palillosCogidos > 0 && (palillosCogidos <= palillosDelMonton1)) {
                         if ((palillosCogidos == 2 && palillosDelMonton1 == 2) && (palillosDelMonton2 + palillosDelMonton3 <= 0)) {
-                            System.out.println("♦♦ No puedes restar " + palillosCogidos + " palillos al monton 1 ");
+                            System.out.println("\t♦♦ No puedes restar " + palillosCogidos + " palillos al monton 1 ♦♦");
                             while (palillosCogidos >= 2 || palillosCogidos <= 0) {
-                                System.out.println("♦♦ Elige 1 palillo ");
+                                System.out.println("\t♦♦ Elige 1 palillo ♦♦");
                                 palillosCogidos = SC.nextInt();
                             }
                         }
-                        System.out.println("♦ Has elegido quitar " + palillosCogidos + " del monton " + MONTON1);
+                        System.out.println("♦ Has elegido quitar " + palillosCogidos + " del monton " + MONTON1 + " ♦");
                         hayPalillosParaRestar = true;
                     } else {
-                        System.out.println("♦ Error : El monton " + MONTON1 + " solo tiene : " + palillosDelMonton1 + " palillos");
+                        System.out.println("♦ Error : El monton " + MONTON1 + " solo tiene : " + palillosDelMonton1 + " palillos ♦");
                         while ((palillosCogidos > palillosDelMonton1)) {
-                            System.out.println("♦ La cantidad de palillos del monton " + MONTON1 + " es menor que la que has ingresado");
+                            System.out.println("♦ La cantidad de palillos del monton " + MONTON1 + " es menor que la que has ingresado ♦");
                             System.out.println("♦ Palillos ingresados : " + palillosCogidos);
-                            System.out.println("♦ En el monton " + MONTON1 + " hay " + palillosDelMonton1 + " palillos");
-                            System.out.println("♦ Vuelve a elegir palillos que sean menores de " + palillosDelMonton1);
+                            System.out.println("♦ En el monton " + MONTON1 + " hay " + palillosDelMonton1 + " palillos ♦");
+                            System.out.println("♦ Vuelve a elegir palillos que sean menores de " + palillosDelMonton1 + "♦");
                             palillosCogidos = SC.nextInt();
                             if (palillosCogidos == 0) {
                                 while (palillosCogidos == 0) {
@@ -396,25 +396,25 @@ public class T3__44_Juego_Nim9xxxArreglarMensajes2 {
 
                     if (palillosCogidos > 0 && (palillosCogidos <= palillosDelMonton2)) {
                         if ((palillosCogidos == 2 && palillosDelMonton2 == 2) && (palillosDelMonton1 + palillosDelMonton3 <= 0)) {
-                            System.out.println("♦♦ No puedes restar " + palillosCogidos + " palillos al monton 1 ");
+                            System.out.println("\t♦♦ No puedes restar " + palillosCogidos + " palillos al monton 1 ♦♦");
                             while (palillosCogidos >= 2 || palillosCogidos <= 0) {
-                                System.out.println("♦♦ Elige el nunero 1 ");
+                                System.out.println("\t♦♦ Elige el nunero 1 ♦♦");
                                 palillosCogidos = SC.nextInt();
                             }
                         }
-                        System.out.println("♦ Has elegido quitar " + palillosCogidos + " del monton " + MONTON2);
+                        System.out.println("♦ Has elegido quitar " + palillosCogidos + " del monton " + MONTON2 + " ♦");
                         hayPalillosParaRestar = true;
                     } else {
-                        System.out.println("♦ Error : El monton " + MONTON2 + " solo tiene : " + palillosDelMonton2 + " palillos");
+                        System.out.println("♦ Error : El monton " + MONTON2 + " solo tiene : " + palillosDelMonton2 + " palillos ♦");
                         while ((palillosCogidos > palillosDelMonton2)) {
-                            System.out.println("♦ La cantidad de palillos del monton " + MONTON2 + " es menor que la que has ingresado");
-                            System.out.println("♦ Palillos ingresados : " + palillosCogidos);
-                            System.out.println("♦ En el monton " + MONTON2 + " hay " + palillosDelMonton2 + " palillos");
-                            System.out.println("♦ Vuelve a elegir palillos que sean menores de " + palillosDelMonton2);
+                            System.out.println("♦ La cantidad de palillos del monton " + MONTON2 + " es menor que la que has ingresado ♦");
+                            System.out.println("♦ Palillos ingresados : " + palillosCogidos + "♦");
+                            System.out.println("♦ En el monton " + MONTON2 + " hay " + palillosDelMonton2 + " palillos ♦");
+                            System.out.println("♦ Vuelve a elegir palillos que sean menores de " + palillosDelMonton2 + " ♦");
                             palillosCogidos = SC.nextInt();
                             if (palillosCogidos == 0) {
                                 while (palillosCogidos == 0) {
-                                    System.out.println("No puedes introducir un valor que sea 0 ");
+                                    System.out.println("♦ No puedes introducir un valor que sea 0 ♦");
                                     palillosCogidos = SC.nextInt();
                                 }
                             }
@@ -426,9 +426,9 @@ public class T3__44_Juego_Nim9xxxArreglarMensajes2 {
                     if (palillosCogidos > 0 && (palillosCogidos <= palillosDelMonton3)) {
 //                                2                    2                             0                    + 1
                         if ((palillosCogidos == 2 && palillosDelMonton3 == 2) && (palillosDelMonton1 + palillosDelMonton2 <= 0)) {
-                            System.out.println("♦♦ No puedes restar " + palillosCogidos + " palillos al monton 1 ");
+                            System.out.println("\t♦♦ No puedes restar " + palillosCogidos + " palillos al monton 1 ♦♦");
                             while (palillosCogidos >= 2 || palillosCogidos <= 0) {
-                                System.out.println("♦♦ Elige el nunero 1 ");
+                                System.out.println("\t♦♦ Elige el nunero 1 ♦♦");
                                 palillosCogidos = SC.nextInt();
                             }
                         }
@@ -444,7 +444,7 @@ public class T3__44_Juego_Nim9xxxArreglarMensajes2 {
                             palillosCogidos = SC.nextInt();
                             if (palillosCogidos == 0) {
                                 while (palillosCogidos == 0) {
-                                    System.out.println("No puedes introducir un valor que sea 0 ");
+                                    System.out.println("♦ No puedes introducir un valor que sea 0 ♦ ");
                                     palillosCogidos = SC.nextInt();
                                 }
                             }

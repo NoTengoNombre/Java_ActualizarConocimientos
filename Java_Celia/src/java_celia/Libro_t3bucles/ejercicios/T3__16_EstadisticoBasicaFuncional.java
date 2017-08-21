@@ -31,35 +31,35 @@ public class T3__16_EstadisticoBasicaFuncional {
 
         System.out.println("----------------------");
 
-        int[] serie = {12, 6, 7, 3, 15, 10, 18, 5};
+        int[] serieArray = {12, 6, 7, 3, 15, 10, 18, 5};
         int max = 0;
-        int minimo = serie.length;
+        int minimo = serieArray.length;
         double acumulador = 0;
         double desviacion = 0;
         double medio = 0;
 
-        for (int j = 0; j < serie.length; j++) {
-            serie[j] = (int) (Math.random() * (1 + 10));
-            System.out.println("El valor es : " + serie[j]);
+        for (int j = 0; j < serieArray.length; j++) {
+            serieArray[j] = (int) (Math.random() * (1 + 10));
+            System.out.println("El valor es : " + serieArray[j]);
         }
 
-        for (int a = 0; a < serie.length; a++) {
+        for (int a = 0; a < serieArray.length; a++) {
 
-            if (serie[a] > max) {
-                max = serie[a];
+            if (serieArray[a] > max) {
+                max = serieArray[a];
                 System.out.printf("\u001B[31m Numero maximo es : " + max + "\n");
             }
 
-            if (serie[a] < minimo) {
-                minimo = serie[a];
+            if (serieArray[a] < minimo) {
+                minimo = serieArray[a];
                 System.out.printf("\u001B[33m Numero minimo es : " + minimo + "\n");
             }
 
-            medio = medio + serie[a];
+            medio += serieArray[a];
         }
 
-        for (int i = 0; i < serie.length; i++) {
-            acumulador = acumulador + (double) Math.sqrt(Math.pow(serie[i], 2));
+        for (int i = 0; i < serieArray.length; i++) {
+            acumulador += Math.sqrt(Math.pow(serieArray[i], 2));
             System.out.println("El acumulador : " + acumulador);
 //            desviacion = (acumulador / serie.length);
         }
@@ -71,14 +71,14 @@ public class T3__16_EstadisticoBasicaFuncional {
 
         System.out.println("-----------------------------------------------");
         System.out.println("valor medio " + medio);
-        System.out.printf("\u001B[36m ♦ Valor medio es : " + medio / serie.length + "\n");
+        System.out.printf("\u001B[36m ♦ Valor medio es : " + medio / serieArray.length + "\n");
     }
 
     //   Media
     public static double media(double[] a) {
         double sumatoria_numerador = 0;
         for (int i = 0; i < a.length; i++) {
-            sumatoria_numerador = sumatoria_numerador + a[i];
+            sumatoria_numerador += a[i];
         }
         return sumatoria_numerador / a.length;
     }
