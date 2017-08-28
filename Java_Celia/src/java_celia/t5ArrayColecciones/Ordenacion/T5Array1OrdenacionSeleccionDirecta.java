@@ -7,7 +7,7 @@
  */
 package java_celia.t5ArrayColecciones.Ordenacion;
 
-public class T5Array1OrdenacionBurbujaPractica {
+public class T5Array1OrdenacionSeleccionDirecta {
 
     public static int[] array = new int[10];
 
@@ -25,31 +25,37 @@ public class T5Array1OrdenacionBurbujaPractica {
 
     /**
      *
-     * @param array
+     * @param vector
      * @return
      */
-    public static int[] setOrdenacionBurbuja(int[] array) {
+    public static int[] setOrdenaDirecta(int[] vector) {
 
-        int i, j, elem;
+        int i, j, minimo, posicion_minimo;
 
         System.out.println("--------------------------");
-        for (i = 1; i < array.length; i++) {
-            for (j = array.length - 1; j >= i; j--) {
-                if (array[j - 1] > array[j]) {
-                    elem = array[j - 1];
-                    array[j - 1] = array[j];
-                    array[j] = elem;
+        for (i = 0; i < vector.length; i++) {
+
+            minimo = vector[i];
+            posicion_minimo = i;
+            for (j = i; j < vector.length; j++) {
+                if (vector[j] < minimo) {
+                    minimo = vector[j];
+                    posicion_minimo = j;
                 }
             }
+            vector[posicion_minimo] = vector[i];
+            System.out.println("• Vector : " + vector[posicion_minimo]);
+            vector[i] = minimo;
+            System.out.println("•• Vector : " + vector[posicion_minimo]);
         }
-        return array;
+        return vector;
     }
 
     public static void getMostrarArray() {
         System.out.println("--------------------------");
-        int[] array = setOrdenacionBurbuja(getArray());
+        array = setOrdenaDirecta(getArray());
         for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i]);
+            System.out.println(i + " - " + array[i]);
         }
     }
 
