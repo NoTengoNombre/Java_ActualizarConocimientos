@@ -9,23 +9,7 @@ package java_celia.t5xEjerciciosBasicos;
 
 public class T53LoteriaPrimitiva {
 
-    public static void main(String[] args) {
-
-        LoteriaPrimitiva lp = new LoteriaPrimitiva();
-        System.out.println(lp.getNumeroAzar());
-
-        lp.getCheckArray();
-
-    }
-}
-
-class LoteriaPrimitiva {
-
-    private int[] loteria;
-
-    public LoteriaPrimitiva() {
-        loteria = new int[6];
-    }
+    private int[] loteria = new int[6];
 
     public int getNumeroAzar() {
         int x = (int) (Math.random() * (1 + 49) + 1);
@@ -33,8 +17,9 @@ class LoteriaPrimitiva {
     }
 
     public void setArray() {
+        T53LoteriaPrimitiva t53l = new T53LoteriaPrimitiva();
         for (int i = 0; i < loteria.length; i++) {
-            loteria[i] = getNumeroAzar();
+            loteria[i] = t53l.getNumeroAzar();
         }
     }
 
@@ -43,10 +28,21 @@ class LoteriaPrimitiva {
         setArray();
 
         for (int i = 0; i < loteria.length; i++) {
-            for (int j = 0; j < loteria[i]; j++) {
-                System.out.println(loteria[i]);
+            for (int j = i + 1; j < loteria.length; j++) {
+                if (loteria[i] == loteria[j]) {
+                    loteria[i] = (int) (Math.random() * (1 + 49) + 1);
+                }
             }
+            System.out.println(i + 1 + " : Numeros de la loteria : " + loteria[i]);
         }
+        System.out.println("-------------------------------------");
     }
 
+    public static void main(String[] args) {
+
+        for (int i = 0; i < 10; i++) {
+            T53LoteriaPrimitiva lp = new T53LoteriaPrimitiva();
+            lp.getCheckArray();
+        }
+    }
 }
