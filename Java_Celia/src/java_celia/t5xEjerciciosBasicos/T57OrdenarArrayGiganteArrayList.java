@@ -37,69 +37,55 @@ public class T57OrdenarArrayGiganteArrayList {
 
     }
 
-    /**
-     *
-     * @return
-     */
     public static ArrayList<Long> setElementosArrayList() {
 
+        for (int i = 0; i < 100; i++) {
 //        for (int i = 0; i < 100000; i++) {
-        for (int i = 0; i < 10; i++) {
+//        for (int i = 0; i < 10; i++) {
+            Long valorL = (long) (Math.random() * (1 + 2000));
 //            Long valorL = (long) (Math.random() * (1 + 2000000));
-            Long valorL = (long) (Math.random() * (1 + 10));
+//            Long valorL = (long) (Math.random() * (1 + 10));
             arrayL.add(valorL);
         }
         return arrayL;
     }
 
-    public static void getOrdenar() {
-        Collections.sort(arrayL);
-    }
-
     public static void setVerArray() {
-
+        System.out.println("---------------------- Sin Ordenar --------------------");
         for (Long arrayL1 : arrayL) {
-            System.out.println(arrayL1);
+            System.out.print(arrayL1 + " | ");
         }
+        System.out.println("");
     }
 
     public static void setSustuirElemento() {
-
-        long v1 = 0;
-        int incremento = 0;
-
+        System.out.println("---------------------- Ordenado --------------------");
         System.out.println(arrayL);
-
-        for (int i1 = 0; i1 < arrayL.size(); i1++) {
-            for (int i2 = i1 + 1; i2 < arrayL.size(); i2++) {
-                if (arrayL.get(i1).compareTo(arrayL.get(i2)) == 0) {
-//                    int p1 = arrayL.indexOf(arrayL.get(i1));
-//                    arrayL.set(p1, (long) ((Math.random() * (1 + 10) + 1)));
-//                    System.out.println("p1 " + p1);
-//                    do {
-                    arrayL.set(i2, (long) ((Math.random() * (1 + 10) + 1)));
-                    System.out.printf("A j %d k %d \n", arrayL.get(i1), arrayL.get(i2));
-//                    } while (arrayL.get(i1).compareTo(arrayL.get(i2)) == 0);
+        for (int i = 0; i < 10; i++) {
+            for (int i1 = 0; i1 < arrayL.size(); i1++) {
+                for (int i2 = i1 + 1; i2 < arrayL.size(); i2++) {
+                    if (arrayL.get(i1).compareTo(arrayL.get(i2)) == 0) {
+//                        System.out.println("indice A : " + i1 + " --> " + arrayL.get(i1) + " |-| indice B : " + i2 + " --> " + arrayL.get(i2));
+                        System.out.println("------------------------------------------");
+                        System.out.printf(" j '%d' %d k '%d' %d \n", i1, arrayL.get(i1), i2, arrayL.get(i2));
+                        do {
+//                            arrayL.set(i1, (long) ((Math.random() * (1 + 10) + 1)));
+                            arrayL.set(i1, (long) ((Math.random() * (1 + 2000) + 1)));
+                            if (arrayL.get(i1).compareTo(arrayL.get(i2)) == 0) {
+//                                arrayL.set(i2, (long) ((Math.random() * (1 + 10) + 1)));
+                                arrayL.set(i2, (long) ((Math.random() * (1 + 2000) + 1)));
+                            }
+                        } while (arrayL.get(i1).compareTo(arrayL.get(i2)) == 0);
+                    }
                 }
             }
         }
+        setOrdenarElemento();
+        System.out.println(arrayL);
+    }
 
-        for (int i1 = 0; i1 < arrayL.size(); i1++) {
-            for (int i2 = i1 + 1; i2 < arrayL.size(); i2++) {
-                if (arrayL.get(i1).compareTo(arrayL.get(i2)) == 0) {
-//                    int p1 = arrayL.indexOf(arrayL.get(i1));
-//                    arrayL.set(p1, (long) ((Math.random() * (1 + 10) + 1)));
-//                    System.out.println("p1 " + p1);
-//                    do {
-                    arrayL.set(i2, (long) ((Math.random() * (1 + 10) + 1)));
-                    System.out.printf("B j %d k %d \n", arrayL.get(i1), arrayL.get(i2));
-//                    } while (arrayL.get(i1).compareTo(arrayL.get(i2)) == 0);
-                }
-            }
-        }
-
+    public static void setOrdenarElemento() {
         Collections.sort(arrayL);
-        System.out.println(arrayL);
     }
 
     public static void setBuscarElemento(long num) {
@@ -113,16 +99,14 @@ public class T57OrdenarArrayGiganteArrayList {
 
     public static void setEjecutar() {
         setElementosArrayList();
-        getOrdenar();
         setVerArray();
+        setSustuirElemento();
+        setOrdenarElemento();
         setBuscarElemento(getNumero());
     }
 
     public static void main(String[] args) {
 
-        setElementosArrayList();
-        getOrdenar();
-//        setVerArray();
-        setSustuirElemento();
+        setEjecutar();
     }
 }
