@@ -108,6 +108,7 @@ public class T59ArrayCrecienteArrayList {
                         vaDer = d;
                     }
                 }
+                
                 int x = array.get(0);
                 System.out.println("Valor : " + x);
                 if ((num < x)) {
