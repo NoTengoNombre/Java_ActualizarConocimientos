@@ -19,12 +19,10 @@ public class java_ejemplo_quicksort {
 
         System.out.println("--------------------------------");
 
-        quicksort(lista1, 0, lista1.length - 1);
-
-        for (int i = 0; i < lista1.length; i++) {
-            System.out.println("ordenados: " + lista1[i]);
-        }
-
+//        quicksort(lista1, 0, lista1.length - 1);
+//        for (int i = 0; i < lista1.length; i++) {
+//            System.out.println("ordenados: " + lista1[i]);
+//        }
         System.out.println("--------------------------------");
         int[] a = quicksort_devuelve(lista1, 0, lista1.length - 1);
 
@@ -67,6 +65,8 @@ public class java_ejemplo_quicksort {
         int pivote = lista1[(i + j) / 2];
         do {
             while (lista1[i] < pivote) {
+                System.out.println("pivote : " + pivote);
+                System.out.println("VALOR : " + lista1[i]);
                 i++;
             }
             while (lista1[j] > pivote) {
