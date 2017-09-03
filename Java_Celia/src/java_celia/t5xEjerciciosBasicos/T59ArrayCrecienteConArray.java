@@ -141,7 +141,6 @@ public class T59ArrayCrecienteConArray {
     }
 
     public static void main(String[] args) {
-
         setIniciarPrograma();
 
     }
