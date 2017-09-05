@@ -7,7 +7,7 @@
  */
 package java_arrays;
 
-public class ArrayAsignacionDeValores {
+public class ArrayAsignacionDeValoresDistintoArrays {
 
     private static String[] arrayStringA = {"A1|", "B2|", "C3|", "D4|", "E5|"};
     private static String[] arrayStringB = {"z6", "y7", "x8", "w9", "v10"};
@@ -25,30 +25,25 @@ public class ArrayAsignacionDeValores {
         return y;
     }
 
-    public static void setIntercambiarPosicionArray(String[] array) {
+    public static void setIntercambiarPosicionArray(String[] arrayParam) {
 
-        for (int i = 0; i < arrayStringA.length; i++) {
+        for (int i = 0; i < arrayParam.length; i++) {
 
             int x = getX();
             int y = getY();
 
-            aux = arrayStringA[x];
+            aux = arrayParam[x];
 
             if (x == y) {
                 y = getY();
             }
 
-            arrayStringA[x] = arrayStringA[y];
-            arrayStringA[y] = aux;
+            arrayParam[x] = arrayParam[y];
+            arrayParam[y] = aux;
 
-            if (arrayStringA[x].equals(arrayStringA[y])) {
-                arrayContenedorNum[x] = arrayStringA[x];
+            if (arrayParam[x].equals(arrayParam[y])) {
+                arrayContenedorNum[x] = arrayParam[x];
             }
-
-//            Operador ternario
-//            if (arrayStringA[x] == null ? arrayStringA[y] != null : !arrayStringA[x].equals(arrayStringA[y])) {
-//                arrayContenedorNum[x] = arrayStringA[x];
-//            }
         }
     }
 
@@ -58,8 +53,7 @@ public class ArrayAsignacionDeValores {
         setIntercambiarPosicionArray(arrayStringB);
 
         for (int i = 0; i < arrayStringA.length; i++) {
-            System.out.print(arrayStringA[i]);
-//            System.out.print(arrayStringB[i] + "\n");
+            System.out.print(arrayStringA[i] + " - " + arrayStringB[i] + "\n");
         }
         System.out.println("");
     }
