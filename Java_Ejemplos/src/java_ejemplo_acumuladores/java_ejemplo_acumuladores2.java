@@ -17,6 +17,16 @@ public class java_ejemplo_acumuladores2 {
         System.out.println("valor : " + a);
         a = a + 1;
         System.out.println("valor : " + a);
+        int b = 2;
+        b += 1;
+        System.out.println(b);
+//                     2 filas 1 Columna
+        int[][] ar
+                = {
+                    {1},
+                    {1}};
 
+        ar[0][0] += 1;
+        System.out.println("Suma de valores : " + ar[0][0]);
     }
 }
