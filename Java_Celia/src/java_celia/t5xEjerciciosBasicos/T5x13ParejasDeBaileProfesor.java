@@ -11,6 +11,7 @@ package java_celia.t5xEjerciciosBasicos;
  * 
  * 2 clases Estudiante y BaileNavidad
  * 
+ * 4 metodos clase BaileNavidad
  * 
  * 
  * Esta clase asigna aleatoriamente parejas de baile para las 3 escuelas de
@@ -26,85 +27,6 @@ public class T5x13ParejasDeBaileProfesor {
 }
 
 /**
- * Clase basica donde estan todos los atributos / metodos de los Alumnos
- * genericos
- *
- * @author Portatil_Bot
- */
-class Estudiante {
-
-    /** * Atributo nombre */
-    private String nombre;
-    /** * Atributo sexo */
-    private char sexo;
-    /** * Atributo colegio */
-    private String colegio;
-
-    /**
-     * Constructor basico 
-     * 
-     * Genera un objeto con los valores asignado en los parametros
-     * 
-     * @param nombre
-     * @param sexo
-     * @param colegio 
-     */
-    public Estudiante(String nombre, char sexo, String colegio) {
-        this.nombre = nombre;
-        this.sexo = sexo;
-        this.colegio = colegio;
-    }
-
-    /**
-     * Devuelve el nombre
-     * @return nombre
-     */
-    public String getNombre() {
-        return nombre;
-    }
-
-    /**
-     * Fija el nombre por parametro
-     * @param nombre 
-     */
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    /**
-     * Devuelve el sexo
-     * @return sexo
-     */
-    public char getSexo() {
-        return sexo;
-    }
-
-    /**
-     * Fija el char sexo 
-     * @param sexo 
-     */
-    public void setSexo(char sexo) {
-        this.sexo = sexo;
-    }
-
-    /**
-     * Devuelve el objeto colegio
-     * @return 
-     */
-    public String getColegio() {
-        return colegio;
-    }
-
-    /**
-     * Fija el objeto colegio
-     * @param colegio 
-     */
-    public void setColegio(String colegio) {
-        this.colegio = colegio;
-    }
-}
-
-/**
  * Clase principal donde se declaran todos los Objetos/Arrays de la aplicacion
  * 
  * @author Portatil_Bot
@@ -117,17 +39,17 @@ class BaileNavidad {
     static Estudiante[] beauxbatons;
     /** * Array Objetos clase Estudiante durmstrang : Cada posicion habra un objeto */
     static Estudiante[] durmstrang;
-
+    
     /** * Array int [] : Almacena lista de estudiantes seleccionados para el baile en cada escuela */
     static int[] seleccionadosHogwarts;
     /** * Array int [] : Almacena lista de estudiantes seleccionados para el baile en cada escuela */
     static int[] seleccionadosBeauxbatons;
     /** * Array int [] : Almacena lista de estudiantes seleccionados para el baile en cada escuela */
     static int[] seleccionadosDurmstrang;
-
+    
 //    Numero estudiantes en cada escuela
     static final int NUM_ESTUDIANTES = 20;
-//    Numero total de parejas de baile = 10 parejas
+//    Numero total de parejas de baile = 20 parejas
     static final int NUM_PAREJAS = (NUM_ESTUDIANTES + NUM_ESTUDIANTES) / 2;
 
     /**
@@ -155,9 +77,11 @@ class BaileNavidad {
      * @return
      */
     public static Estudiante[][] crearListaParejas() {
-//  Creamos la lista de parejas Bidimensional        Filas     Columnas
+        System.out.println("Numero Parejas : "+NUM_PAREJAS);
+        
+//  Creamos la lista de parejas Bidimensional        Filas       Columnas
         Estudiante[][] listaParejas = new Estudiante[NUM_PAREJAS][2];
-
+        
 //Creamos 2 objetos sin apuntar a ninguna direccion de memoria
         Estudiante chico = null;
         Estudiante chica = null;
@@ -165,7 +89,7 @@ class BaileNavidad {
 //Objeto String almacena el 1º colegio      
         String colegio = "Hogwarts"; // Valor inicial para el colegio
 
-//Rellenamos la lista con estudiantes elegidos al azar - NUM_PAREJAS = 10
+//Rellenamos la lista con estudiantes elegidos al azar - NUM_PAREJAS = 20
         for (int i = 0; i < NUM_PAREJAS; i++) {
 //Seleccionamos al chico : Apuntamos chico a una direccion de memoria
             chico = seleccionarEstudiante(colegio, 'H');
@@ -177,7 +101,20 @@ class BaileNavidad {
             }else{
                 colegio = "Hogwarts";
             }
-            
+//            --------------------------------
+//            Con Switch
+//            switch (colegio) {
+//                case "Hogwarts":
+//                    colegio = "Durmstrang";
+//                    break;
+//                case "Durmstrang":
+//                    colegio = "Beauxbatons";
+//                    break;
+//                default:
+//                    colegio = "Hogwarts";
+//                    break;
+//            }
+//            --------------------------------
 //          Seleccionamos a la chica
             chica = seleccionarEstudiante(colegio, 'M');
 //Cambiamos de colegio , para que las parejas sean de estudiantes de colegios distintos
@@ -189,8 +126,9 @@ class BaileNavidad {
                 colegio = "Hogwarts";
             }
             
-//            Asignamos al chico y a la chica a las lista de parejas
-//                   FILAS  COLUMNAS
+//Asignamos al chico y a la chica a las lista de parejas
+//               FILAS[1a20]
+//                 COLUMNAS[0a1]  
             listaParejas[i][0] = chico;
             listaParejas[i][1] = chica;
         }
@@ -362,8 +300,89 @@ class BaileNavidad {
     public static void mostrar(Estudiante[][] listaParejas){
         for (int i = 0; i < NUM_PAREJAS; i++) {
             System.out.printf("Pareja %2d: %s (%s)(%c) - %s (%s)(%c)\n" , i + 1,
+//                            F1-20 C
                     listaParejas[i][0].getNombre(),listaParejas[i][0].getColegio(),listaParejas[i][0].getSexo(),
+//                            F1-20 C
                     listaParejas[i][1].getNombre(),listaParejas[i][1].getColegio(),listaParejas[i][1].getSexo());
         }
+    }
+}
+
+/**
+ * Clase basica donde estan todos los atributos / metodos de los Alumnos
+ * genericos
+ *
+ * @author Portatil_Bot
+ */
+class Estudiante {
+
+    /** * Atributo nombre */
+    private String nombre;
+    /** * Atributo sexo */
+    private char sexo;
+    /** * Atributo colegio */
+    private String colegio;
+
+    /**
+     * Constructor basico 
+     * 
+     * Genera un objeto con los valores asignado en los parametros
+     * 
+     * @param nombre
+     * @param sexo
+     * @param colegio 
+     */
+    public Estudiante(String nombre, char sexo, String colegio) {
+        this.nombre = nombre;
+        this.sexo = sexo;
+        this.colegio = colegio;
+    }
+
+    /**
+     * Devuelve el nombre
+     * @return nombre
+     */
+    public String getNombre() {
+        return nombre;
+    }
+
+    /**
+     * Fija el nombre por parametro
+     * @param nombre 
+     */
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    /**
+     * Devuelve el sexo
+     * @return sexo
+     */
+    public char getSexo() {
+        return sexo;
+    }
+
+    /**
+     * Fija el char sexo 
+     * @param sexo 
+     */
+    public void setSexo(char sexo) {
+        this.sexo = sexo;
+    }
+
+    /**
+     * Devuelve el objeto colegio
+     * @return 
+     */
+    public String getColegio() {
+        return colegio;
+    }
+
+    /**
+     * Fija el objeto colegio
+     * @param colegio 
+     */
+    public void setColegio(String colegio) {
+        this.colegio = colegio;
     }
 }

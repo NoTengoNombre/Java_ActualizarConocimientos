@@ -59,13 +59,12 @@ public class T5x13ParejasDeBaileBasico {
         String[] parejas = getConcatenarParejas(chicos, chicas);
         int n = 1;
         for (String pareja : parejas) {
-            System.out.println("Pareja " + n++ + " : ".concat(pareja)
-            );
+            System.out.println("Pareja " + n + " : ".concat(pareja));
+            n++;
         }
     }
 
     public static void main(String[] args) {
-
         lanzarPrograma();
     }
 }
