@@ -7,17 +7,23 @@
  */
 package java_celia.t5xEjerciciosBasicos.EjerciciosMatrices;
 
+import java.util.Scanner;
+
 public class T5x17PermutarFilas {
 
     private static int[][] array = new int[3][5];
 
+    public static int getDatos(int f, int c) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introduce el dato para la fila : " + f + " y la columna " + c + " por teclado.");
+        int x = sc.nextInt();
+        return x;
+    }
+
     public static void setDatos() {
-        int x = 0;
         for (int f = 0; f < array.length; f++) {
             for (int c = 0; c < array[f].length; c++) {
-                x = 1 + x;
-                array[f][c] = x;
-                System.out.print(array[f][c] + " ");
+                array[f][c] = getDatos(f, c);
             }
             System.out.println();
         }
@@ -46,7 +52,6 @@ public class T5x17PermutarFilas {
     }
 
     public static void main(String[] args) {
-//        setDatos();
         setDatosOrdenados();
     }
 }
