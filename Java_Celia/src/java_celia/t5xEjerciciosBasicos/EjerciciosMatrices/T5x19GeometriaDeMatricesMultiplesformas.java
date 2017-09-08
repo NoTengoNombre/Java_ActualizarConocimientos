@@ -7,29 +7,13 @@
  */
 package java_celia.t5xEjerciciosBasicos.EjerciciosMatrices;
 
-import java.util.Scanner;
-
-public class T5x19GeometriaDeMatrices {
+public class T5x19GeometriaDeMatricesMultiplesformas {
 
     private static final int[][] MATRIZ = new int[5][5];
 
     public static int setNumeros() {
         int x = (int) (Math.random() * (1 + 8) + 1);
         return x;
-    }
-
-    public static int setFijarNumeros() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Introduce por teclado un numero mayor que 0 y menor que 100");
-        int n = sc.nextInt();
-        if (n < 1 || n > 100) {
-            while (n < 1 || n > 100) {
-                System.out.println("el numero " + n + " es invalido");
-                System.out.println("Por favor : Introduce por teclado un numero mayor que 0 y menor que 100");
-                n = sc.nextInt();
-            }
-        }
-        return n;
     }
 
     public static void setValoresEnArray() {
@@ -53,25 +37,66 @@ public class T5x19GeometriaDeMatrices {
         }
     }
 
-    public static int[][] setMostrarDiagonal(int n) {
+    public static void setMostrarDiagonal() {
+        for (int f = 0; f < MATRIZ.length; f++) {
+            for (int c = 0; c < MATRIZ[f].length; c++) {
+
+                if (MATRIZ[f][f] != MATRIZ[f][c]) {
+                    MATRIZ[f][f] = 1;
+                    System.out.print(MATRIZ[f][f]);
+                } else {
+                    MATRIZ[f][c] = 2;
+                    System.out.print(MATRIZ[c][c]);
+                }
+            }
+            System.out.println("");
+        }
+        System.out.println();
+    }
+
+    public static void setMostrarDiagonal2() {
         for (int f = 0; f < MATRIZ.length; f++) {
             for (int c = 0; c < MATRIZ[f].length; c++) {
 // Siempre va a representar las posiciones [0][0] aunque se traten de columnas 
-                MATRIZ[c][c] = n + 1;
+                MATRIZ[c][c] = f + 1;
                 System.out.print(MATRIZ[f][c] + " ");
             }
             System.out.println("");
         }
-        return MATRIZ;
+    }
+
+    public static void setMostrarDiagonal3() {
+        for (int f = 0; f < MATRIZ.length; f++) {
+            MATRIZ[f][f] += 1;
+            for (int c = 0; c < MATRIZ[f].length; c++) {
+                MATRIZ[f][c] += 2;
+                System.out.print(MATRIZ[f][c] + " ");
+            }
+            System.out.println("");
+        }
+    }
+
+    public static void setNoMostrarPuntosFF() {
+        int[][] array = new int[5][5];
+        for (int f = 0; f < MATRIZ.length; f++) {
+            for (int c = 0; c < MATRIZ[f].length; c++) {
+                MATRIZ[f][c] = c + 1;
+                if (MATRIZ[f][f] < MATRIZ[f][c]) {
+                    array[f][c] = MATRIZ[f][c];
+                    System.out.print(array[f][c]);
+                }
+                System.out.print(MATRIZ[f][c] + " ");
+            }
+            System.out.println("");
+        }
     }
 
     public static void setSumarDiagonalSuperior() {
-        setMostrarDiagonal(setFijarNumeros());
         int[][] arrayIntermedio = new int[5][5];
         int n = 0;
         for (int f = 0; f < MATRIZ.length; f++) {
             for (int c = 0; c < MATRIZ[f].length; c++) {
-                MATRIZ[f][c] = setFijarNumeros();
+                MATRIZ[f][c] = 1;
                 if ((f <= c) && (c <= MATRIZ.length)) {
                     n += MATRIZ[f][c];
                     arrayIntermedio[f][c] = MATRIZ[f][c];
@@ -99,8 +124,6 @@ public class T5x19GeometriaDeMatrices {
 
     public static void main(String[] args) {
 
-//        setSumarDiagonalSuperior();
-        setMostrarDiagonal(10);
         setSumarDiagonalSuperior();
     }
 
