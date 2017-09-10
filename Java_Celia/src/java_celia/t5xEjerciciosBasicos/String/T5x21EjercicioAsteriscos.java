@@ -11,7 +11,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class T5xEjercicioAsteriscos {
+public class T5x21EjercicioAsteriscos {
 
     public static void main(String[] args) throws IOException {
 
