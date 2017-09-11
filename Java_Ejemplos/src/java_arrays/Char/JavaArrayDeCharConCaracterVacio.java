@@ -7,7 +7,7 @@
  */
 package java_arrays.Char;
 
-public class JavaArrayDeChar {
+public class JavaArrayDeCharConCaracterVacio {
 
     public static void main(String[] args) {
 
