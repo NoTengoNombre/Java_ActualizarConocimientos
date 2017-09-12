@@ -9,25 +9,43 @@ package java_celia.t5xEjerciciosBasicos.String;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class T5x28DecimalABinario {
 
     public static void main(String[] args) {
+        DecimalToBinario btb = new DecimalToBinario();
+        btb.getNumeroDecimalToBinario(btb.getNumero());
+    }
+}
 
-        int dividendo = 12;
+class DecimalToBinario {
+
+    public int getNumero() {
+        int n;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introduce un numero :");
+        n = sc.nextInt();
+        if (n <= 0) {
+            while (n <= 0) {
+                System.out.println("Introduce un numero :");
+                n = sc.nextInt();
+            }
+        }
+        return n;
+
+    }
+
+    public String getNumeroDecimalToBinario(int dividendo) {
+        int cociente;
         int divisor = 2;
-        int cociente = 0;
 
         ArrayList<Integer> resto = new ArrayList<>();
-
-        System.out.println("Resto : " + dividendo % divisor);
-        System.out.println("");
 
         int x = 0;
         do {
             cociente = (dividendo / divisor);
             resto.add(dividendo % divisor);
-            System.out.println("• Despues de dividir : " + cociente);
             dividendo = cociente;
             x++;
         } while (dividendo > 0);
@@ -40,19 +58,17 @@ public class T5x28DecimalABinario {
             xx++;
         }
 
-        System.out.println(a[a.length - 1]);
-        System.out.println(a[a.length - 2]);
-        System.out.println(a[a.length - 3]);
-        System.out.println(a[a.length - 4]);
-
         int[] b = new int[a.length];
 
-//               3 = 4 - 1         3,2,1,0
         for (int i = a.length - 1; i >= 0; i--) {
             b[i] = a[(a.length - i) - 1];
-            System.out.print(a[i]);
+        }
+
+        for (int i = 0; i < b.length; i++) {
+            System.out.print(b[i]);
         }
         System.out.println("");
-
+        String cadena = Arrays.toString(b);
+        return cadena;
     }
 }
