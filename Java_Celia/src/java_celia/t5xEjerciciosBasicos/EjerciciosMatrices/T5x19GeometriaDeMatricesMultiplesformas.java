@@ -27,17 +27,20 @@ public class T5x19GeometriaDeMatricesMultiplesformas {
         }
     }
 
-    public static void setVerValoresDiagonal() {
+    public static void setCrearMatrizBasica() {
         setValoresEnArray();
-        System.out.println("");
+        System.out.println("------------------");
         for (int f = 0; f < MATRIZ.length; f++) {
-            System.out.println("f : " + f);
+            System.out.println(" filas : " + f);
             for (int c = 0; c < MATRIZ[f].length; c++) {
+                MATRIZ[f][c] = +1;
+                System.out.print(MATRIZ[f][c]);
             }
         }
+        System.out.println("");
     }
 
-    public static void setMostrarDiagonal() {
+    public static void setMostrarDiagonalConIncremento() {
         for (int f = 0; f < MATRIZ.length; f++) {
             for (int c = 0; c < MATRIZ[f].length; c++) {
 
@@ -54,7 +57,7 @@ public class T5x19GeometriaDeMatricesMultiplesformas {
         System.out.println();
     }
 
-    public static void setMostrarDiagonal2() {
+    public static void setMostrarDiagonalinferiorIncremento() {
         for (int f = 0; f < MATRIZ.length; f++) {
             for (int c = 0; c < MATRIZ[f].length; c++) {
 // Siempre va a representar las posiciones [0][0] aunque se traten de columnas 
@@ -65,7 +68,7 @@ public class T5x19GeometriaDeMatricesMultiplesformas {
         }
     }
 
-    public static void setMostrarDiagonal3() {
+    public static void setMostrarDiagonalBasica() {
         for (int f = 0; f < MATRIZ.length; f++) {
             MATRIZ[f][f] += 1;
             for (int c = 0; c < MATRIZ[f].length; c++) {
@@ -76,7 +79,7 @@ public class T5x19GeometriaDeMatricesMultiplesformas {
         }
     }
 
-    public static void setNoMostrarPuntosFF() {
+    public static void setMostrarDiagonalCentroAutoincremento() {
         int[][] array = new int[5][5];
         for (int f = 0; f < MATRIZ.length; f++) {
             for (int c = 0; c < MATRIZ[f].length; c++) {
@@ -124,7 +127,12 @@ public class T5x19GeometriaDeMatricesMultiplesformas {
 
     public static void main(String[] args) {
 
-        setSumarDiagonalSuperior();
+//        setSumarDiagonalSuperior();
+//        setMostrarDiagonalConIncremento();
+//        setMostrarDiagonalinferiorIncremento();
+//        setMostrarDiagonalCentroAutoincremento();
+//        setMostrarDiagonalBasica();
+        setCrearMatrizBasica();
     }
 
 }
