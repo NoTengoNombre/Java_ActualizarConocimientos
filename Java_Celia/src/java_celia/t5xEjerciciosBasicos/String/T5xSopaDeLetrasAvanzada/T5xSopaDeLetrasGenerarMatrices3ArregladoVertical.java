@@ -22,26 +22,26 @@ import java_celia.t5xEjerciciosBasicos.String.T5xSopaDeLetrasAvanzada.Interfaces
  *
  * @author Portatil_Bot
  */
-public class T5xSopaDeLetrasGenerarMatrices {
+public class T5xSopaDeLetrasGenerarMatrices3ArregladoVertical {
 
     private static char[][] matriz;
 
     public static void main(String[] args) {
-        GenerarMatrices2 gm = new GenerarMatrices2();
+        GenerarMatrices3 gm = new GenerarMatrices3();
         matriz = gm.getGenerarMatrizCaracterAleatorios(5, 10);
-        matriz = gm.setArrayVertical(matriz, "GATO");
+//        matriz = gm.setArrayVertical(matriz, "GATO", 0, 0);
 //        System.out.println("--------------------------");
-        matriz = gm.setArrayHorizontal(matriz, "PERRO");
+        matriz = gm.setArrayHorizontal(matriz, "PERRO", 4, 0);
+        System.out.println("--------------------------");
+//        matriz = gm.setArrayDiagonal(matriz, "MOUSE");
 //        System.out.println("--------------------------");
-        matriz = gm.setArrayDiagonal(matriz, "MOUSE");
-//        System.out.println("--------------------------");
-        matriz = gm.setInvertido(matriz, "ZORRO");
+//        matriz = gm.setInvertido(matriz, "ZORRO");
         gm.setVerMatrices(matriz);
 
     }
 }
 
-class GenerarMatrices2 implements SopaDeLetraMatriz {
+class GenerarMatrices3 implements SopaDeLetraMatriz {
 
     /**
      * A - Tamaño de la sopa de letras a generar
@@ -67,43 +67,63 @@ class GenerarMatrices2 implements SopaDeLetraMatriz {
     }
 
     /**
+     * Controlar la 'f' y 'c' por parametros para evitar meter palabras que no
+     * encajen en la sopa de letras y también evitar solaparse la palabra
+     * elegida con otras palabras que hayan dentro
+     *
+     * Funciona perfectamente
      *
      * @param matriz
      */
-    public char[][] setArrayVertical(char[][] matriz, String palabra) {
-        CapturaTeclado ct = new CapturaTeclado();
-        char[] palabraTroceada = ct.getConvertirStringArrayDeChar(palabra);
-        int indice = 0;
-        for (int f = 1; f < matriz.length; f++) {
-            for (int c = 0; c < matriz[f].length; c++) {
-                // Modificando (cadena[0].length - 10)
-                // esta parte mueve la palabra de izquierda a derecha
-                if ((f == f) && (c == (matriz[0].length - (matriz[f].length)))) {
-                    if (indice < palabra.length() && (f <= palabra.length())) {
-                        matriz[f][c] = palabraTroceada[indice];
-                        indice++;
-                    }
-                }
-            }
-        }
-        return matriz;
-    }
-
+//    public char[][] setArrayVertical(char[][] matriz, String palabra, int paramFila, int paramColumna) {
+//        CapturaTeclado ct = new CapturaTeclado();
+//        char[] palabraTroceada = ct.getConvertirStringArrayDeChar(palabra);
+//
+//        if ((paramFila > (matriz.length - palabraTroceada.length)) || (matriz.length < palabraTroceada.length) || (paramColumna > 9)) {
+//            System.out.println("Elije otra palabra");
+//        } else {
+//            int indice = 0;
+//            for (int f = paramFila; f < matriz.length; f++) {
+//                for (int c = paramColumna; c < matriz[f].length; c++) {
+//                    if ((f == f) && (c == paramColumna)) {
+//                        if (indice < palabra.length() && (f <= palabra.length())) {
+//                            matriz[f][c] = palabraTroceada[indice];
+//                            indice++;
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//        return matriz;
+//    }
     /**
      *
      * @param args
      */
-    public char[][] setArrayHorizontal(char[][] matriz, String palabra) {
+    public char[][] setArrayHorizontal(char[][] matriz, String palabra, int paramFila, int paramColumna) {
         CapturaTeclado ct = new CapturaTeclado();
         char[] palabraTroceada = ct.getConvertirStringArrayDeChar(palabra);
-        int indice = 0;
-        for (int f = 0; f < matriz.length; f++) {
-            for (int c = 0; c < matriz[f].length; c++) {
+
+        System.out.println("Fila : " + paramFila);
+        System.out.println("Columna : " + paramColumna);
+        System.out.println("palabra.length : " + palabra.length());
+        System.out.println("palabraTroceada : " + palabraTroceada.length);
+        System.out.println("matriz.length: " + matriz.length);
+        System.out.println("matriz[0].length: " + matriz[0].length);
+
+        if ((paramColumna > (matriz[0].length - palabraTroceada.length)) || (paramFila > matriz.length)) {
+            System.out.println("Elije otra palabra");
+        } else {
+            int indice = 0;
+            for (int f = paramFila; f < matriz.length; f++) {
+                for (int c = paramColumna; c < matriz[f].length; c++) {
 // Modificando (f == 0) Movemos de arriba a abajo el array de letras
-                if (((f == 0) && (c <= matriz.length))) {
-                    if ((indice < palabra.length()) && (indice < matriz[f].length)) {
-                        matriz[f][c] = palabraTroceada[indice];
-                        indice++;
+//                if (((f == paramFila) && (c <= matriz.length))) {
+                    if (f == paramFila) {
+                        if ((indice < palabra.length()) && (indice < matriz[f].length)) {
+                            matriz[f][c] = palabraTroceada[indice];
+                            indice++;
+                        }
                     }
                 }
             }
