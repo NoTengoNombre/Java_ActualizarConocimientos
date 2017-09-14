@@ -167,8 +167,8 @@ class GenerarMatrices5 implements SopaDeLetraMatriz {
      * palabras
      *
      * Solucionado el PROBLEMA DE LAS COLUMNAS FALTAN CORREGIR LOS FALLOS POR 0
-     * , 0 y NO PASAR DEL MAXIMO DE FILAS  
-     * 
+     * , 0 y NO PASAR DEL MAXIMO DE FILAS
+     *
      * @param matriz
      * @param palabra
      * @param paramFila
@@ -180,9 +180,9 @@ class GenerarMatrices5 implements SopaDeLetraMatriz {
         char[] palabraTroceada = ct.getConvertirStringArrayDeChar(palabra);
 
 //               10           FILAS             0                     
-//        if ((paramFila > (palabra.length() - matriz.length) || (paramFila < 1 && paramColumna < 1)) || (paramColumna >= matriz[0].length)) {
-//        if ((paramFila > matriz.length || paramFila < 1)) {
-        if (paramColumna > ((matriz[0].length + 1) - palabra.length()) || (paramColumna == 0)) {
+//        if ((paramFila > (palabra.length() - matriz.length) || (paramFila < 1 && paramColumna < 1)) 
+//|| (paramColumna >= matriz[0].length)) {
+        if (paramColumna > ((matriz[0].length + 1) - palabra.length()) || (paramColumna == 0) || ((paramFila > matriz.length) || (paramFila < 1))) {
             System.out.println("Elegir otra palabra");
         } else {
             int indice = 0;
@@ -201,7 +201,7 @@ class GenerarMatrices5 implements SopaDeLetraMatriz {
 
     public static void main(String[] args) {
         GenerarMatrices5 gm = new GenerarMatrices5();
-        matriz = gm.getGenerarMatrizCaracterAleatorios(5, 7);
+        matriz = gm.getGenerarMatrizCaracterAleatorios(4, 6);
         matriz = gm.setInvertido(matriz, "ZORROS", 1, 1);
 //        matriz = gm.setArrayVertical(matriz, "GATO", 0, 0);
 //        matriz = gm.setArrayHorizontal(matriz, "PERRO", 4, 0);
