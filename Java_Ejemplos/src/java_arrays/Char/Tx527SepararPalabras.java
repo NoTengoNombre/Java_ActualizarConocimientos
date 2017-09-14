@@ -89,7 +89,6 @@ class SepararPalabras {
 
         System.out.println(Arrays.toString(contenedorString));
 
-
         return contenedorString;
     }
 
