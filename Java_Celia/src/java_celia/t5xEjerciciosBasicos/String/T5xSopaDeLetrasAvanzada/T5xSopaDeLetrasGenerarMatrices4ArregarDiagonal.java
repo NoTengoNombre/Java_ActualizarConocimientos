@@ -175,7 +175,6 @@ class GenerarMatrices4 implements SopaDeLetraMatriz {
         int indice = 0;
 //f - controla la posicion de la fila donde quiero que este (mas alto mas abajo)
         for (int f = matriz.length - 1; f < matriz.length; f++) {
-//Controla la posicion de la columna donde quiero que este 
             for (int c = matriz[f].length - 1; c >= 0; c--) {
                 if (indice < palabra.length() && (indice <= matriz[f].length)) {
                     matriz[f][c] = palabraTroceada[indice];

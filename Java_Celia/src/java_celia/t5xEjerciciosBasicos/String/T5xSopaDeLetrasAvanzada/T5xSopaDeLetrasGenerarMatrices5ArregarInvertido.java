@@ -24,24 +24,25 @@ import java_celia.t5xEjerciciosBasicos.String.T5xSopaDeLetrasAvanzada.Interfaces
  */
 public class T5xSopaDeLetrasGenerarMatrices5ArregarInvertido {
 
-    private static char[][] matriz;
-
-    public static void main(String[] args) {
-        GenerarMatrices5 gm = new GenerarMatrices5();
-        matriz = gm.getGenerarMatrizCaracterAleatorios(5, 10);
-//        matriz = gm.setArrayVertical(matriz, "GATO", 0, 0);
-//        System.out.println("--------------------------");
-//        matriz = gm.setArrayHorizontal(matriz, "PERRO", 4, 0);
-        System.out.println("--------------------------");
-//        matriz = gm.setArrayDiagonal(matriz, "MOUSE", 0, 0);
-//        System.out.println("--------------------------");
-        matriz = gm.setInvertido(matriz, "ZORRO");
-        gm.setVerMatrices(matriz);
-
-    }
 }
 
 class GenerarMatrices5 implements SopaDeLetraMatriz {
+
+    private static char[][] matriz;
+
+    /**
+     *
+     * @param matriz
+     */
+    public void setVerMatrices(char[][] matriz) {
+        for (int f = 0; f < matriz.length; f++) {
+            for (int c = 0; c < matriz[f].length; c++) {
+                System.out.print(matriz[f][c]);
+            }
+            System.out.println();
+        }
+        System.out.println("---------------------------");
+    }
 
     /**
      * A - Tamaño de la sopa de letras a generar
@@ -131,31 +132,31 @@ class GenerarMatrices5 implements SopaDeLetraMatriz {
 //        return matriz;
 //    }
     /**
+     * No puedo moverlo de columna , siempre empieza en Fila:0|Col:0
      *
      * @param args
      */
-    public char[][] setArrayDiagonal(char[][] matriz, String palabra, int paramFila, int paramColumna) {
-        CapturaTeclado ct = new CapturaTeclado();
-        char[] palabraTroceada = ct.getConvertirStringArrayDeChar(palabra);
-
-        if ((paramFila > (matriz.length - palabraTroceada.length))) {
-            System.out.println("• Elije otra palabra");
-        } else {
-            int indice = 0;
-            for (int f = paramFila; f < matriz.length; f++) {
-                for (int c = paramColumna; c < matriz[f].length; c++) {
-                    if ((f == f) && (f == c)) {
-                        if ((indice < palabra.length()) && (indice < matriz[f].length)) {
-                            matriz[f][c] = palabraTroceada[indice];
-                            indice++;
-                        }
-                    }
-                }
-            }
-        }
-        return matriz;
-    }
-
+//    public char[][] setArrayDiagonal(char[][] matriz, String palabra, int paramFila, int paramColumna) {
+//        CapturaTeclado ct = new CapturaTeclado();
+//        char[] palabraTroceada = ct.getConvertirStringArrayDeChar(palabra);
+//
+//        if ((paramFila > (matriz.length - palabraTroceada.length))) {
+//            System.out.println("• Elije otra palabra");
+//        } else {
+//            int indice = 0;
+//            for (int f = paramFila; f < matriz.length; f++) {
+//                for (int c = paramColumna; c < matriz[f].length; c++) {
+//                    if ((f == f) && (f == c)) {
+//                        if ((indice < palabra.length()) && (indice < matriz[f].length)) {
+//                            matriz[f][c] = palabraTroceada[indice];
+//                            indice++;
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//        return matriz;
+//    }
     /**
      * Añade 1 palabra segun la posicion de la fila y la columna
      *
@@ -165,40 +166,48 @@ class GenerarMatrices5 implements SopaDeLetraMatriz {
      * Incluso comprobar que si tienen en mismo valor puedan solaparse las
      * palabras
      *
+     * Solucionado el PROBLEMA DE LAS COLUMNAS FALTAN CORREGIR LOS FALLOS POR 0
+     * , 0 y NO PASAR DEL MAXIMO DE FILAS  
+     * 
      * @param matriz
      * @param palabra
+     * @param paramFila
+     * @param paramColumna
      * @return
      */
-    public char[][] setInvertido(char[][] matriz, String palabra) {
+    public char[][] setInvertido(char[][] matriz, String palabra, int paramFila, int paramColumna) {
         CapturaTeclado ct = new CapturaTeclado();
         char[] palabraTroceada = ct.getConvertirStringArrayDeChar(palabra);
-        int indice = 0;
-//f - controla la posicion de la fila donde quiero que este (mas alto mas abajo)
-        for (int f = matriz.length - 1; f < matriz.length; f++) {
+
+//               10           FILAS             0                     
+//        if ((paramFila > (palabra.length() - matriz.length) || (paramFila < 1 && paramColumna < 1)) || (paramColumna >= matriz[0].length)) {
+//        if ((paramFila > matriz.length || paramFila < 1)) {
+        if (paramColumna > ((matriz[0].length + 1) - palabra.length()) || (paramColumna == 0)) {
+            System.out.println("Elegir otra palabra");
+        } else {
+            int indice = 0;
+            for (int f = matriz.length - paramFila; f < matriz.length; f++) {
 //Controla la posicion de la columna donde quiero que este 
-            for (int c = matriz[f].length - 1; c >= 0; c--) {
-                if (indice < palabra.length() && (indice <= matriz[f].length)) {
-                    matriz[f][c] = palabraTroceada[indice];
-                    indice++;
+                for (int c = (matriz[f].length - paramColumna); c >= 0; c--) {
+                    if (indice < palabra.length() && (indice <= matriz[f].length)) {
+                        matriz[f][c] = palabraTroceada[indice];
+                        indice++;
+                    }
                 }
             }
-            System.out.println();
         }
         return matriz;
     }
 
-    /**
-     *
-     * @param matriz
-     */
-    public void setVerMatrices(char[][] matriz) {
-        for (int f = 0; f < matriz.length; f++) {
-            for (int c = 0; c < matriz[f].length; c++) {
-                System.out.print(matriz[f][c]);
-            }
-            System.out.println();
-        }
-        System.out.println("---------------------------");
+    public static void main(String[] args) {
+        GenerarMatrices5 gm = new GenerarMatrices5();
+        matriz = gm.getGenerarMatrizCaracterAleatorios(5, 7);
+        matriz = gm.setInvertido(matriz, "ZORROS", 1, 1);
+//        matriz = gm.setArrayVertical(matriz, "GATO", 0, 0);
+//        matriz = gm.setArrayHorizontal(matriz, "PERRO", 4, 0);
+//        matriz = gm.setArrayDiagonal(matriz, "MOUSE", 0, 0);
+        gm.setVerMatrices(matriz);
+
     }
 
 }
