@@ -128,7 +128,7 @@ class CapturaTeclado implements SopaDeLetrasCapturaTeclado {
      * @param cadena
      * @return
      */
-        public char[] getConvertirStringArrayDeChar(String cadena) {
+    public char[] getConvertirStringArrayDeChar(String cadena) {
         char[] caracteres = new char[cadena.length()];
         for (int i = 0; i < cadena.length(); i++) {
             caracteres[i] = cadena.charAt(i);

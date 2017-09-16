@@ -11,6 +11,14 @@ package java_celia.t5xEjerciciosBasicos.String.T5xSopaDeLetrasAvanzada.Interface
  */
 public interface SopaDeLetraMatriz {
 
-    char[][] getGenerarMatrizCaracterAleatorios(int fila, int col);
+    public char[][] getGenerarMatrizCaracterAleatorios(int fila, int col);
+
+    /**
+     * Devuelve una palabra en base a una longitud
+     *
+     * @param longitudMatriz
+     * @return Longitud vertical u horizontal
+     */
+    public String getElegirPalabra(int longitudMatriz);
 
 }
