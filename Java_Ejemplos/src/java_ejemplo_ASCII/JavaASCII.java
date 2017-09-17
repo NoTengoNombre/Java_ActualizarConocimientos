@@ -12,10 +12,10 @@ public class JavaASCII {
     public static void main(String[] args) {
         char letra = 0;
         for (int i = 0; i <= 12042; i++) {
-            System.out.println("El codigo ASCII de la letra "
-                    + letra++ + " es " + i);
+            System.out.println("El codigo ASCII de la letra " + letra++ + " es " + i);
         }
         char v = (char) 0x1F431;
         System.out.println(v);
+
     }
 }
