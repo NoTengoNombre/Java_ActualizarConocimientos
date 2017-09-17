@@ -19,6 +19,6 @@ public interface SopaDeLetraMatriz {
      * @param longitudMatriz
      * @return Longitud vertical u horizontal
      */
-    public String getElegirPalabra(int longitudMatriz);
+    public String getElegirPalabraSopaLetras(int longitudMatriz);
 
 }

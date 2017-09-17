@@ -28,7 +28,7 @@ public class T5xSopaDeLetrasGenerarMatrices8ElegirPalabrasYLongitud {
 
 }
 
-class GenerarMatrices implements SopaDeLetraMatriz, SopaDeLetraNumerosAleatorios {
+class GenerarMatrices8 implements SopaDeLetraMatriz, SopaDeLetraNumerosAleatorios {
 
     private static char[][] matriz;
 
@@ -90,7 +90,7 @@ class GenerarMatrices implements SopaDeLetraMatriz, SopaDeLetraNumerosAleatorios
      * @return
      */
     @Override
-    public String getElegirPalabra(int longitudArray) {
+    public String getElegirPalabraSopaLetras(int longitudArray) {
         int x;
         boolean stop = true;
         String palabra = "";
@@ -103,7 +103,7 @@ class GenerarMatrices implements SopaDeLetraMatriz, SopaDeLetraNumerosAleatorios
                     System.out.println("Numero x : " + x);
                     palabra = SopaDeLetrasDiccionario.DICCIONARIO[x].toUpperCase();
                     System.out.println("Palabra elegida : " + palabra + " longitud : " + palabra.length());
-                    if (palabra.length() < matriz.length && (palabra.length() < matriz[0].length - 1)) {
+                    if (palabra.length() < matriz.length && (palabra.length() < matriz[0].length)) {
                         stop = false;
                     }
                 }
@@ -123,13 +123,13 @@ class GenerarMatrices implements SopaDeLetraMatriz, SopaDeLetraNumerosAleatorios
      */
     public char[][] setArrayVertical(char[][] matriz, String palabra, int paramFila, int paramColumna) {
         CapturaTeclado ct = new CapturaTeclado();
-        GenerarMatrices gm = new GenerarMatrices();
+        GenerarMatrices8 gm = new GenerarMatrices8();
 
         char[] palabraTroceada = ct.getConvertirStringArrayDeChar(palabra);
 
         if ((paramFila > (matriz.length - palabraTroceada.length)) || (matriz.length < palabraTroceada.length) || (paramColumna > matriz[0].length - 1)) {
             int indice = 0;
-            palabraTroceada = ct.getConvertirStringArrayDeChar(gm.getElegirPalabra(matriz.length));
+            palabraTroceada = ct.getConvertirStringArrayDeChar(gm.getElegirPalabraSopaLetras(matriz.length));
 
             for (int f = paramFila; f < matriz.length; f++) {
                 for (int c = paramColumna; c < matriz[f].length; c++) {
@@ -164,13 +164,13 @@ class GenerarMatrices implements SopaDeLetraMatriz, SopaDeLetraNumerosAleatorios
      */
     public char[][] setArrayHorizontal(char[][] matriz, String palabra, int paramFila, int paramColumna) {
         CapturaTeclado ct = new CapturaTeclado();
-        GenerarMatrices gm = new GenerarMatrices();
+        GenerarMatrices8 gm = new GenerarMatrices8();
 
         char[] palabraTroceada = ct.getConvertirStringArrayDeChar(palabra);
 
         if ((paramColumna > (matriz[0].length - palabraTroceada.length)) || (paramFila > matriz.length)) {
             int indice = 0;
-            palabraTroceada = ct.getConvertirStringArrayDeChar(gm.getElegirPalabra(matriz.length));
+            palabraTroceada = ct.getConvertirStringArrayDeChar(gm.getElegirPalabraSopaLetras(matriz.length));
 
             for (int f = paramFila; f < matriz.length; f++) {
                 for (int c = paramColumna; c < matriz[f].length; c++) {
@@ -207,7 +207,7 @@ class GenerarMatrices implements SopaDeLetraMatriz, SopaDeLetraNumerosAleatorios
      */
     public char[][] setArrayDiagonal(char[][] matriz, String palabra, int paramFila, int paramColumna) {
         CapturaTeclado ct = new CapturaTeclado();
-        GenerarMatrices gm = new GenerarMatrices();
+        GenerarMatrices8 gm = new GenerarMatrices8();
 
         char[] palabraTroceada = ct.getConvertirStringArrayDeChar(palabra);
 
@@ -227,7 +227,7 @@ class GenerarMatrices implements SopaDeLetraMatriz, SopaDeLetraNumerosAleatorios
 
         if ((paramFila > (fila - (palabraTroceada.length))) || (paramColumna >= (columna - palabraTroceada.length))) {
             int indice = 0;
-            palabraTroceada = ct.getConvertirStringArrayDeChar(gm.getElegirPalabra(matriz.length));
+            palabraTroceada = ct.getConvertirStringArrayDeChar(gm.getElegirPalabraSopaLetras(matriz.length));
 
             for (int f = paramFila; f < matriz.length; f++) {
                 for (int c = paramColumna; c < matriz[f].length; c++) {
@@ -235,7 +235,7 @@ class GenerarMatrices implements SopaDeLetraMatriz, SopaDeLetraNumerosAleatorios
 //                    System.out.println("Columna " + c + " del array[c] : " + matriz[0].length);
                     if (f == paramFila) {
                         if ((indice < palabra.length()) && (indice < palabraTroceada.length)) {
-                            matriz[f][c - 1] = palabraTroceada[indice];
+                            matriz[f][c] = palabraTroceada[indice];
                             indice++;
                         }
 //                    } else {
@@ -280,13 +280,13 @@ class GenerarMatrices implements SopaDeLetraMatriz, SopaDeLetraNumerosAleatorios
      */
     public char[][] setInvertido(char[][] matriz, String palabra, int paramFila, int paramColumna) {
         CapturaTeclado ct = new CapturaTeclado();
-        GenerarMatrices gm = new GenerarMatrices();
+        GenerarMatrices8 gm = new GenerarMatrices8();
 
         char[] palabraTroceada = ct.getConvertirStringArrayDeChar(palabra);
 
         if (paramColumna > ((matriz[0].length + 1) - palabra.length()) || (paramColumna == 0) || ((paramFila > matriz.length) || (paramFila < 1))) {
             int indice = 0;
-            palabraTroceada = ct.getConvertirStringArrayDeChar(gm.getElegirPalabra(matriz.length));
+            palabraTroceada = ct.getConvertirStringArrayDeChar(gm.getElegirPalabraSopaLetras(matriz.length));
             for (int f = matriz.length - paramFila; f < matriz.length; f++) {
 //Controla la posicion de la columna donde quiero que este 
                 for (int c = (matriz[f].length - paramColumna); c >= 0; c--) {
@@ -312,13 +312,13 @@ class GenerarMatrices implements SopaDeLetraMatriz, SopaDeLetraNumerosAleatorios
     }
 
     public static void main(String[] args) {
-        GenerarMatrices gm = new GenerarMatrices();
-        matriz = gm.getGenerarMatrizCaracterAleatorios(10, 15);
+        GenerarMatrices8 gm = new GenerarMatrices8();
+        matriz = gm.getGenerarMatrizCaracterAleatorios(5, 5);
 //        matriz = gm.setInvertido(matriz, "CERDO", 2, 1);
 //        matriz = gm.setInvertido(matriz, "ZORRO", 1, 1);
 //        matriz = gm.setArrayVertical(matriz, gm.getElegirPalabra(matriz.length), 0, 0);
 //        matriz = gm.setArrayHorizontal(matriz, gm.getElegirPalabra(matriz.length), 3, 4);
-        matriz = gm.setArrayDiagonal(matriz, gm.getElegirPalabra(matriz.length), 0, 1);
+        matriz = gm.setArrayDiagonal(matriz, gm.getElegirPalabraSopaLetras(matriz.length), 0, 0);
 //        matriz = gm.setArrayVertical(matriz, "GATO", 0, 0);
 //        matriz = gm.setArrayHorizontal(matriz, "PERRO", 2, 5);
 //        matriz = gm.setArrayDiagonal(matriz, "CUERVO", 1, 0);

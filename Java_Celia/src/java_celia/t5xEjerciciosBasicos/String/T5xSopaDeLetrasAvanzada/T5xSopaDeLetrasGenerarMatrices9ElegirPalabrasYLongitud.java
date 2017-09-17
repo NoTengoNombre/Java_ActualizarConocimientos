@@ -7,6 +7,7 @@
  */
 package java_celia.t5xEjerciciosBasicos.String.T5xSopaDeLetrasAvanzada;
 
+import java_celia.t5xEjerciciosBasicos.String.T5xSopaDeLetrasAvanzada.CapturaTeclado;
 import java_celia.t5xEjerciciosBasicos.String.T5xSopaDeLetrasAvanzada.Interfaces.SopaDeLetraMatriz;
 import java_celia.t5xEjerciciosBasicos.String.T5xSopaDeLetrasAvanzada.Interfaces.SopaDeLetraNumerosAleatorios;
 import java_celia.t5xEjerciciosBasicos.String.T5xSopaDeLetrasAvanzada.Interfaces.SopaDeLetrasDiccionario;
@@ -90,7 +91,7 @@ class GenerarMatrices9 implements SopaDeLetraMatriz, SopaDeLetraNumerosAleatorio
      * @return
      */
     @Override
-    public String getElegirPalabra(int longitudArray) {
+    public String getElegirPalabraSopaLetras(int longitudArray) {
         int x;
         boolean stop = true;
         String palabra = "";
@@ -119,7 +120,7 @@ class GenerarMatrices9 implements SopaDeLetraMatriz, SopaDeLetraNumerosAleatorio
      */
     public char[][] setArrayVertical(char[][] matriz, String palabra, int paramFila, int paramColumna) {
         CapturaTeclado ct = new CapturaTeclado();
-        GenerarMatrices gm = new GenerarMatrices();
+        GenerarMatrices9 gm = new GenerarMatrices9();
 
         char[] palabraTroceada = ct.getConvertirStringArrayDeChar(palabra);
 
@@ -127,7 +128,7 @@ class GenerarMatrices9 implements SopaDeLetraMatriz, SopaDeLetraNumerosAleatorio
 
             int indice = 0;
 
-            palabraTroceada = ct.getConvertirStringArrayDeChar(gm.getElegirPalabra(matriz.length));
+            palabraTroceada = ct.getConvertirStringArrayDeChar(gm.getElegirPalabraSopaLetras(matriz.length));
 
             for (int f = paramFila; f < matriz.length; f++) {
                 for (int c = paramColumna; c < matriz[f].length; c++) {
@@ -251,10 +252,10 @@ class GenerarMatrices9 implements SopaDeLetraMatriz, SopaDeLetraNumerosAleatorio
         matriz = gm.getGenerarMatrizCaracterAleatorios(4, 12);
 //        matriz = gm.setInvertido(matriz, "CERDO", 2, 1);
 //        matriz = gm.setInvertido(matriz, "ZORRO", 1, 1);
-        matriz = gm.setArrayVertical(matriz, gm.getElegirPalabra(matriz.length), 2, 0);
+//        matriz = gm.setArrayVertical(matriz, gm.getElegirPalabraSopaLetras(matriz.length), 0, 0);
 //        matriz = gm.setArrayVertical(matriz, "GATO", 0, 0);
 //        matriz = gm.setArrayHorizontal(matriz, "PERRO", 2, 5);
-//        matriz = gm.setArrayDiagonal(matriz, "CUERVO", 1, 0);
+        matriz = gm.setArrayDiagonal(matriz, "CUERVO", 1, 0);
         gm.setVerMatrices(matriz);
 
     }

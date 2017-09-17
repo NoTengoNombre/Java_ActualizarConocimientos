@@ -21,13 +21,6 @@ import java_celia.t5xEjerciciosBasicos.String.T5xSopaDeLetrasAvanzada.Interfaces
  */
 public class T5xSopaDeLetrasCapturaTeclado {
 
-    public static void main(String[] args) throws IOException {
-        CapturaTeclado t = new CapturaTeclado();
-//        t.getCapturaArrayCharTeclado(1, 1);
-//        t.getNumeroPalabrasParaAniadirSopa();
-//        t.getGeneraLetraAleatoria();
-        t.getConvertirStringArrayDeChar("perro");
-    }
 }
 
 class CapturaTeclado implements SopaDeLetrasCapturaTeclado {
@@ -135,5 +128,4 @@ class CapturaTeclado implements SopaDeLetrasCapturaTeclado {
         }
         return caracteres;
     }
-
 }
