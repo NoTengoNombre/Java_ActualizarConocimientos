@@ -11,7 +11,11 @@ package java_celia.t5xEjerciciosBasicos.String.T5xSopaDeLetrasAvanzada.Interface
  */
 public interface SopaDeLetraNumerosAleatorios {
 
-    
     public int getNumRandom(int minimo, int maximo);
+
+    public static int getStaticNumRandom(int minimo, int maximo) {
+        int x = (int) (Math.random() * (minimo + maximo));
+        return x;
+    }
 
 }

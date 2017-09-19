@@ -59,38 +59,6 @@ class CapturaTeclado implements SopaDeLetrasCapturaTeclado {
     }
 
     /**
-     * Captura String Teclado
-     *
-     * @return
-     */
-    @Override
-    public String getCapturaStringTeclado() {
-        String cadena = null;
-        try {
-            BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-            System.out.println("Introduce una cadena String");
-            cadena = bf.readLine();
-        } catch (IOException ex) {
-            Logger.getLogger(CapturaTeclado.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return cadena;
-    }
-
-    /**
-     * Captura Char Teclado
-     *
-     * @return
-     */
-    @Override
-    public char getCapturaCharTeclado() {
-        Scanner sc = new Scanner(System.in);
-        char c;
-        System.out.println("Introduce un caracter por teclado");
-        c = sc.next().charAt(0);
-        return c;
-    }
-
-    /**
      * Captura Numero Teclado
      *
      * @return

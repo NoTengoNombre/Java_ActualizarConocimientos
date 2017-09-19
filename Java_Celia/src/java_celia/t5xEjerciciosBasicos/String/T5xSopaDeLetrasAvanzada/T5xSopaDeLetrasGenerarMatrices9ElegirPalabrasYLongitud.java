@@ -7,7 +7,6 @@
  */
 package java_celia.t5xEjerciciosBasicos.String.T5xSopaDeLetrasAvanzada;
 
-import java_celia.t5xEjerciciosBasicos.String.T5xSopaDeLetrasAvanzada.CapturaTeclado;
 import java_celia.t5xEjerciciosBasicos.String.T5xSopaDeLetrasAvanzada.Interfaces.SopaDeLetraMatriz;
 import java_celia.t5xEjerciciosBasicos.String.T5xSopaDeLetrasAvanzada.Interfaces.SopaDeLetraNumerosAleatorios;
 import java_celia.t5xEjerciciosBasicos.String.T5xSopaDeLetrasAvanzada.Interfaces.SopaDeLetrasDiccionario;
@@ -254,8 +253,8 @@ class GenerarMatrices9 implements SopaDeLetraMatriz, SopaDeLetraNumerosAleatorio
 //        matriz = gm.setInvertido(matriz, "ZORRO", 1, 1);
 //        matriz = gm.setArrayVertical(matriz, gm.getElegirPalabraSopaLetras(matriz.length), 0, 0);
 //        matriz = gm.setArrayVertical(matriz, "GATO", 0, 0);
-//        matriz = gm.setArrayHorizontal(matriz, "PERRO", 2, 5);
-        matriz = gm.setArrayDiagonal(matriz, "CUERVO", 1, 0);
+        matriz = gm.setArrayHorizontal(matriz, "PERRO", 0, 0);
+//        matriz = gm.setArrayDiagonal(matriz, "CUERVO", 1, 0);
         gm.setVerMatrices(matriz);
 
     }

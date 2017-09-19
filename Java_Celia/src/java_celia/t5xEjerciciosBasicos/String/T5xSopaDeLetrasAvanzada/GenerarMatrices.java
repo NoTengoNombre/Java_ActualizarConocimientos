@@ -443,26 +443,42 @@ class GenerarMatrices implements SopaDeLetraMatriz, SopaDeLetraNumerosAleatorios
         gm.getListaPalabrasParaSopaLetras(getNumeroDePalabrasParaSopa());
         gm.getGenerarMatrizCaracterAleatorios(1, gm.getNumero());
         gm.setFormaDefinidasSopaDeLetras(gm.getNumeroFila(), gm.getNumeroColum());
+        matriz = gm.setPalabrasHorizontal(matriz, "PERRO", 0, 0);
         gm.setVerMatrizSopaLetras(matriz);
+    }
+
+    /**
+     * @param matriz
+     */
+    public void setVerMatrices(char[][] matriz) {
+        for (int f = 0; f < matriz.length; f++) {
+            for (int c = 0; c < matriz[f].length; c++) {
+                System.out.print(matriz[f][c]);
+            }
+            System.out.println();
+        }
+        System.out.println("---------------------------");
     }
 
     public static void main(String[] args) {
         GenerarMatrices gm = new GenerarMatrices();
+//        matriz = gm.getGenerarMatrizCaracterAleatorios(4, 12);
 //        matriz = gm.setPalabrasInvertidas(matriz, "CERDO", 2, 1);
 //        matriz = gm.setPalabrasInvertidas(matriz, "ZORRO", 1, 1);
 //        matriz = gm.setPalabrasVerticales(matriz, gm.getElegirPalabra(matriz.length), 0, 0);
-//        matriz = gm.setPalabrasHorizontal(matriz, gm.getElegirPalabra(matriz.length), 3, 4);
+//        matriz = gm.setPalabrasHorizontal(matriz, "PERRO", 0, 0);
 //        matriz = gm.setPalabrasDiagonal(matriz, gm.getElegirPalabraSopaLetras(matriz.length), 0, 0);
 //        matriz = gm.setPalabrasVerticales(matriz, "GATO", 0, 0);
 //        matriz = gm.setPalabrasHorizontal(matriz, "PERRO", 2, 5);
 //        matriz = gm.setPalabrasDiagonal(matriz, "CUERVO", 1, 0);
+//        gm.setVerMatrizSopaLetras(matriz);
 
         setLanzarPrograma();
-        gm.setPalabrasHorizontal(matriz, verPalabras[0], 5, 5);
-
-//        String[] palabras = gm.getCuantasPalabrasParaSopaLetras(10);
+//        gm.setPalabrasHorizontal(matriz, verPalabras[0], 5, 5);
+//        String[] palabras = gm.(10);
 //        for (String indices : palabras) {
 //            System.out.println(indices);
+//        }
 //        }
     }
 }

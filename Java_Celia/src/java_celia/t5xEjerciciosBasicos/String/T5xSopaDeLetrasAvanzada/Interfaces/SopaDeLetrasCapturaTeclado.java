@@ -13,8 +13,4 @@ public interface SopaDeLetrasCapturaTeclado {
 
     public int getCapturaNumeroTeclado();
 
-    public char getCapturaCharTeclado();
-
-    public String getCapturaStringTeclado();
-
 }
