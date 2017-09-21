@@ -5,9 +5,9 @@
  * @version
  * @author Raul Vela Salas
  */
-package java_arrays.ComprobarPosiciones;
+package java_arrays.RellenarPosicionDiagonal;
 
-public class JavaRellenarPosicionesArray {
+public class JavaArrayDiagonal3RellenarPosicionesArriba {
 
     public static void setArray() {
         int[][] a = new int[5][5];

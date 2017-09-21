@@ -7,7 +7,7 @@
  */
 package java_arrays;
 
-public class ArrayAlmacenaNumeroAleatorioNoRepetido2 {
+public class ArrayAlmacenaNumeroAleatorioNoRepetidoError2 {
 
 //                                  0  1  2  3  4
     private static int[] numeros = {1, 2, 3, 4, 5};

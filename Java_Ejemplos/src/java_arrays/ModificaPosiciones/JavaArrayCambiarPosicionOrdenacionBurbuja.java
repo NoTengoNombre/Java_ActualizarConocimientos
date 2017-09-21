@@ -7,7 +7,13 @@
  */
 package java_arrays.ModificaPosiciones;
 
-public class JavaArrayCambiarPosicion {
+/**
+ * 
+ * Ordenacion burbuja
+ *
+ * @author Portatil_Bot
+ */
+public class JavaArrayCambiarPosicionOrdenacionBurbuja {
 
     public static void main(String[] args) {
         int aux;
@@ -45,6 +51,8 @@ public class JavaArrayCambiarPosicion {
             }
         }
 
+        System.out.println("\n------------------------------");
+        
         for (int i = 0; i < a1.length; i++) {
             System.out.print(a1[i] + " ");
         }

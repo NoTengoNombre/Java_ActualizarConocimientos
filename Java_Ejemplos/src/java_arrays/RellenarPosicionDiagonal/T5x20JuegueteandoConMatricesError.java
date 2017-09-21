@@ -5,9 +5,9 @@
  * @version
  * @author Raul Vela Salas
  */
-package java_arrays.ComprobarPosiciones;
+package java_arrays.RellenarPosicionDiagonal;
 
-public class T5x20JuegueteandoConMatrices {
+public class T5x20JuegueteandoConMatricesError {
 
     private static final int N = (int) (Math.random() * (1 + 9) + 1);
     private static final int N1 = (int) (Math.random() * (1 + 9) + 1);

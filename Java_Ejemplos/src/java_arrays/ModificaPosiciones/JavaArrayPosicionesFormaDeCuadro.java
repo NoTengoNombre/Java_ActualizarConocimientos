@@ -7,12 +7,16 @@
  */
 package java_arrays.ModificaPosiciones;
 
+/**
+ * Mostrar un array siguiendo la forma de un cuadrado
+ *
+ * @author Portatil_Bot
+ */
 public class JavaArrayPosicionesFormaDeCuadro {
 
     public static void main(String[] args) {
 
         int[][] arr = new int[4][4];
-        int[][] arrAlmacen = arr;
 
         int ii = 10;
         for (int i = 0; i < arr.length; i++) {

@@ -19,6 +19,7 @@ public class JavaArrayComprobarValorIndices {
         for (int i = 0; i < a.length; i++) {
             System.out.println("• Indice i : " + i);
             for (int j = i + 1; j < a.length; j++) {
+                System.out.println("===========================================");
                 System.out.println("•• Valor i : " + i + " con a[i] : " + a[i]);
                 System.out.println("♦♦ Valor j : " + j + " con a[j] : " + a[j]);
 //                    2  ==   7
@@ -26,11 +27,12 @@ public class JavaArrayComprobarValorIndices {
                     System.out.println("--------------------------");
                     System.out.println("◘◘ Valor Iguales " + a[i] + " = " + a[j] + " ◘◘ ");
                     System.out.println("◘◘ Valor de a[i] : " + a[i] + " ◘◘ ");
-                    a[i] = (int) (Math.random() * (1 + 49) + 1);
+                    a[i] = (int) (Math.random() * (1 + 14));
                 }
             }
         }
-        System.out.println("--------------------------");
+
+        System.out.println("---------- NUEVO ARRAY ------------");
 
         for (int x = 0; x < a.length; x++) {
             System.out.println("♠ valor i " + x + " de a[i] : " + a[x]);
