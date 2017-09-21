@@ -7,7 +7,7 @@
  */
 package java_celia.t5xEjerciciosBasicos.String.T5xSopaDeLetrasAvanzada2;
 
-public class T5xSopaDeLetrasPalabrasDentroSopa {
+public class T5xSopaDeLetrasPalabrasDentroSopaCopiaS {
 
     private static char[] palabraTroceada;
 
@@ -91,8 +91,6 @@ public class T5xSopaDeLetrasPalabrasDentroSopa {
 
         T5xSopaDeLetrasFilasColumnas gm = new T5xSopaDeLetrasFilasColumnas();
 
-        System.out.println("• PALABRA ELEGIDA : " + palabra + " • ");
-
         palabraTroceada = getConvertirStringArrayDeChar(palabra);
 
         if ((paramFila > (matriz.length - palabraTroceada.length)) || (matriz.length < palabraTroceada.length) || (paramColumna > matriz[0].length - 1)) {
@@ -136,8 +134,6 @@ public class T5xSopaDeLetrasPalabrasDentroSopa {
     public char[][] setPalabrasHorizontal(char[][] matriz, String palabra, int paramFila, int paramColumna) {
 
         T5xSopaDeLetrasFilasColumnas gm = new T5xSopaDeLetrasFilasColumnas();
-
-        System.out.println("• PALABRA ELEGIDA : " + palabra + " • ");
 
         palabraTroceada = getConvertirStringArrayDeChar(palabra);
 
@@ -189,8 +185,6 @@ public class T5xSopaDeLetrasPalabrasDentroSopa {
         T5xSopaDeLetrasFilasColumnas gm = new T5xSopaDeLetrasFilasColumnas();
 
         palabraTroceada = getConvertirStringArrayDeChar(palabra);
-
-        System.out.println("• PALABRA ELEGIDA : " + palabra + " • ");
 
         if (paramColumna > ((matriz[0].length + 1) - palabra.length()) || (paramColumna == 0) || ((paramFila > matriz.length) || (paramFila < 1))) {
             int indice = 0;
@@ -268,3 +262,53 @@ public class T5xSopaDeLetrasPalabrasDentroSopa {
     }
 
 }
+
+//    public String getElegirPalabraSopaLetrasCopiaAntigua() {
+//        boolean stopWhile = true;
+//        String palabraElegida = new String();
+//        int numGenerado;
+//        System.out.println("• Valor del Indice : " + indice);
+//        int[] numAlmacenado = new int[10];
+//        
+//        numAlmacenado = new int[contenedorPalabras.length]; // Asigno la longitud del array que almacena los numeros
+////                      0
+//        for (int i = indice; i < contenedorPalabras.length; i++) {
+//
+//            if ((contenedorPalabras[i].length() <= matriz.length) && (contenedorPalabras[i].length() <= matriz[0].length)) {
+//
+//                while (stopWhile != false) {
+////                   0,1,2,3
+//                    numGenerado = getStaticNumRandom(1, (contenedorPalabras.length - 1));
+//
+//                    System.out.println("○ Numero Generado : " + numGenerado);
+//
+//                    for (int j = 0; j < numAlmacenado.length; j++) {
+//                        if (numGenerado == numAlmacenado[j]) {
+//                            while (numGenerado != numAlmacenado[j]) {
+//                                numGenerado = getStaticNumRandom(1, (contenedorPalabras.length - 1));
+//                                numAlmacenado[j] = numGenerado;
+//                            }
+//                        } else {
+//                            numAlmacenado[i] = numGenerado;
+//                        }
+//                    }
+//
+//                    palabraElegida = contenedorPalabras[numAlmacenado[i]].toUpperCase();
+//
+//                    System.out.println("○○ Numero Elegido : " + numAlmacenado[i] + " - Palabra : " + palabraElegida);
+//
+//                    if ((palabraElegida.length() <= matriz.length) && (palabraElegida.length() <= matriz[0].length)) {
+//                        stopWhile = false;
+//                        System.out.println("○○○ Palabra elegida : '" + palabraElegida + "' longitud : " + palabraElegida.length() + " ○ ");
+//                    }
+//                }
+//            }
+//        }
+//        System.out.println("..............................");
+//        System.out.println(Arrays.toString(numAlmacenado));
+//        System.out.println("..............................");
+//        indice++;
+//
+//        return palabraElegida;
+//    }
+

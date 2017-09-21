@@ -78,7 +78,7 @@ public class T5xSopaDeLetrasCogeDatosTeclado implements SopaDeLetrasCapturaTecla
         int longitud = SopaDeLetrasDiccionario.DICCIONARIO.length;
         System.out.println("▯ Introduce un numero para elegir cuantas palabras quieres mostrar en la sopa de letras : ");
         int totalPalabras = sc.nextInt();
-        System.out.println("-------------------------------------------------------------------------------------------");
+        System.out.println("-----------------------------------------------");
         System.out.println("▯ Numero elegido : " + totalPalabras);
 
         System.out.println("Ver longitud : " + totalPalabras);
