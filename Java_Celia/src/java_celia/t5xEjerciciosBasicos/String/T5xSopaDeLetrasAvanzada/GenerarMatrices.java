@@ -123,14 +123,17 @@ class GenerarMatrices implements SopaDeLetraMatriz, SopaDeLetraNumerosAleatorios
      */
     public void setVerMatrizSopaLetras(char[][] matriz) {
         CapturaTeclado ct = new CapturaTeclado();
-        int incremento = 0;
         int incrementoPalabra = 1;
+        int incremento = 0;
+
         System.out.println("\n\t\u001b[33m ═ Filas : " + totalPalabras + " ║ Columnas : " + getNumeroColum());
         System.out.println("\t\u001b[32m ░ Sopa de letras generada ░ ");
         System.out.println("\nTotal de palabras elegidas : " + verPalabras.length);
+
         for (int indice1 = 0; indice1 < getNumeroColum() * 9; indice1++) {
             System.out.print("_");
         }
+
         for (fila = 0; fila < matriz.length; fila++) {
             while (incremento < verPalabras.length) {
                 System.out.print("\n " + (incrementoPalabra++) + " - " + verPalabras[incremento] + "\t\t");
@@ -141,6 +144,7 @@ class GenerarMatrices implements SopaDeLetraMatriz, SopaDeLetraNumerosAleatorios
             }
         }
         System.out.println();
+
         for (int i = 0; i < getNumeroColum() * 5; i++) {
             System.out.print("▔");
         }

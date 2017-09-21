@@ -7,7 +7,7 @@
  */
 package java_celia.t5xEjerciciosBasicos.String.T5xSopaDeLetrasAvanzada2;
 
-public class T5xSopaDeLetrasPalabrasDentroSopa {
+public class T5xSopaDeLetrasMetodosFormaPalabras {
 
     private static char[] palabraTroceada;
 
@@ -44,6 +44,7 @@ public class T5xSopaDeLetrasPalabrasDentroSopa {
         palabraTroceada = getConvertirStringArrayDeChar(palabra);
 
         if ((paramColumna > (paramMatriz[0].length - palabraTroceada.length)) || (paramFila > paramMatriz.length)) {
+
             int indice = 0;
 
             palabraTroceada = getConvertirStringArrayDeChar(gm.getElegirPalabraSopaLetras());
@@ -58,6 +59,7 @@ public class T5xSopaDeLetrasPalabrasDentroSopa {
                     }
                 }
             }
+
         } else {
             int indice = 0;
             for (int f = paramFila; f < paramMatriz.length; f++) {
@@ -244,7 +246,6 @@ public class T5xSopaDeLetrasPalabrasDentroSopa {
                     if ((f == paramFila) && (f + paramColumna == c)) {
                         if ((indice < palabra.length()) && (indice < palabraTroceada.length)) {
                             matriz[f][c] = palabraTroceada[indice];
-//                            System.out.println("Entra A " + matriz[f][c]);
                             indice++;
                         }
                     }
@@ -257,7 +258,6 @@ public class T5xSopaDeLetrasPalabrasDentroSopa {
                     if ((f == f) && (f + paramColumna == c)) {
                         if ((indice < palabra.length()) && (indice < matriz[f].length)) {
                             matriz[f][c] = palabraTroceada[indice];
-//                            System.out.println("Entra B " + matriz[f][c]);
                             indice++;
                         }
                     }

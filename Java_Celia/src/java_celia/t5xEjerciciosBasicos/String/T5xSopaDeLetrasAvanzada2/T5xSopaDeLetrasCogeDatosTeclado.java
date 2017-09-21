@@ -28,13 +28,26 @@ public class T5xSopaDeLetrasCogeDatosTeclado implements SopaDeLetrasCapturaTecla
      * @param numero
      * @return
      */
-    public int getNumero() {
+    public int getNumeroFilas() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("✤ Introduce un numero entre '3' y '20' ✤ ");
+        System.out.println("✤ Filas : Introduce un numero entre '3' y '20' ✤ ");
         int col = sc.nextInt();
-        if (col < 2 || col > 20) {
-            while (col < 2 || col > 20) {
-                System.out.println("✤ Por favor : Introduce un numero entre 3 y 20");
+        if (col < 3 || col > 20) {
+            while (col < 3 || col > 20) {
+                System.out.println("✤ Filas : Por favor : Introduce un numero entre 3 y 20");
+                col = sc.nextInt();
+            }
+        }
+        return col;
+    }
+
+    public int getNumeroCol() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("✤ Columnas : Introduce un numero entre '3' y '20' ✤ ");
+        int col = sc.nextInt();
+        if (col < 3 || col > 20) {
+            while (col < 3 || col > 20) {
+                System.out.println("✤ Columnas : Por favor : Introduce un numero entre 3 y 20");
                 col = sc.nextInt();
             }
         }
@@ -81,7 +94,7 @@ public class T5xSopaDeLetrasCogeDatosTeclado implements SopaDeLetrasCapturaTecla
         System.out.println("-----------------------------------------------");
         System.out.println("▯ Numero elegido : " + totalPalabras);
 
-        System.out.println("Ver longitud : " + totalPalabras);
+        System.out.println("▯ Ver longitud : " + totalPalabras);
 
         if (totalPalabras < 1 || totalPalabras >= longitud) {
             while (totalPalabras < 1 || totalPalabras > longitud) {
@@ -130,5 +143,4 @@ public class T5xSopaDeLetrasCogeDatosTeclado implements SopaDeLetrasCapturaTecla
         char caracter = (char) (Math.random() * 26 + 'a');
         return caracter;
     }
-
 }

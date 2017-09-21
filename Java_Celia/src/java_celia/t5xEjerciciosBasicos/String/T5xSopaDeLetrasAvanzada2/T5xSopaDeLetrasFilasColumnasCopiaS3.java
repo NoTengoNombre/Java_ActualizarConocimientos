@@ -11,7 +11,7 @@ import java.util.Arrays;
 import java_celia.t5xEjerciciosBasicos.String.T5xSopaDeLetrasAvanzada.Interfaces.SopaDeLetraNumerosAleatorios;
 import java_celia.t5xEjerciciosBasicos.String.T5xSopaDeLetrasAvanzada.Interfaces.SopaDeLetrasDiccionario;
 
-class T5xSopaDeLetrasFilasColumnas implements SopaDeLetraMatriz2, SopaDeLetraNumerosAleatorios {
+class T5xSopaDeLetrasFilasColumnasCopiaS3 implements SopaDeLetraMatriz2, SopaDeLetraNumerosAleatorios {
 
     private static int fila;
     private static int col;
@@ -223,42 +223,46 @@ class T5xSopaDeLetrasFilasColumnas implements SopaDeLetraMatriz2, SopaDeLetraNum
         String palabraIntermedia = null;
 
         if (contenedorPalabras.length == 1) {
-            palabraIntermedia = contenedorPalabras[0];
+            for (int indiceA = 0; indiceA < contenedorPalabras.length; indiceA++) {
+                palabraIntermedia = contenedorPalabras[indiceA];
+            }
         }
 
         if (contenedorPalabras.length == 2) {
             for (int indicebB = 0; indicebB < contenedorPalabras.length; indicebB++) {
+                System.out.println("A ) VALORES de contenedorPalabras : " + contenedorPalabras[indicebB]);
                 palabraIntermedia = contenedorPalabras[(int) (Math.random() * (0 + contenedorPalabras.length))];
             }
         } else {
             palabraIntermedia = contenedorPalabras[(int) (Math.random() * (0 + (contenedorPalabras.length)))];
         }
+
         return palabraIntermedia;
     }
 
     public static void setGenerarSopa() {
-        T5xSopaDeLetrasFilasColumnas t = new T5xSopaDeLetrasFilasColumnas();
+        T5xSopaDeLetrasFilasColumnasCopiaS3 t = new T5xSopaDeLetrasFilasColumnasCopiaS3();
         T5xSopaDeLetrasCogeDatosTeclado c = new T5xSopaDeLetrasCogeDatosTeclado();
         T5xSopaDeLetrasMetodosFormaPalabras fps = new T5xSopaDeLetrasMetodosFormaPalabras();
 
         t.getGenerarMatrizCaracterAleatorios(c.getNumeroFilas(), c.getNumeroCol());
         t.verFilasColum();
         t.getListaPalabrasParaSopaLetras(c.getNumeroDePalabrasParaSopa());
-
         String palabraElegida = t.getElegirPalabraSopaLetras();
 
+        for (int indice1 = 0; indice1 < getNumeroColum() * 9; indice1++) {
+            System.out.print("_");
+        }
         for (int i = 0; i < contenedorPalabras.length; i++) {
             System.out.println("͏ " + i + " Ver la palabra elegida : " + palabraElegida);
             fps.setPalabrasHorizontalBasica(getMatrizChar(), t.getOtraPalabraSopaLetras(contenedorPalabras), i, 0);
         }
-
         System.out.println();
         t.verMatrizGenerada(getMatrizChar());
-
     }
 
     public static void setVerMatrizSopaLetras(char[][] matriz) {
-        T5xSopaDeLetrasFilasColumnas t = new T5xSopaDeLetrasFilasColumnas();
+        T5xSopaDeLetrasFilasColumnasCopiaS3 t = new T5xSopaDeLetrasFilasColumnasCopiaS3();
         T5xSopaDeLetrasCogeDatosTeclado c = new T5xSopaDeLetrasCogeDatosTeclado();
         T5xSopaDeLetrasMetodosFormaPalabras fps = new T5xSopaDeLetrasMetodosFormaPalabras();
 

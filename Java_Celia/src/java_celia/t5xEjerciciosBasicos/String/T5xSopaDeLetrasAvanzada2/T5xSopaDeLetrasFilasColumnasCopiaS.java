@@ -216,7 +216,7 @@ class T5xSopaDeLetrasFilasColumnasCopiaS implements SopaDeLetraMatriz2, SopaDeLe
     public static void main(String[] args) {
         T5xSopaDeLetrasFilasColumnasCopiaS t = new T5xSopaDeLetrasFilasColumnasCopiaS();
         T5xSopaDeLetrasCogeDatosTeclado c = new T5xSopaDeLetrasCogeDatosTeclado();
-        T5xSopaDeLetrasPalabrasDentroSopa fps = new T5xSopaDeLetrasPalabrasDentroSopa();
+        T5xSopaDeLetrasMetodosFormaPalabras fps = new T5xSopaDeLetrasMetodosFormaPalabras();
 
 //        t.getGenerarMatrizCaracterAleatorios(c.getNumero(), c.getNumero());
         t.getGenerarMatrizCaracterAleatorios(6, 6);
@@ -241,9 +241,7 @@ class T5xSopaDeLetrasFilasColumnasCopiaS implements SopaDeLetraMatriz2, SopaDeLe
         fps.setPalabrasHorizontalBasica(getMatrizChar(), palabraElegida, 0, 0);
 
 //        fps.setPalabrasVerticales(matriz, palabraElegida, 1, 1);
-
 //        t.verMatrizGenerada(getMatrizChar());
-
         t.getOtraPalabraSopaLetras(contenedorPalabras);
 
 //        for (int i = 0; i < matriz.length; i++) {
