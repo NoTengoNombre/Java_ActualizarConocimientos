@@ -21,7 +21,7 @@ public class T5xSopaDeLetrasMetodosFormaPalabras {
         char[] caracteres = new char[paramPalabra.length()];
         for (int i = 0; i < paramPalabra.length(); i++) {
             caracteres[i] = paramPalabra.charAt(i);
-            System.out.println("Ø Caracteres : " + caracteres[i]);
+//            System.out.println("Ø Caracteres : " + caracteres[i]);
         }
         return caracteres;
     }
@@ -39,7 +39,7 @@ public class T5xSopaDeLetrasMetodosFormaPalabras {
 
         T5xSopaDeLetrasFilasColumnas gm = new T5xSopaDeLetrasFilasColumnas();
 
-        System.out.println("• PALABRA ELEGIDA : " + palabra + " • ");
+        System.out.println(" →→ Palabra Horizontal version Basica : " + palabra);
 
         palabraTroceada = getConvertirStringArrayDeChar(palabra);
 
@@ -93,7 +93,7 @@ public class T5xSopaDeLetrasMetodosFormaPalabras {
 
         T5xSopaDeLetrasFilasColumnas gm = new T5xSopaDeLetrasFilasColumnas();
 
-        System.out.println("• PALABRA ELEGIDA : " + palabra + " • ");
+        System.out.println(" ↨↨ Palabra Vertical : " + palabra);
 
         palabraTroceada = getConvertirStringArrayDeChar(palabra);
 
@@ -139,7 +139,7 @@ public class T5xSopaDeLetrasMetodosFormaPalabras {
 
         T5xSopaDeLetrasFilasColumnas gm = new T5xSopaDeLetrasFilasColumnas();
 
-        System.out.println("• PALABRA ELEGIDA : " + palabra + " • ");
+        System.out.println(" →→ Palabra Horizontalmente : " + palabra);
 
         palabraTroceada = getConvertirStringArrayDeChar(palabra);
 
@@ -183,16 +183,21 @@ public class T5xSopaDeLetrasMetodosFormaPalabras {
      *
      * @param matriz
      * @param palabra
+     * @param paramFila1
+     * @param paramColumna1
      * @param paramFila
      * @param paramColumna
      * @return
      */
-    public char[][] setPalabrasInvertidas(char[][] matriz, String palabra, int paramFila, int paramColumna) {
+    public char[][] setPalabrasInvertidas(char[][] matriz, String palabra, int paramFila1, int paramColumna1) {
         T5xSopaDeLetrasFilasColumnas gm = new T5xSopaDeLetrasFilasColumnas();
 
         palabraTroceada = getConvertirStringArrayDeChar(palabra);
 
-        System.out.println("• PALABRA ELEGIDA : " + palabra + " • ");
+        System.out.println(" ←← Palabra Invertida : " + palabra);
+
+        int paramFila = paramFila1 + 1;
+        int paramColumna = paramColumna1 + 1;
 
         if (paramColumna > ((matriz[0].length + 1) - palabra.length()) || (paramColumna == 0) || ((paramFila > matriz.length) || (paramFila < 1))) {
             int indice = 0;
@@ -230,6 +235,8 @@ public class T5xSopaDeLetrasMetodosFormaPalabras {
      */
     public char[][] setPalabrasDiagonal(char[][] matriz, String palabra, int paramFila, int paramColumna) {
         T5xSopaDeLetrasFilasColumnas gm = new T5xSopaDeLetrasFilasColumnas();
+
+        System.out.println(" ↘↘ Palabra Diagonal : " + palabra);
 
         palabraTroceada = getConvertirStringArrayDeChar(palabra);
 

@@ -11,6 +11,7 @@ import java.util.Arrays;
 import java_celia.t5xEjerciciosBasicos.String.T5xSopaDeLetrasAvanzada.Interfaces.SopaDeLetraNumerosAleatorios;
 import static java_celia.t5xEjerciciosBasicos.String.T5xSopaDeLetrasAvanzada.Interfaces.SopaDeLetraNumerosAleatorios.getStaticNumRandom;
 import java_celia.t5xEjerciciosBasicos.String.T5xSopaDeLetrasAvanzada.Interfaces.SopaDeLetrasDiccionario;
+import static java_celia.t5xEjerciciosBasicos.String.T5xSopaDeLetrasAvanzada2.T5xSopaDeLetrasNumerosAleatorios.getNumRandomDe0a5;
 
 class T5xSopaDeLetrasFilasColumnasCopiaS implements SopaDeLetraMatriz2, SopaDeLetraNumerosAleatorios {
 
@@ -238,7 +239,7 @@ class T5xSopaDeLetrasFilasColumnasCopiaS implements SopaDeLetraMatriz2, SopaDeLe
 
         System.out.println("͏ Ver la palabra elegida : " + palabraElegida + " ͏");
 
-        fps.setPalabrasHorizontalBasica(getMatrizChar(), palabraElegida, 0, 0);
+        fps.setPalabrasHorizontalBasica(getMatrizChar(), palabraElegida, getNumRandomDe0a5(), getNumRandomDe0a5());
 
 //        fps.setPalabrasVerticales(matriz, palabraElegida, 1, 1);
 //        t.verMatrizGenerada(getMatrizChar());

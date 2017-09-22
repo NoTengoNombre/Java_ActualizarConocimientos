@@ -465,7 +465,7 @@ class GenerarMatrices implements SopaDeLetraMatriz, SopaDeLetraNumerosAleatorios
     }
 
     public static void main(String[] args) {
-        GenerarMatrices gm = new GenerarMatrices();
+//        GenerarMatrices gm = new GenerarMatrices();
 //        matriz = gm.getGenerarMatrizCaracterAleatorios(4, 12);
 //        matriz = gm.setPalabrasInvertidas(matriz, "CERDO", 2, 1);
 //        matriz = gm.setPalabrasInvertidas(matriz, "ZORRO", 1, 1);
