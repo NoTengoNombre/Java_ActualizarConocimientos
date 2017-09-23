@@ -92,9 +92,7 @@ public class T5xSopaDeLetrasCogeDatosTeclado implements SopaDeLetrasCapturaTecla
         System.out.println("▯ Introduce un numero para elegir cuantas palabras quieres mostrar en la sopa de letras : ");
         int totalPalabras = sc.nextInt();
         System.out.println("-----------------------------------------------");
-        System.out.println("▯ Numero elegido : " + totalPalabras);
-
-        System.out.println("▯ Ver longitud : " + totalPalabras);
+        System.out.println("▯ Numero palabras elegidas para la sopa de letras : " + totalPalabras);
 
         if (totalPalabras < 1 || totalPalabras >= longitud) {
             while (totalPalabras < 1 || totalPalabras > longitud) {

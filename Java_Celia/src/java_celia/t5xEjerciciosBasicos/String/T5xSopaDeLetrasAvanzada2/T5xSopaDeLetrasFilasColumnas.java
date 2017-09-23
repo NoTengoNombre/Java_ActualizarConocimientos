@@ -20,6 +20,8 @@ class T5xSopaDeLetrasFilasColumnas implements SopaDeLetraMatriz2, SopaDeLetraNum
      */
     private static int contador;
     private static int indicePalabras;
+    private static int incrementaFila = 5;
+    private static boolean stop = true;
 
     private static char[][] matriz;
     private static String[] contenedorPalabras;
@@ -124,7 +126,7 @@ class T5xSopaDeLetrasFilasColumnas implements SopaDeLetraMatriz2, SopaDeLetraNum
 // Contador para quedarme con el numero de elementos sin null
 // contenedor de palabras almacena el numero de palabras introducido por teclado
         contenedorPalabras = new String[numerosPalabra];
-        System.out.println("------------------- Palabras DISPONIBLES -------------------------");
+        System.out.println("\n--------------------- Palabras DISPONIBLES -------------------------");
 //      Desde :      0  hasta 20 
         for (int i = 0; i < SopaDeLetrasDiccionario.DICCIONARIO.length; i++) {
 //          SI: las palabras del diccionario son menores que la longitud y anchura de la Matriz 
@@ -195,7 +197,6 @@ class T5xSopaDeLetrasFilasColumnas implements SopaDeLetraMatriz2, SopaDeLetraNum
         String palabraElegida = new String();
         System.out.println();
         System.out.println("┅┅┅┅┅ Palabras Menores que la longitud de la Matriz ┅┅┅┅┅");
-        System.out.println();
 //      Desde:                 0    <     4 
         for (int indice = 0; indice < contenedorPalabras.length; indice++) {
 //          Si: La longitud de la palabra es menor que la longitud de la fila y que la longitud de la columna del array
@@ -212,11 +213,11 @@ class T5xSopaDeLetrasFilasColumnas implements SopaDeLetraMatriz2, SopaDeLetraNum
      * @return
      */
     public String getOtraPalabraSopaLetras(String[] contenedorPalabras) {
-        System.out.println();
-        System.out.println("---------- Palabras seleccionadas -------------");
-        System.out.println(Arrays.toString(contenedorPalabras));
-        System.out.println("-----------------------------------------------");
-        System.out.println();
+//        System.out.println();
+//        System.out.println("---------- Palabras seleccionadas -------------");
+//        System.out.println(Arrays.toString(contenedorPalabras));
+//        System.out.println("-----------------------------------------------");
+//        System.out.println();
 
         if (contenedorPalabras.length == 1) {
             palabraSeleccionada = contenedorPalabras[0];
@@ -227,8 +228,10 @@ class T5xSopaDeLetrasFilasColumnas implements SopaDeLetraMatriz2, SopaDeLetraNum
                 palabraSeleccionada = contenedorPalabras[(int) (Math.random() * (0 + contenedorPalabras.length))];
             }
         } else {
-            palabraSeleccionada = contenedorPalabras[indicePalabras];
-            indicePalabras++;
+            if (indicePalabras < contenedorPalabras.length) {
+                palabraSeleccionada = contenedorPalabras[indicePalabras];
+                indicePalabras++;
+            }
         }
         return palabraSeleccionada;
     }
@@ -246,51 +249,91 @@ class T5xSopaDeLetrasFilasColumnas implements SopaDeLetraMatriz2, SopaDeLetraNum
         T5xSopaDeLetrasFilasColumnas t = new T5xSopaDeLetrasFilasColumnas();
         T5xSopaDeLetrasMetodosFormaPalabras fps = new T5xSopaDeLetrasMetodosFormaPalabras();
 
-        String palabraElegida = t.getElegirPalabraSopaLetras();
-
-        int i = 0;
-        System.out.println(" ☆  " + i + " Ver la palabra elegida : " + palabraElegida);
-        fps.setPalabrasHorizontalBasica(getMatrizChar(), t.getOtraPalabraSopaLetras(contenedorPalabras), 0, 0);
-//        fps.setPalabrasHorizontalBasica(getMatrizChar(), t.getOtraPalabraSopaLetras(contenedorPalabras), 6, 6);
-//        fps.setPalabrasVerticales(getMatrizChar(), t.getOtraPalabraSopaLetras(contenedorPalabras), 4, 0);
-//        fps.setPalabrasDiagonal(getMatrizChar(), t.getOtraPalabraSopaLetras(contenedorPalabras), 5, 0);
-//        fps.setPalabrasInvertidas(getMatrizChar(), t.getOtraPalabraSopaLetras(contenedorPalabras), 0, 0);
+        System.out.println("------------- SOPA DE LETRAS POR FILAS Y COLUMNAS -------------\n");
+//            if ((contenedorPalabras.length > getNumeroFila()) && (contenedorPalabras.length > getNumeroColum())) {
+        System.out.println("No se pueden mostrar mas palabras del diccionario : '" + contenedorPalabras.length + "' que filas : '" + getNumeroFila() + "' de la sopa de letras");
+        fps.setPalabrasHorizontalA(getMatrizChar(), t.getOtraPalabraSopaLetras(contenedorPalabras), 0, 0);
+        System.out.println("\t\t\n-----------------------\n");
         t.verMatrizGenerada(getMatrizChar());
     }
 
-    public static void setVerMatrizSopaLetras(char[][] matriz) {
+    public static void setPalabraSopaLetrasV1() {
+        boolean stopFor = true;
         T5xSopaDeLetrasFilasColumnas t = new T5xSopaDeLetrasFilasColumnas();
-        T5xSopaDeLetrasCogeDatosTeclado c = new T5xSopaDeLetrasCogeDatosTeclado();
         T5xSopaDeLetrasMetodosFormaPalabras fps = new T5xSopaDeLetrasMetodosFormaPalabras();
 
-        int incrementoPalabra = 1;
-        int incremento = 0;
+//        String palabraElegida = t.getElegirPalabraSopaLetras();
+        System.out.println("------------- SOPA DE LETRAS POR FILAS Y COLUMNAS -------------\n");
+//        for (int j = 0; j < contenedorPalabras.length && stopFor == true; j++) {
+////            if ((contenedorPalabras.length > getNumeroFila()) && (contenedorPalabras.length > getNumeroColum())) {
+//                System.out.println("No se pueden mostrar mas palabras del diccionario : '" + contenedorPalabras.length + "' que filas : '" + getNumeroFila() + "' de la sopa de letras");
+//                stopFor = false;
+//            } else {
+//                if (j < 4) {
+//        System.out.println("♦ He entrado ♦ 1 ");
+//        fps.setPalabrasHorizontalA(getMatrizChar(), t.getOtraPalabraSopaLetras(contenedorPalabras), j, (incrementaFila + contenedorPalabras.length));
+//                }
+//                if (j == 1) {
+//                    fps.setPalabrasInvertidas(getMatrizChar(), t.getOtraPalabraSopaLetras(contenedorPalabras), j, 0);
+//                }
+//                if (j == 2) {
+//                    fps.setPalabrasDiagonal(getMatrizChar(), t.getOtraPalabraSopaLetras(contenedorPalabras), j, 0);
+//                }
+//                if (j == 3) {
+//                    fps.setPalabrasVerticales(getMatrizChar(), t.getOtraPalabraSopaLetras(contenedorPalabras), j, (getNumeroColum() / 2));
+//                }
+//                if (j > 4) {
+//                    System.out.println("♦ He entrado ♦ 2 ");
+//                    fps.setPalabrasHorizontalA(getMatrizChar(), t.getOtraPalabraSopaLetras(contenedorPalabras), (int) (Math.random() * (incrementaFila + contenedorPalabras.length)), (int) (Math.random() * (incrementaFila + contenedorPalabras.length)));
+//                    incrementaFila++;
+//                }
+//            fps.setPalabrasHorizontalA(getMatrizChar(), t.getOtraPalabraSopaLetras(contenedorPalabras), 6, 0);
+        System.out.println("♦♦♦ Numero aleatorio : " + (int) (Math.random() * (5 + contenedorPalabras.length)) + " ♦♦♦ ");
+//            }
+//        }
 
-        t.getGenerarMatrizCaracterAleatorios(c.getNumeroFilas(), c.getNumeroCol());
-        t.verFilasColum();
-        t.getListaPalabrasParaSopaLetras(c.getNumeroDePalabrasParaSopa());
+        System.out.println("\t\t\n-----------------------\n");
+        t.verMatrizGenerada(getMatrizChar());
+    }
+
+    /**
+     * Muestra la matriz completa con caracteres o sin ellos
+     *
+     * @param matriz
+     */
+    public static void setVerMatrizSopaLetras() {
+
+        int incremento = 0;
 
         System.out.println("\n\t\u001b[33m ═ Filas : " + getNumeroFila() + " ║ Columnas : " + getNumeroColum());
         System.out.println("\t\u001b[32m ░ Sopa de letras generada ░ ");
         System.out.println("\nTotal de palabras elegidas : " + contenedorPalabras.length);
 
-        for (int indice1 = 0; indice1 < getNumeroColum() * 9; indice1++) {
+        for (int indice1 = 0; indice1 < getNumeroColum() * 5; indice1++) {
             System.out.print("_");
         }
 
-        for (fila = 0; fila < matriz.length; fila++) {
-            while (incremento < contenedorPalabras.length) {
-                incrementoPalabra++;
-                System.out.print("\n " + (incrementoPalabra) + " - " + contenedorPalabras[incremento] + "\t\t");
-                for (int columnas = 0; columnas < matriz[fila].length; columnas++) {
-                    fps.setPalabrasHorizontalBasica(matriz, t.getOtraPalabraSopaLetras(contenedorPalabras), fila, 0);
+        System.out.println("\t\n\n---- SOPA DE LETRAS DEPENDIENDO DEL NUMERO DE PALABRAS INTRODUCIDAS -----");
+        for (int f = 0; f < getMatrizChar().length; f++) {
+            while ((incremento < contenedorPalabras.length) && (stop == true)) {
+                if (contenedorPalabras.length > getMatrizChar().length) {
+                    System.out.println("\n El numero de palabras tiene que ser menor");
+                    stop = false;
+                } else {
+                    System.out.print("\n " + incremento + " - " + contenedorPalabras[incremento] + "\t\t");
+                    for (int c = 0; c < getMatrizChar()[f].length; c++) {
+                        if ((f < getMatrizChar().length) && (contenedorPalabras.length < getNumeroFila() && contenedorPalabras.length < getNumeroColum())) {
+                            System.out.print("|" + getMatrizChar()[incremento][c] + "|");
+                        }
+                    }
+                    incremento++;
                 }
-                incremento++;
             }
         }
-        System.out.println();
-        for (int i = 0; i < getNumeroColum() * 5; i++) {
-            System.out.print("▔");
+
+        System.out.println("");
+        for (int indice2 = 0; indice2 < getNumeroColum() * 5; indice2++) {
+            System.out.print("_");
         }
         System.out.println();
     }
@@ -299,6 +342,7 @@ class T5xSopaDeLetrasFilasColumnas implements SopaDeLetraMatriz2, SopaDeLetraNum
 
         setGenerarSopa();
         setPalabraSopaLetras();
+        setVerMatrizSopaLetras();
 
     }
 }

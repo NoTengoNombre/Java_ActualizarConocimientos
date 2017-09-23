@@ -239,7 +239,7 @@ class T5xSopaDeLetrasFilasColumnasCopiaS implements SopaDeLetraMatriz2, SopaDeLe
 
         System.out.println("͏ Ver la palabra elegida : " + palabraElegida + " ͏");
 
-        fps.setPalabrasHorizontalBasica(getMatrizChar(), palabraElegida, getNumRandomDe0a5(), getNumRandomDe0a5());
+        fps.setPalabrasHorizontalA(getMatrizChar(), palabraElegida, getNumRandomDe0a5(), getNumRandomDe0a5());
 
 //        fps.setPalabrasVerticales(matriz, palabraElegida, 1, 1);
 //        t.verMatrizGenerada(getMatrizChar());

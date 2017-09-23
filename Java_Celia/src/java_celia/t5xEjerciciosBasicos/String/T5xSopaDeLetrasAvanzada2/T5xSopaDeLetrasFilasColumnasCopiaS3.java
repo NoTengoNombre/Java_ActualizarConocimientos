@@ -255,7 +255,7 @@ class T5xSopaDeLetrasFilasColumnasCopiaS3 implements SopaDeLetraMatriz2, SopaDeL
         }
         for (int i = 0; i < contenedorPalabras.length; i++) {
             System.out.println("͏ " + i + " Ver la palabra elegida : " + palabraElegida);
-            fps.setPalabrasHorizontalBasica(getMatrizChar(), t.getOtraPalabraSopaLetras(contenedorPalabras), i, 0);
+            fps.setPalabrasHorizontalA(getMatrizChar(), t.getOtraPalabraSopaLetras(contenedorPalabras), i, 0);
         }
         System.out.println();
         t.verMatrizGenerada(getMatrizChar());
@@ -288,7 +288,7 @@ class T5xSopaDeLetrasFilasColumnasCopiaS3 implements SopaDeLetraMatriz2, SopaDeL
                 incrementoPalabra++;
                 System.out.print("\n " + (incrementoPalabra) + " - " + contenedorPalabras[incremento] + "\t\t");
                 for (int columnas = 0; columnas < matriz[fila].length; columnas++) {
-                    fps.setPalabrasHorizontalBasica(matriz, t.getOtraPalabraSopaLetras(contenedorPalabras), fila, 0);
+                    fps.setPalabrasHorizontalA(matriz, t.getOtraPalabraSopaLetras(contenedorPalabras), fila, 0);
                 }
                 incremento++;
             }

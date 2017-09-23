@@ -32,7 +32,7 @@ public interface SopaDeLetrasDiccionario {
     public static final String PALABRA18 = "checksum";
     public static final String PALABRA19 = "enable";
 
-    public static String[] DICCIONARIOX = {
+    public static String[] DICCIONARIO = {
         "enable",
         "bit",
         "boot",
@@ -54,7 +54,7 @@ public interface SopaDeLetrasDiccionario {
         "checksum",
         "ide"};
 
-    public static String[] DICCIONARIO = {
+    public static String[] DICCIONARIOx = {
         "•123•",
         "◘1◘",
         "○12○",

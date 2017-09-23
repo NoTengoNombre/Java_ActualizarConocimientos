@@ -35,11 +35,11 @@ public class T5xSopaDeLetrasMetodosFormaPalabras {
      * @param paramColumna
      * @return
      */
-    public char[][] setPalabrasHorizontalBasica(char[][] paramMatriz, String palabra, int paramFila, int paramColumna) {
+    public char[][] setPalabrasHorizontalA(char[][] paramMatriz, String palabra, int paramFila, int paramColumna) {
 
         T5xSopaDeLetrasFilasColumnas gm = new T5xSopaDeLetrasFilasColumnas();
 
-        System.out.println(" →→ Palabra Horizontal version Basica : " + palabra);
+        System.out.println(" →→ Palabra Horizontal A : " + palabra);
 
         palabraTroceada = getConvertirStringArrayDeChar(palabra);
 
@@ -74,6 +74,51 @@ public class T5xSopaDeLetrasMetodosFormaPalabras {
             }
         }
         return paramMatriz;
+    }
+
+    /**
+     *
+     * @param matriz
+     * @param paramFila
+     * @param paramColumna
+     * @param palabra
+     * @return
+     */
+    public char[][] setPalabrasHorizontalB(char[][] matriz, String palabra, int paramFila, int paramColumna) {
+
+        T5xSopaDeLetrasFilasColumnas gm = new T5xSopaDeLetrasFilasColumnas();
+
+        System.out.println(" →→ Palabra Horizontal B : " + palabra);
+
+        palabraTroceada = getConvertirStringArrayDeChar(palabra);
+
+        if ((paramColumna > (matriz[0].length - palabraTroceada.length)) || (paramFila > matriz.length)) {
+            int indice = 0;
+            palabraTroceada = getConvertirStringArrayDeChar(gm.getElegirPalabraSopaLetras());
+            for (int f = paramFila; f < matriz.length; f++) {
+                for (int c = paramColumna; c < matriz[f].length; c++) {
+                    if (f == paramFila) {
+                        if ((indice < palabra.length()) && (indice < matriz[f].length)) {
+                            matriz[f][c] = palabraTroceada[indice];
+                            indice++;
+                        }
+                    }
+                }
+            }
+        } else {
+            int indice = 0;
+            for (int f = paramFila; f < matriz.length; f++) {
+                for (int c = paramColumna; c < matriz[f].length; c++) {
+                    if (f == paramFila) {
+                        if ((indice < palabra.length()) && (indice < matriz[f].length)) {
+                            matriz[f][c] = palabraTroceada[indice];
+                            indice++;
+                        }
+                    }
+                }
+            }
+        }
+        return matriz;
     }
 
     /**
@@ -117,51 +162,6 @@ public class T5xSopaDeLetrasMetodosFormaPalabras {
                 for (int c = paramColumna; c < matriz[f].length; c++) {
                     if ((f == f) && (c == paramColumna)) {
                         if (indice < palabra.length() && (f <= palabra.length())) {
-                            matriz[f][c] = palabraTroceada[indice];
-                            indice++;
-                        }
-                    }
-                }
-            }
-        }
-        return matriz;
-    }
-
-    /**
-     *
-     * @param matriz
-     * @param paramFila
-     * @param paramColumna
-     * @param palabra
-     * @return
-     */
-    public char[][] setPalabrasHorizontal(char[][] matriz, String palabra, int paramFila, int paramColumna) {
-
-        T5xSopaDeLetrasFilasColumnas gm = new T5xSopaDeLetrasFilasColumnas();
-
-        System.out.println(" →→ Palabra Horizontalmente : " + palabra);
-
-        palabraTroceada = getConvertirStringArrayDeChar(palabra);
-
-        if ((paramColumna > (matriz[0].length - palabraTroceada.length)) || (paramFila > matriz.length)) {
-            int indice = 0;
-            palabraTroceada = getConvertirStringArrayDeChar(gm.getElegirPalabraSopaLetras());
-            for (int f = paramFila; f < matriz.length; f++) {
-                for (int c = paramColumna; c < matriz[f].length; c++) {
-                    if (f == paramFila) {
-                        if ((indice < palabra.length()) && (indice < matriz[f].length)) {
-                            matriz[f][c] = palabraTroceada[indice];
-                            indice++;
-                        }
-                    }
-                }
-            }
-        } else {
-            int indice = 0;
-            for (int f = paramFila; f < matriz.length; f++) {
-                for (int c = paramColumna; c < matriz[f].length; c++) {
-                    if (f == paramFila) {
-                        if ((indice < palabra.length()) && (indice < matriz[f].length)) {
                             matriz[f][c] = palabraTroceada[indice];
                             indice++;
                         }
