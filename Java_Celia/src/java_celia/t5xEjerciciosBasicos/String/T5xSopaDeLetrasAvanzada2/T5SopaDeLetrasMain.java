@@ -7,27 +7,23 @@
  */
 package java_celia.t5xEjerciciosBasicos.String.T5xSopaDeLetrasAvanzada2;
 
+import static java_celia.t5xEjerciciosBasicos.String.T5xSopaDeLetrasAvanzada2.T5xSopaDeLetrasFilasColumnas.setGenerarSopa;
+import static java_celia.t5xEjerciciosBasicos.String.T5xSopaDeLetrasAvanzada2.T5xSopaDeLetrasFilasColumnas.setPalabraSopaLetras;
+import static java_celia.t5xEjerciciosBasicos.String.T5xSopaDeLetrasAvanzada2.T5xSopaDeLetrasFilasColumnas.setVerMatrizSopaLetras;
+
 public class T5SopaDeLetrasMain {
 
 //    private static char[][] matriz;
     public static void setLanzarPrograma() {
 
-//        T5xSopaDeLetrasFilasColumnas gm = new T5xSopaDeLetrasFilasColumnas();
-//        T5xSopaDeLetrasMetodosArrays tsma = new T5xSopaDeLetrasMetodosArrays();
-//        T5xSopaDeLetrasCogeDatosTeclado ct = new T5xSopaDeLetrasCogeDatosTeclado();
-//        System.out.println("✩ Elige el tamaño de la sopa de letras ✩ ");
-//        gm.getListaPalabrasParaSopaLetras(ct.getNumeroDePalabrasParaSopa());
-//        gm.getGenerarMatrizCaracterAleatorios(1, ct.getNumero());
-//        gm.setFormaDefinidasSopaDeLetras(gm.getNumeroFila(), gm.getNumeroColum());
-//        tsma.setVerMatrizSopaLetras(matriz);
+        setGenerarSopa();
+        setPalabraSopaLetras();
+        setVerMatrizSopaLetras();
+
     }
 
     public static void main(String[] args) {
+        setLanzarPrograma();
 
-//        T5xSopaDeLetrasFilasColumnas gm = new T5xSopaDeLetrasFilasColumnas();
-//        T5xSopaDeLetrasMetodosArrays tsdma = new T5xSopaDeLetrasMetodosArrays();
-//        matriz = gm.getGenerarMatrizCaracterAleatorios(1, 10);
-//        tsdma.setVerMatrizSopaLetras(matriz);
-//        setLanzarPrograma();
     }
 }

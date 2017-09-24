@@ -49,7 +49,7 @@ public class T5xSopaDeLetrasMetodosFormaPalabras {
 
             palabraTroceada = getConvertirStringArrayDeChar(gm.getElegirPalabraSopaLetras());
 
-            for (int f = paramFila; f < paramMatriz.length; f++) {
+            for (int f = paramFila; f < paramMatriz.length ; f++) {
                 for (int c = paramColumna; c < paramMatriz[f].length; c++) {
                     if (f == paramFila) {
                         if ((indice < palabra.length()) && (indice < paramMatriz[f].length)) {
