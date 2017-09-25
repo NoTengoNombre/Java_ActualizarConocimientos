@@ -5,7 +5,7 @@
  * @version
  * @author Raul Vela Salas
  */
-package java_ejemplo_ASCII;
+package java_ejemplo_ASCII_salida_por_pantalla;
 
 public class JavaUnicode {
 
