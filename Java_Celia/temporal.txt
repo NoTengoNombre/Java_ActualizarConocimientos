@@ -1,0 +1,1 @@
+Soy el archivo temporal para hacer una prueba de FileWriter y BufferedReader
