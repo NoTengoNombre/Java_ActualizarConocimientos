@@ -5,7 +5,7 @@
  * @version
  * @author Raul Vela Salas
  */
-package java_celia.t6xEjerciciosBasicos.T6Ficheros.DataInputOutputStreamAlumnos;
+package java_celia.t6xEjerciciosBasicos.T6Ficheros.DataInputOutputStream;
 
 import java.io.BufferedReader;
 import java.io.DataInputStream;

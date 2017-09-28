@@ -45,7 +45,8 @@ public class T6EjemploBusquedaFileInputStream {
      * @param file
      */
     public static void buscarFicheroSecuencial(File file) {
-        int pos = 0;
+
+        int pos = 1;
         byte contenido;
         boolean encontrado = false;
 
@@ -55,10 +56,8 @@ public class T6EjemploBusquedaFileInputStream {
 
             fis = new FileInputStream(file);
 
-            contenido = (byte) fis.read();
-
             while ((((contenido = (byte) fis.read()) != -1)) && (encontrado == false)) {
-
+                System.out.printf("\n \u001b[33m Posicion %4d - Caracter %4c : ", pos, contenido);
                 if ((char) contenido == 'X') {
                     encontrado = true;
                 }
@@ -66,19 +65,20 @@ public class T6EjemploBusquedaFileInputStream {
             }
 
             if (encontrado == true) {
-                System.out.println("\u001b[32m Hemos encontrado el caracter X : " + " - Posicion : " + pos);
+                System.out.println("\n\u001b[35m Hemos encontrado el caracter X : " + " - Posicion : " + pos);
+
             } else {
-                System.out.println("\u001b[35m No hemos encontrado el caracter X : " + " - Posicion : " + pos);
+                System.out.println("\n\u001b[35m No hemos encontrado el caracter X : " + " - Posicion : " + pos);
             }
+
         } catch (IOException ioe) {
             System.out.println("Error Mensaje : " + ioe.getMessage() + " Localiza el mensaje : " + ioe.getLocalizedMessage());
         }
     }
 
     public static void main(String[] args) throws FileNotFoundException {
-
-//        leerArchivoEnCaracteres();
         File f = new File("contar.txt");
+        leerArchivoEnCaracteres();
         buscarFicheroSecuencial(f);
 
     }
