@@ -1,1 +1,0 @@
-FileOuputStream Para Archivos Binarios de organizacion secuencial , acceso directo o indirecto(aleatorio)

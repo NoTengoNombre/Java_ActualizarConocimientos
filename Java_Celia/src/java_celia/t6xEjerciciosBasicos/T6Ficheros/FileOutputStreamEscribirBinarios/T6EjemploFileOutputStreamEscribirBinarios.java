@@ -20,7 +20,7 @@ public class T6EjemploFileOutputStreamEscribirBinarios {
 
         FileOutputStream fop = null;
         File file;
-        String content = "FileOuputStream Para Archivos Binarios de organizacion secuencial , acceso directo o indirecto(aleatorio)";
+        String content = "FileOuputStream Para abrir un flujo en un archivos y escribir bytes (binarios) de organizacion secuencial , acceso directo o indirecto(aleatorio)";
         try {
             file = new File("fileoutputstream.txt");
             fop = new FileOutputStream(file);

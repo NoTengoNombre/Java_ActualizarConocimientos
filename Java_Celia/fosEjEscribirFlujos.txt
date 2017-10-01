@@ -1,0 +1,5 @@
+1 Abrimos un flujo binario hacia el fichero para escribri en el
+ 2 Abierto el flujo escribimos una consecución de bytes dentro de el
+ 3 Escribimos la consecución de bytes dentro del fichero
+ 4 Despues de escribir cerramos el fichero
+ 5 Sistema ideal para acceso directo y aleatorio

@@ -1,0 +1,1 @@
+Abrimos un flujo de datos directo para escribir en memoria secundaria sin usar un objeto File

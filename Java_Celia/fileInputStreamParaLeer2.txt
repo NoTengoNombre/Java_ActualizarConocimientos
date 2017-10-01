@@ -1,0 +1,1 @@
+A) Archivo que abre un flujo de entrada para escribir y luego otro flujo para leer

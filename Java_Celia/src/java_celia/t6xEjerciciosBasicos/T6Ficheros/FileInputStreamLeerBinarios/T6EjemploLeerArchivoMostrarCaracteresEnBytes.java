@@ -34,6 +34,9 @@ public class T6EjemploLeerArchivoMostrarCaracteresEnBytes {
 
             while ((content = fileinput.read()) != -1) {
 //Convierte el byte leido en un char para mostrarlo
+//Char
+//                System.out.println((char) content);
+//Bytes
                 System.out.println(content);
             }
         } catch (FileNotFoundException ex) {

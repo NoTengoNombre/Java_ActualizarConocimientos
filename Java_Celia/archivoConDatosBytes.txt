@@ -1,0 +1,1 @@
+Abrir un flujo 'stream' en un archivo 'txt' para escribir bytes dentro de él
