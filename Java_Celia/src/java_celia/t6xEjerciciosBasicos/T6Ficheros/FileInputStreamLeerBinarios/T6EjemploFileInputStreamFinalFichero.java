@@ -5,7 +5,7 @@
  * @version
  * @author Raul Vela Salas
  */
-package java_celia.t6xEjerciciosBasicos.T6Ficheros.FileInputStream;
+package java_celia.t6xEjerciciosBasicos.T6Ficheros.FileInputStreamLeerBinarios;
 
 import java.io.File;
 import java.io.FileInputStream;
